@@ -1,0 +1,526 @@
+{
+  "title": "webheader-navigation-property",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "menu-toaster": {
+      "type": "instance",
+      "instanceOf": "menu-toaster"
+    },
+    "header-logo-brand": {
+      "type": "instance",
+      "instanceOf": "header-logo"
+    },
+    "weblogin-v2": {
+      "type": "instance",
+      "instanceOf": "weblogin-v2"
+    },
+    "container": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false"
+    },
+    "right": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false"
+    },
+    "nav-link": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "nav-link"
+    },
+    "separator": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false"
+    },
+    "hotel-and-resorts": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "menu-item-all"
+    },
+    "webaccessibility": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "webaccessibility"
+    },
+    "left": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false"
+    },
+    "nav-header-link": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "nav-header-link"
+    },
+    "parameters": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false"
+    },
+    "geolocation": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "geolocation"
+    },
+    "currency": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "geolocation"
+    },
+    "header-menu": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "header-menu"
+    },
+    "webbutton": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "instanceOf": "webbutton"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "immersive": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), immersive=false",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "width": 375,
+          "height": 64,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/sem/color/outline-primary-low",
+          "strokeBottomWeight": "borders/wel/sem/borderWidth/default",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "menu-toaster",
+          "header-logo-brand",
+          "weblogin-v2"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 69
+        }
+      },
+      "menu-toaster": {
+        "parent": "wrapper",
+        "styles": {
+          "width": 36,
+          "height": 32
+        },
+        "propConfigurations": {
+          "state": "default",
+          "open": "false"
+        }
+      },
+      "header-logo-brand": {
+        "parent": "wrapper",
+        "styles": {
+          "width": 129.65,
+          "height": 64
+        },
+        "propConfigurations": {
+          "separator": "false",
+          "choose-appendix": "259954144",
+          "appendix": "false",
+          "brand-logo": "13342105807"
+        }
+      },
+      "weblogin-v2": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "open": "false",
+          "display": "panel",
+          "login": "false"
+        }
+      },
+      "container": {
+        "styles": {
+          "height": 80,
+          "minWidth": 1280,
+          "maxWidth": 1439,
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "itemSpacing": 24,
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "right": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/md"
+        }
+      },
+      "nav-link": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "breakpoint": "desktop-1024",
+          "state": "default"
+        }
+      },
+      "separator": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "width": 1,
+          "height": 40,
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeWeight": "borders/wel/sem/borderWidth/default"
+        }
+      },
+      "hotel-and-resorts": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "state": "default",
+          "display": "tab-inline"
+        }
+      },
+      "webaccessibility": {
+        "styles": {
+          "visible": false,
+          "layoutSizingHorizontal": "HUG",
+          "height": 80
+        },
+        "propConfigurations": {
+          "state": "default"
+        }
+      },
+      "left": {
+        "styles": {
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/md"
+        }
+      },
+      "nav-header-link": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "display": "stack",
+          "state": "default"
+        }
+      },
+      "parameters": {
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+        }
+      },
+      "geolocation": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "currency": {
+        "styles": {
+          "visible": false,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "header-menu": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "tab-5": "true",
+          "tab-6": "true",
+          "tab-4": "true",
+          "more": "false",
+          "tab-8": "false",
+          "tab-7": "true",
+          "tab": "false",
+          "breakpoint": "desktop-1024"
+        }
+      },
+      "webbutton": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "1333975809",
+          "right-icon": "1333975809",
+          "label": "check-rates",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), immersive=true",
+      "configuration": {
+        "immersive": true
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/overlay-low"
+          }
+        },
+        "header-logo-brand": {
+          "propConfigurations": {
+            "separator": "true",
+            "appendix": "true"
+          }
+        },
+        "weblogin-v2": {
+          "propConfigurations": {
+            "open": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), immersive=false",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959,
+            "itemSpacing": 249
+          }
+        },
+        "header-logo-brand": {
+          "propConfigurations": {
+            "separator": "true",
+            "appendix": "true"
+          }
+        },
+        "weblogin-v2": {
+          "propConfigurations": {
+            "open": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), immersive=false",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "height": 80,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215,
+            "itemSpacing": 377
+          }
+        },
+        "header-logo-brand": {
+          "propConfigurations": {
+            "separator": "true",
+            "appendix": "true"
+          }
+        },
+        "weblogin-v2": {
+          "propConfigurations": {
+            "open": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), immersive=false",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "wrapper",
+            "wrapper"
+          ],
+          "styles": {
+            "fills": null,
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "VERTICAL",
+            "strokes": null,
+            "strokeWeight": null,
+            "paddingLeft": 0,
+            "paddingRight": 0
+          }
+        },
+        "wrapper": {
+          "children": [
+            "container"
+          ],
+          "styles": {
+            "fills": "colorModes/wel/sem/color/overlay-low",
+            "minWidth": null,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "VERTICAL",
+            "strokes": "colorModes/wel/sem/color/outline-primary-low",
+            "strokeTopWeight": 0,
+            "strokeBottomWeight": "borders/wel/sem/borderWidth/default",
+            "strokeLeftWeight": 0,
+            "strokeRightWeight": 0,
+            "itemSpacing": 0
+          }
+        },
+        "container": {
+          "parent": "wrapper"
+        },
+        "right": {
+          "parent": "container"
+        },
+        "nav-link": {
+          "parent": "right",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "separator": {
+          "parent": "right"
+        },
+        "hotel-and-resorts": {
+          "parent": "right",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "webaccessibility": {
+          "parent": "left"
+        },
+        "header-logo-brand": {
+          "parent": "container",
+          "propConfigurations": {
+            "separator": "true",
+            "appendix": "true"
+          }
+        },
+        "left": {
+          "parent": "container"
+        },
+        "nav-header-link": {
+          "parent": "left",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "weblogin-v2": {
+          "parent": "left",
+          "propConfigurations": {
+            "open": "true",
+            "display": "popover"
+          }
+        },
+        "parameters": {
+          "parent": "left"
+        },
+        "geolocation": {
+          "parent": "parameters"
+        },
+        "currency": {
+          "parent": "parameters"
+        },
+        "header-menu": {
+          "parent": "container",
+          "propConfigurations": {
+            "more": "true",
+            "tab-8": "true",
+            "tab": "false"
+          }
+        },
+        "webbutton": {
+          "parent": "container",
+          "propConfigurations": {
+            "left-icon": "false",
+            "right-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

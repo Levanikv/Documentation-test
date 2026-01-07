@@ -1,0 +1,255 @@
+{
+  "title": "💠 web.booking-engine-next-version-light",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "search-engine": {
+      "type": "instance",
+      "instanceOf": "search-engine"
+    },
+    "special-rates": {
+      "type": "container"
+    },
+    "webseparator": {
+      "type": "instance",
+      "instanceOf": "webseparator"
+    },
+    "weblink": {
+      "type": "instance",
+      "instanceOf": "weblink"
+    }
+  },
+  "props": {
+    "display": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "condensed"
+      ]
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-md (1280-1439)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "display=default, breakpoint=desktop-md (1280-1439)",
+    "elements": {
+      "root": {
+        "children": [
+          "search-engine",
+          "special-rates"
+        ],
+        "styles": {
+          "width": 1440,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inline/5xl",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inline/5xl"
+        }
+      },
+      "search-engine": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "effectStyleId": "default-bottom",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "room": "true",
+          "special-rates": "true",
+          "date-picker": "true",
+          "type": "booking",
+          "display": "default",
+          "breakpoint": "desktop-md-1280-1439"
+        }
+      },
+      "special-rates": {
+        "parent": "root",
+        "children": [
+          "webseparator",
+          "weblink",
+          "webseparator"
+        ],
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+        }
+      },
+      "webseparator": {
+        "parent": "special-rates",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1
+        }
+      },
+      "weblink": {
+        "parent": "special-rates",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "label": "tarifs-spciaux",
+          "right-icon": "true",
+          "variant": "icon",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "display=default, breakpoint=mobile (320-767)",
+      "configuration": {
+        "breakpoint": "mobile (320-767)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "search-engine"
+          ],
+          "styles": {
+            "width": 343,
+            "itemSpacing": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0
+          }
+        },
+        "search-engine": {
+          "styles": {
+            "fills": null,
+            "effectStyleId": "",
+            "layoutSizingHorizontal": "FIXED",
+            "width": 343
+          },
+          "propConfigurations": {
+            "breakpoint": "mobile-320-767"
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "display=default, breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inline/xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inline/xl"
+          }
+        },
+        "search-engine": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "special-rates": {
+          "styles": {
+            "itemSpacing": 24
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "display=default, breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inline/xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inline/xl"
+          }
+        },
+        "search-engine": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "display=condensed, breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "display": "condensed"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "search-engine"
+          ],
+          "styles": {
+            "width": 960,
+            "itemSpacing": 10,
+            "paddingLeft": 0,
+            "paddingRight": 0
+          }
+        },
+        "search-engine": {
+          "propConfigurations": {
+            "display": "condensed"
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T14:32:13.021Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "9379:48904",
+      "nodeId": "9379:25201"
+    }
+  }
+}

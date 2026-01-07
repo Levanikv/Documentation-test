@@ -1,0 +1,179 @@
+{
+  "title": "💠 web.accessibility",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "accessibility-button": {
+      "type": "instance",
+      "instanceOf": "accessibility-button"
+    },
+    "popover": {
+      "type": "container",
+      "detectedIn": ":state=open"
+    },
+    "webbutton-icon": {
+      "type": "instance",
+      "detectedIn": ":state=open",
+      "instanceOf": "webbutton-icon"
+    },
+    "content": {
+      "type": "container",
+      "detectedIn": ":state=open"
+    },
+    "accessibility": {
+      "type": "text",
+      "detectedIn": ":state=open"
+    },
+    "webtoggle": {
+      "type": "instance",
+      "detectedIn": ":state=open",
+      "instanceOf": "webtoggle"
+    }
+  },
+  "props": {
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "open"
+      ]
+    }
+  },
+  "default": {
+    "name": ":state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "accessibility-button"
+        ],
+        "styles": {
+          "height": 80,
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL"
+        }
+      },
+      "accessibility-button": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "state": "default"
+        }
+      },
+      "popover": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "effectStyleId": "drop-shadow-top-bottom",
+          "cornerRadius": 6,
+          "width": 375,
+          "height": 168,
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "VERTICAL",
+          "layoutPositioning": "ABSOLUTE",
+          "x": -351,
+          "y": 56,
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        }
+      },
+      "webbutton-icon": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "152545018",
+          "size": "sm",
+          "function": "tertiary",
+          "state": "default"
+        }
+      },
+      "content": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "accessibility": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "title-03"
+        }
+      },
+      "webtoggle": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "on": "false",
+          "size": "md",
+          "position": "start",
+          "content": "label",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": ":state=open",
+      "configuration": {
+        ":state": "open"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "accessibility-button",
+            "popover"
+          ]
+        },
+        "popover": {
+          "parent": "root"
+        },
+        "webbutton-icon": {
+          "parent": "popover"
+        },
+        "content": {
+          "parent": "popover"
+        },
+        "accessibility": {
+          "parent": "content"
+        },
+        "webtoggle": {
+          "parent": "content"
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-08T13:01:53.666Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "13025:9313",
+      "nodeId": "102:25585"
+    }
+  }
+}

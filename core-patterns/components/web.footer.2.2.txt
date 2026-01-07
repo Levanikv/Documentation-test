@@ -1,0 +1,534 @@
+{
+  "title": "💠 web.footer",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "footer-section-frieze": {
+      "type": "instance",
+      "instanceOf": "footer-section-frieze"
+    },
+    "footer-section-cta": {
+      "type": "instance",
+      "instanceOf": "footer-section-cta"
+    },
+    "footer-section-help": {
+      "type": "instance",
+      "instanceOf": "footer-section-help"
+    },
+    "footer-section-list": {
+      "type": "instance",
+      "instanceOf": "footer-section-list"
+    },
+    "footer-social-networks": {
+      "type": "instance",
+      "instanceOf": "footer-social-networks"
+    },
+    "footer-section-legal": {
+      "type": "instance",
+      "instanceOf": "footer-section-legal"
+    },
+    "brand-section": {
+      "type": "container",
+      "detectedIn": "type=brands, breakpoint=mobile (320-767)"
+    },
+    "footer-breadcrumb": {
+      "type": "instance",
+      "detectedIn": "type=brands, breakpoint=mobile (320-767)",
+      "instanceOf": "footer-breadcrumb"
+    },
+    "logo-brand-container": {
+      "type": "instance",
+      "detectedIn": "type=brands, breakpoint=mobile (320-767)",
+      "instanceOf": "logo-brand-container"
+    },
+    "webseparator": {
+      "type": "instance",
+      "detectedIn": "type=brands, breakpoint=mobile (320-767)",
+      "instanceOf": "webseparator"
+    }
+  },
+  "props": {
+    "breadcrumb": {
+      "type": "boolean",
+      "default": true
+    },
+    "type": {
+      "type": "string",
+      "default": "all",
+      "enum": [
+        "all",
+        "brands"
+      ]
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "brands-section": {
+      "type": "boolean",
+      "default": true
+    },
+    "help-section": {
+      "type": "boolean",
+      "default": true
+    },
+    "exclusive-offers-and-appstore-section": {
+      "type": "boolean",
+      "default": true
+    },
+    "social-network-section": {
+      "type": "boolean",
+      "default": true
+    },
+    "list-section": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "type=all, breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "footer-section-frieze",
+          "footer-section-cta",
+          "footer-section-help",
+          "footer-section-list",
+          "footer-social-networks",
+          "footer-section-legal"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "footer-section-frieze": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "divider": "false",
+          "logo": "true",
+          "breakpoint": "mobile-320-767",
+          "withbackground": "no"
+        }
+      },
+      "footer-section-cta": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "divider": "true",
+          "breakpoint": "mobile-320-767"
+        }
+      },
+      "footer-section-help": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "divider": "true",
+          "breakpoint": "mobile-320-767"
+        }
+      },
+      "footer-section-list": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "divider": "true",
+          "breakpoint": "mobile-320-767"
+        }
+      },
+      "footer-social-networks": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "social-network-8": "152544821",
+          "social-network-7": "152544937",
+          "social-network-6": "152544935",
+          "social-network-4": "152545050",
+          "social-network-5": "152544823",
+          "social-network-3": "152544845",
+          "icon-7": "true",
+          "icon-6": "true",
+          "icon-5": "true",
+          "divider": "false",
+          "icon-2": "true",
+          "icon-8": "false",
+          "icon-4": "true",
+          "social-network-1": "152544983",
+          "icon-1": "true",
+          "social-network-2": "152544981",
+          "icon-3": "true"
+        }
+      },
+      "footer-section-legal": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "withdivider": "false",
+          "breakpoint": "mobile-320-767"
+        }
+      },
+      "brand-section": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/4xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/4xl"
+        }
+      },
+      "footer-breadcrumb": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/breadcrumb"
+          }
+        }
+      },
+      "logo-brand-container": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "display": "footer"
+        }
+      },
+      "webseparator": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "type=all, breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959
+          }
+        },
+        "footer-section-frieze": {
+          "propConfigurations": {
+            "divider": "true",
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "footer-section-cta": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "footer-section-help": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "footer-section-list": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "footer-social-networks": {
+          "styles": {
+            "layoutSizingHorizontal": "FIXED",
+            "width": 426
+          },
+          "propConfigurations": {
+            "divider": "false",
+            "icon-8": "false"
+          }
+        },
+        "footer-section-legal": {
+          "propConfigurations": {
+            "withdivider": "false",
+            "breakpoint": "tablet-768-1023"
+          }
+        }
+      }
+    },
+    {
+      "name": "type=all, breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 959,
+            "maxWidth": 1215
+          }
+        },
+        "footer-section-frieze": {
+          "propConfigurations": {
+            "divider": "true",
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "footer-section-cta": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "footer-section-help": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "footer-section-list": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "footer-social-networks": {
+          "propConfigurations": {
+            "divider": "false",
+            "icon-8": "false"
+          }
+        },
+        "footer-section-legal": {
+          "propConfigurations": {
+            "withdivider": "false",
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        }
+      }
+    },
+    {
+      "name": "type=all, breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": 1440,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311
+          }
+        },
+        "footer-section-frieze": {
+          "propConfigurations": {
+            "divider": "true",
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "footer-section-cta": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "footer-section-help": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "footer-section-list": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "footer-social-networks": {
+          "propConfigurations": {
+            "divider": "false",
+            "icon-8": "false"
+          }
+        },
+        "footer-section-legal": {
+          "propConfigurations": {
+            "withdivider": "false",
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        }
+      }
+    },
+    {
+      "name": "type=brands, breakpoint=mobile (320-767)",
+      "configuration": {
+        "type": "brands"
+      },
+      "elements": {
+        "wrapper": {
+          "children": [
+            "brand-section",
+            "footer-section-frieze"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": null,
+            "itemSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        },
+        "brand-section": {
+          "parent": "wrapper"
+        },
+        "footer-breadcrumb": {
+          "parent": "brand-section"
+        },
+        "logo-brand-container": {
+          "parent": "brand-section"
+        },
+        "webseparator": {
+          "parent": "brand-section"
+        },
+        "footer-section-cta": {
+          "parent": "brand-section",
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/exclusive offers and appstore section"
+            }
+          }
+        },
+        "footer-section-help": {
+          "parent": "brand-section",
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/help section"
+            }
+          }
+        },
+        "footer-section-list": {
+          "parent": "brand-section",
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/list section"
+            }
+          }
+        },
+        "footer-social-networks": {
+          "parent": "brand-section",
+          "propConfigurations": {
+            "divider": "false",
+            "icon-8": "false"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/social network section"
+            }
+          }
+        },
+        "footer-section-legal": {
+          "parent": "brand-section",
+          "propConfigurations": {
+            "withdivider": "false"
+          }
+        },
+        "footer-section-frieze": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/surface-container-low"
+          },
+          "propConfigurations": {
+            "divider": "true",
+            "withbackground": "yes"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/brands section"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T15:11:39.600Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "8:8505",
+      "nodeId": "14318:74369"
+    }
+  }
+}

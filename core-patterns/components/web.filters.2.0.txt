@@ -1,0 +1,384 @@
+{
+  "title": "💠 web.filters",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "weblink": {
+      "type": "instance",
+      "instanceOf": "weblink"
+    },
+    "xx-filtered-items": {
+      "type": "text"
+    },
+    "close-24": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), open=true",
+      "instanceOf": "close-24"
+    },
+    "texts": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), open=true"
+    },
+    "title": {
+      "type": "text",
+      "detectedIn": "breakpoint=mobile (320-767), open=true"
+    },
+    "filters": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), open=true"
+    },
+    "filter-icon": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), open=true",
+      "instanceOf": "contentfilter-icon"
+    },
+    "webbutton": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), open=true",
+      "instanceOf": "webbutton"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "open": {
+      "type": "boolean",
+      "default": false,
+      "x-platform": {
+        "FIGMA": {
+          "type": "VARIANT"
+        }
+      }
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), open=false",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "effectStyleId": "drop-shadow-bottom-default",
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": 16,
+          "paddingRight": 16
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "weblink",
+          "xx-filtered-items"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeBottomWeight": 1,
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/xl"
+        }
+      },
+      "weblink": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "true",
+          "left-icon": "false",
+          "label": "filters-label",
+          "variant": "icon",
+          "state": "default"
+        }
+      },
+      "xx-filtered-items": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "ui/body-01 (1rem)",
+          "textAlignHorizontal": "RIGHT"
+        }
+      },
+      "close-24": {
+        "styles": {
+          "width": 24,
+          "height": 24
+        }
+      },
+      "texts": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/2xl"
+        }
+      },
+      "title": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "ui/heading-01"
+        }
+      },
+      "filters": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 16
+        }
+      },
+      "filter-icon": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "selected": "false"
+        }
+      },
+      "webbutton": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "right-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), open=true",
+      "configuration": {
+        "open": true
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "effectStyleId": "",
+            "height": 667,
+            "counterAxisAlignItems": "MAX",
+            "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "close-24",
+            "texts",
+            "webbutton"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "MIN",
+            "counterAxisAlignItems": "MAX",
+            "layoutMode": "VERTICAL",
+            "layoutSizingVertical": "FILL",
+            "strokes": null,
+            "strokeWeight": null,
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/2xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/md",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/md"
+          }
+        },
+        "close-24": {
+          "parent": "wrapper"
+        },
+        "texts": {
+          "parent": "wrapper"
+        },
+        "title": {
+          "parent": "texts"
+        },
+        "filters": {
+          "parent": "texts"
+        },
+        "filter-icon": {
+          "parent": "filters"
+        },
+        "weblink": {
+          "parent": "texts",
+          "propConfigurations": {
+            "left-icon": "false",
+            "label": "clear-all-filters",
+            "variant": "default"
+          }
+        },
+        "webbutton": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), open=false",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": null,
+            "maxWidth": null,
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": 32,
+            "paddingRight": 32
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": null,
+            "maxWidth": null,
+            "layoutSizingVertical": "FIXED",
+            "itemSpacing": 995,
+            "height": 56
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), open=false",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "height": 72,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215,
+            "itemSpacing": 995
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), open=false",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "height": 72,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "paddingLeft": 64,
+            "paddingRight": 64
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311,
+            "itemSpacing": 995,
+            "paddingTop": 24
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T14:49:51.658Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "8:92",
+      "nodeId": "8:4894"
+    }
+  }
+}

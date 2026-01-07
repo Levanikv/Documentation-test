@@ -1,0 +1,130 @@
+{
+  "title": "💠 web.search-destination",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webautocomplete": {
+      "type": "instance",
+      "instanceOf": "webautocomplete"
+    }
+  },
+  "props": {
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "open",
+        "default",
+        "filled"
+      ]
+    }
+  },
+  "default": {
+    "name": ":state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "webautocomplete"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/input",
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/sem/color/outline-hi",
+          "strokeWeight": "breakpoints/wel/sem/borderWidth/default",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        }
+      },
+      "webautocomplete": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "clear-icon": "false",
+          "type": "15564663",
+          "assistive-text": "false",
+          "optional-label": "false",
+          "label": "true",
+          "action": "false",
+          "icon-left": "false",
+          "display": "embed",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": ":state=open",
+      "configuration": {
+        ":state": "open"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": null,
+            "cornerRadius": 0,
+            "strokes": null,
+            "strokeWeight": null,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        },
+        "webautocomplete": {
+          "propConfigurations": {
+            "assistive-text": "false",
+            "optional-label": "false",
+            "clear-icon": "false",
+            "action": "false",
+            "icon-left": "false",
+            "state": "open-bottom"
+          }
+        }
+      }
+    },
+    {
+      "name": ":state=filled",
+      "configuration": {
+        ":state": "filled"
+      },
+      "elements": {
+        "webautocomplete": {
+          "propConfigurations": {
+            "assistive-text": "false",
+            "optional-label": "false",
+            "clear-icon": "false",
+            "action": "false",
+            "icon-left": "false",
+            "state": "filled"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T15:24:38.132Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "10051:7027",
+      "nodeId": "10054:8132"
+    }
+  }
+}

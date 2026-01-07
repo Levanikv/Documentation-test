@@ -1,0 +1,269 @@
+{
+  "title": "💠 web.filters-chips",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "chips": {
+      "type": "container"
+    },
+    "webchip": {
+      "type": "instance",
+      "instanceOf": "webchip"
+    },
+    "chip": {
+      "type": "instance",
+      "instanceOf": "slot-horizontal1"
+    },
+    "truncation": {
+      "type": "container"
+    },
+    "truncation-left": {
+      "type": "container"
+    },
+    "button-left": {
+      "type": "instance",
+      "instanceOf": "webbutton-icon"
+    },
+    "truncation-right": {
+      "type": "container"
+    },
+    "button-right": {
+      "type": "instance",
+      "instanceOf": "webbutton-icon"
+    }
+  },
+  "props": {
+    "truncation": {
+      "type": "boolean",
+      "default": true
+    },
+    "align": {
+      "type": "string",
+      "default": "flex-start",
+      "enum": [
+        "flex-start",
+        "center"
+      ]
+    },
+    "chips": {
+      "type": "string",
+      "default": "13:1183"
+    },
+    "more-chips": {
+      "type": "boolean",
+      "default": true
+    },
+    "right": {
+      "type": "boolean",
+      "default": true
+    },
+    "left": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "default": {
+    "name": "align=flex-start",
+    "elements": {
+      "root": {
+        "children": [
+          "chips",
+          "truncation"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "chips": {
+        "parent": "root",
+        "children": [
+          "webchip",
+          "webchip",
+          "webchip",
+          "webchip",
+          "webchip",
+          "webchip",
+          "chip"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "webchip": {
+        "parent": "chips",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "txt": "plus",
+          "additional-txt": "false",
+          "left-icon": "false",
+          "size": "md",
+          "variant": "default",
+          "state": "default"
+        }
+      },
+      "chip": {
+        "parent": "chips",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "height": 36
+        },
+        "propConfigurations": {
+          "has-absolute": "false"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/more chips"
+          },
+          "mainComponent": {
+            "$ref": "#/props/-> chips "
+          }
+        }
+      },
+      "truncation": {
+        "parent": "root",
+        "children": [
+          "truncation-left",
+          "truncation-right"
+        ],
+        "styles": {
+          "width": 558,
+          "height": 36,
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "counterAxisAlignItems": "CENTER",
+          "layoutPositioning": "ABSOLUTE",
+          "y": 36
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/truncation"
+          }
+        }
+      },
+      "truncation-left": {
+        "parent": "truncation",
+        "children": [
+          "button-left"
+        ],
+        "styles": {
+          "visible": false,
+          "height": 40,
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "y": -2,
+          "paddingRight": 16
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/-> left"
+          }
+        }
+      },
+      "button-left": {
+        "parent": "truncation-left",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "effectStyleId": "drop-shadow-bottom-strong",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "152545098",
+          "size": "xs",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "truncation-right": {
+        "parent": "truncation",
+        "children": [
+          "button-right"
+        ],
+        "styles": {
+          "height": 40,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "x": 510,
+          "y": -2,
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/pinchHorizontal/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/-> right"
+          }
+        }
+      },
+      "button-right": {
+        "parent": "truncation-right",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "effectStyleId": "drop-shadow-bottom-strong",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "152545102",
+          "size": "xs",
+          "function": "secondary",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "align=center",
+      "configuration": {
+        "align": "center"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "chips": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "webchip": {
+          "propConfigurations": {
+            "additional-txt": "false",
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T15:06:18.567Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "8:92",
+      "nodeId": "10749:7493"
+    }
+  }
+}

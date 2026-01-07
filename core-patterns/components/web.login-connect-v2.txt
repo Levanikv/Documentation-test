@@ -1,0 +1,154 @@
+{
+  "title": "💠 web.login-connect-v2",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "user-menu-button": {
+      "type": "instance",
+      "instanceOf": "user-menu-button"
+    },
+    "panel": {
+      "type": "instance",
+      "instanceOf": "login-connect-content"
+    },
+    "popover": {
+      "type": "instance",
+      "detectedIn": "display=popover",
+      "instanceOf": "webpopover"
+    }
+  },
+  "props": {
+    "open": {
+      "type": "boolean",
+      "default": true
+    },
+    "display": {
+      "type": "string",
+      "default": "modal",
+      "enum": [
+        "modal",
+        "popover"
+      ]
+    }
+  },
+  "default": {
+    "name": "display=modal",
+    "elements": {
+      "root": {
+        "children": [
+          "user-menu-button",
+          "panel"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/sm"
+        }
+      },
+      "user-menu-button": {
+        "parent": "root",
+        "styles": {
+          "width": 40,
+          "height": 40
+        },
+        "propConfigurations": {
+          "content": "icon",
+          "discreet": "false",
+          "login": "false",
+          "state": "default"
+        }
+      },
+      "panel": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "x": -304,
+          "y": 52,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 360
+        },
+        "propConfigurations": {
+          "version": "v2"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/open"
+          }
+        }
+      },
+      "popover": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-hi",
+          "effectStyleId": "wide",
+          "x": -180,
+          "y": 52,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 360
+        },
+        "propConfigurations": {
+          "custom-content": "1537221688",
+          "focus": "false",
+          "content": "slot"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/open"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "display=popover",
+      "configuration": {
+        "display": "popover"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "user-menu-button",
+            "popover"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/2xs"
+          }
+        },
+        "user-menu-button": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "content": "iconlabel"
+          }
+        },
+        "popover": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T16:33:33.915Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "13014:555236",
+      "nodeId": "15372:21528"
+    }
+  }
+}

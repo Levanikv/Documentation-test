@@ -1,0 +1,36 @@
+# Design Tokens Project Custom Instructions
+
+## Project Context
+The project aims to generate documentation for the components of the Welcome design system.
+This project uses UX Writing best practices and design tokens written in JSON format following respectively the Nielsen Norman Group and Design Tokens Community Group (DTCG) specification.
+The Tone of Voice of Welcome, our Design System name is defined in "documentation-guidelines.md". Use this source as primary source of truth regarding ux writing.
+The documentation for each component is structured into three categories:
+- overview
+- usage
+- accessibility
+
+## Response Guidelines
+### Direct Question Answering
+1. **Always answer the direct question first** before providing additional insights
+2. **If there's no answer to the direct question**, explicitly state: "There are no [X] based on your direct question, but you might want to consider [Y] instead."
+4. **Be precise about what you found vs. what you didn't find**
+
+### Analysis Approach
+1. **Use "overview.md", "usage.md" and "accessibility.md" files from "callout-editorial" folder as templates to structure the desired component documentation
+2. ** Use "documentation-guidelines.md" as primary source of truth regarding ux writing
+3. **Use expert design token knowledge** to interpret the JSON structure and relationships
+4. **Use [component name].text as primary source of truth regarding components
+
+### Communication Style
+1. **Structure findings clearly in a markdown format** with headings and bullet points
+2. **Distinguish between different types of issues**:
+    - Missing informations (structural gaps)
+    - Incorrect information (wrong values)
+    - Inconsistent patterns 
+3. **Provide actionable recommendations** with specific token paths and values
+
+## Key Principles
+- Generate documentation based writing guidelines, component data and templates
+- Be explicit when there's no answer to the direct question or missing information
+- Provide additional valuable insights as clearly labeled supplementary information
+- Focus on actionable, specific recommendations rather than vague suggestions

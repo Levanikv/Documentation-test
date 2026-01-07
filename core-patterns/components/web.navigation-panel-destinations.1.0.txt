@@ -1,0 +1,994 @@
+{
+  "title": "💠 web.navigation-panel-destinations",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "level-1": {
+      "type": "container"
+    },
+    "menu-destinations": {
+      "type": "container"
+    },
+    "menu-title": {
+      "type": "text"
+    },
+    "header-menu-item": {
+      "type": "instance",
+      "instanceOf": "header-menu-item"
+    },
+    "item": {
+      "type": "instance",
+      "instanceOf": "slot-horizontal1"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "menu-2": {
+      "type": "container"
+    },
+    "simple-nav-item": {
+      "type": "instance",
+      "instanceOf": "simple-nav-item"
+    },
+    "menu-3": {
+      "type": "container"
+    },
+    "level-2": {
+      "type": "container"
+    },
+    "image": {
+      "type": "container"
+    },
+    "webmedia-free": {
+      "type": "instance",
+      "instanceOf": "webmedia-free"
+    },
+    "caption": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "webbutton-icon": {
+      "type": "instance",
+      "instanceOf": "webbutton-icon"
+    },
+    "header-home-link": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "header-home-link"
+    },
+    "header-menu": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "header-menu"
+    },
+    "menu-4": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), level=1"
+    },
+    "menu-5": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), level=1"
+    },
+    "menu-bottom": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), level=1"
+    },
+    "header-nav-link": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "header-nav-link"
+    },
+    "loyalty-nav-link": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "header-nav-link"
+    },
+    "parameters": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), level=1"
+    },
+    "geolocation": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "geolocation"
+    },
+    "currency": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "geolocation"
+    },
+    "accessibility": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), level=1",
+      "instanceOf": "header-menu-item"
+    },
+    "menu-6": {
+      "type": "container",
+      "detectedIn": "breakpoint=tablet (768-1023), level=1"
+    },
+    "shop-nav-link": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023), level=1",
+      "instanceOf": "header-nav-link"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-md (1280-1439)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "level": {
+      "type": "string",
+      "default": "1",
+      "enum": [
+        "1",
+        "2"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=desktop-md (1280-1439), level=1",
+    "elements": {
+      "root": {
+        "children": [
+          "level-1",
+          "level-2",
+          "image"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "width": 1340,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL"
+        }
+      },
+      "level-1": {
+        "parent": "root",
+        "children": [
+          "menu-destinations",
+          "menu-2",
+          "menu-3"
+        ],
+        "styles": {
+          "width": 424,
+          "height": 812,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "menu-destinations": {
+        "parent": "level-1",
+        "children": [
+          "menu-title",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "item",
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "menu-title": {
+        "parent": "menu-3",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "detail"
+        }
+      },
+      "header-menu-item": {
+        "parent": "level-2",
+        "styles": {
+          "visible": false,
+          "locked": true,
+          "width": 67,
+          "height": 80
+        },
+        "propConfigurations": {
+          "right-icon2": "152544817",
+          "label-2": "true",
+          "icon": "81784",
+          "more-options": "false",
+          "right-icon": "true",
+          "focus": "false",
+          "state": "default",
+          "display": "tab-inline"
+        }
+      },
+      "item": {
+        "parent": "level-2",
+        "styles": {
+          "visible": false,
+          "x": 343.5,
+          "y": 64,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 34
+        },
+        "propConfigurations": {
+          "has-absolute": "false"
+        }
+      },
+      "webbutton": {
+        "parent": "menu-destinations",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "right-icon": "false",
+          "label": "view-all-destinations",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "menu-2": {
+        "parent": "level-1",
+        "children": [
+          "menu-title",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "simple-nav-item": {
+        "parent": "menu-3",
+        "styles": {
+          "visible": false,
+          "locked": true,
+          "layoutSizingVertical": "HUG",
+          "width": 339
+        },
+        "propConfigurations": {
+          "emphasis": "low",
+          "state": "default"
+        }
+      },
+      "menu-3": {
+        "parent": "level-1",
+        "children": [
+          "menu-title",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "level-2": {
+        "parent": "root",
+        "children": [
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "header-menu-item",
+          "item"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "width": 424,
+          "height": 812,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/5xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/5xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "image": {
+        "parent": "root",
+        "children": [
+          "webmedia-free",
+          "caption",
+          "webbutton-icon"
+        ],
+        "styles": {
+          "height": 812,
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "itemSpacing": 8,
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "webmedia-free": {
+        "parent": "image",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutPositioning": "ABSOLUTE",
+          "width": 492,
+          "height": 812
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "gradient-overlay": "false",
+          "overlay": "false",
+          "caption": "false",
+          "placeholder": "true",
+          "type": "image"
+        }
+      },
+      "caption": {
+        "parent": "image",
+        "children": [
+          "title"
+        ],
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 16
+        }
+      },
+      "title": {
+        "parent": "caption",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-05"
+        }
+      },
+      "webbutton-icon": {
+        "parent": "image",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "x": 388,
+          "y": 64,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propConfigurations": {
+          "icon": "152545018",
+          "size": "sm",
+          "function": "primary",
+          "state": "default"
+        }
+      },
+      "header-home-link": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "breakpoint": "mobile-and-tablet",
+          "state": "default"
+        }
+      },
+      "header-menu": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "menu-item-10": "true",
+          "menu-item-9": "true",
+          "menu-item-4": "true",
+          "menu-item-5": "true",
+          "menu-item-7": "true",
+          "more": "true",
+          "menu-item-6": "true",
+          "menu-item-8": "true",
+          "menu-item": "false",
+          "display": "sub-level"
+        }
+      },
+      "menu-4": {
+        "children": [
+          "menu-title",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "menu-5": {
+        "children": [
+          "menu-title",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "menu-bottom": {
+        "children": [
+          "header-nav-link",
+          "loyalty-nav-link",
+          "parameters"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeTopWeight": 1,
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+        }
+      },
+      "header-nav-link": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "height": 24
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "display": "stack",
+          "state": "default"
+        }
+      },
+      "loyalty-nav-link": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "display": "stack",
+          "state": "default"
+        }
+      },
+      "parameters": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "geolocation": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "currency": {
+        "styles": {
+          "visible": false,
+          "layoutSizingVertical": "HUG",
+          "width": 311
+        }
+      },
+      "accessibility": {
+        "styles": {
+          "visible": false,
+          "width": 311,
+          "height": 24
+        },
+        "propConfigurations": {
+          "more-options": "false",
+          "right-icon2": "152544817",
+          "icon": "81784",
+          "label-2": "true",
+          "right-icon": "true",
+          "focus": "false",
+          "state": "default",
+          "display": "sub-level"
+        }
+      },
+      "menu-6": {
+        "children": [
+          "menu-title",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "shop-nav-link": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "display": "stack",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), level=1",
+      "configuration": {
+        "breakpoint": "mobile (320-767)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "header-home-link",
+            "menu-destinations",
+            "menu-4",
+            "menu-5",
+            "menu-bottom"
+          ],
+          "styles": {
+            "width": 375,
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "VERTICAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl",
+            "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+          }
+        },
+        "header-home-link": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "menu-destinations": {
+          "parent": "root",
+          "children": [
+            "menu-title",
+            "header-menu",
+            "simple-nav-item"
+          ],
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/outline-low",
+            "strokeTopWeight": 0,
+            "strokeBottomWeight": 1,
+            "strokeLeftWeight": 0,
+            "strokeRightWeight": 0,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+          }
+        },
+        "menu-title": {
+          "parent": "menu-5"
+        },
+        "header-menu": {
+          "parent": "menu-destinations",
+          "propConfigurations": {
+            "menu-item": "false"
+          }
+        },
+        "simple-nav-item": {
+          "parent": "menu-5"
+        },
+        "menu-4": {
+          "parent": "root"
+        },
+        "item": {
+          "parent": "menu-5",
+          "styles": {
+            "x": 279.5,
+            "y": 0
+          }
+        },
+        "menu-5": {
+          "parent": "root"
+        },
+        "menu-bottom": {
+          "parent": "root"
+        },
+        "header-nav-link": {
+          "parent": "menu-bottom",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "loyalty-nav-link": {
+          "parent": "menu-bottom",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "parameters": {
+          "parent": "menu-bottom"
+        },
+        "geolocation": {
+          "parent": "parameters"
+        },
+        "currency": {
+          "parent": "parameters"
+        },
+        "accessibility": {
+          "parent": "parameters",
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        },
+        "header-menu-item": {
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-free": {
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "caption": "false",
+            "overlay": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), level=1",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "header-home-link",
+            "menu-destinations",
+            "menu-4",
+            "menu-6",
+            "menu-bottom"
+          ],
+          "styles": {
+            "width": 768,
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "VERTICAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl",
+            "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+          }
+        },
+        "header-home-link": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "menu-destinations": {
+          "parent": "root",
+          "children": [
+            "menu-title",
+            "header-menu",
+            "simple-nav-item"
+          ],
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/outline-low",
+            "strokeTopWeight": 0,
+            "strokeBottomWeight": 1,
+            "strokeLeftWeight": 0,
+            "strokeRightWeight": 0,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+          }
+        },
+        "menu-title": {
+          "parent": "menu-6"
+        },
+        "header-menu": {
+          "parent": "menu-destinations",
+          "propConfigurations": {
+            "menu-item": "false"
+          }
+        },
+        "simple-nav-item": {
+          "parent": "menu-6"
+        },
+        "menu-4": {
+          "parent": "root"
+        },
+        "item": {
+          "parent": "menu-6",
+          "styles": {
+            "x": 279.5,
+            "y": 0
+          }
+        },
+        "menu-6": {
+          "parent": "root"
+        },
+        "menu-bottom": {
+          "parent": "root",
+          "children": [
+            "shop-nav-link",
+            "loyalty-nav-link",
+            "parameters"
+          ]
+        },
+        "shop-nav-link": {
+          "parent": "menu-bottom",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "loyalty-nav-link": {
+          "parent": "menu-bottom",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "parameters": {
+          "parent": "menu-bottom"
+        },
+        "geolocation": {
+          "parent": "parameters"
+        },
+        "currency": {
+          "parent": "parameters"
+        },
+        "accessibility": {
+          "parent": "parameters",
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        },
+        "header-menu-item": {
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-free": {
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "caption": "false",
+            "overlay": "false"
+          }
+        },
+        "header-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), level=1",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "header-home-link",
+            "menu-destinations",
+            "menu-4",
+            "menu-5",
+            "menu-bottom"
+          ],
+          "styles": {
+            "width": 1024,
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "VERTICAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl",
+            "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+          }
+        },
+        "header-home-link": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "menu-destinations": {
+          "parent": "root",
+          "children": [
+            "menu-title",
+            "header-menu",
+            "simple-nav-item"
+          ],
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/outline-low",
+            "strokeTopWeight": 0,
+            "strokeBottomWeight": 1,
+            "strokeLeftWeight": 0,
+            "strokeRightWeight": 0,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+          }
+        },
+        "menu-title": {
+          "parent": "menu-5"
+        },
+        "header-menu": {
+          "parent": "menu-destinations",
+          "propConfigurations": {
+            "menu-item": "false"
+          }
+        },
+        "simple-nav-item": {
+          "parent": "menu-5"
+        },
+        "menu-4": {
+          "parent": "root"
+        },
+        "item": {
+          "parent": "menu-5",
+          "styles": {
+            "x": 279.5,
+            "y": 0
+          }
+        },
+        "menu-5": {
+          "parent": "root"
+        },
+        "menu-bottom": {
+          "parent": "root",
+          "children": [
+            "shop-nav-link",
+            "loyalty-nav-link",
+            "parameters"
+          ]
+        },
+        "shop-nav-link": {
+          "parent": "menu-bottom",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "loyalty-nav-link": {
+          "parent": "menu-bottom",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "parameters": {
+          "parent": "menu-bottom"
+        },
+        "geolocation": {
+          "parent": "parameters"
+        },
+        "currency": {
+          "parent": "parameters"
+        },
+        "accessibility": {
+          "parent": "parameters",
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        },
+        "header-menu-item": {
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-free": {
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "caption": "false",
+            "overlay": "false"
+          }
+        },
+        "header-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "level": "2"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-08T12:58:34.256Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "13025:12144",
+      "nodeId": "3557:5655"
+    }
+  }
+}

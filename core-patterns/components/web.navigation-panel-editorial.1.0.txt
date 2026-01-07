@@ -1,0 +1,617 @@
+{
+  "title": "💠 web.navigation-panel-editorial",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "header-menu": {
+      "type": "instance",
+      "instanceOf": "header-menu"
+    },
+    "menu-bottom": {
+      "type": "container"
+    },
+    "shop-nav-link": {
+      "type": "instance",
+      "instanceOf": "header-nav-link"
+    },
+    "loyalty-nav-link": {
+      "type": "instance",
+      "instanceOf": "header-nav-link"
+    },
+    "parameters": {
+      "type": "container"
+    },
+    "geolocation": {
+      "type": "instance",
+      "instanceOf": "geolocation"
+    },
+    "currency": {
+      "type": "instance",
+      "instanceOf": "geolocation"
+    },
+    "accessibility": {
+      "type": "instance",
+      "instanceOf": "header-menu-item"
+    },
+    "level-1": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "hotel-name": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "contributed-title": {
+      "type": "text",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "menu-01": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "simple-nav-item": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "simple-nav-item"
+    },
+    "item": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "slot-horizontal1"
+    },
+    "webbutton": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "webbutton"
+    },
+    "menu-02": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "image": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "webmedia-fixed"
+    },
+    "caption": {
+      "type": "text",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)"
+    },
+    "webbutton-icon": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "webbutton-icon"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "header-menu",
+          "menu-bottom"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "header-menu": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "menu-item-10": "true",
+          "menu-item-9": "true",
+          "menu-item-4": "true",
+          "menu-item-5": "true",
+          "menu-item-7": "true",
+          "more": "true",
+          "menu-item-6": "true",
+          "menu-item-8": "true",
+          "menu-item": "false",
+          "display": "sub-level"
+        }
+      },
+      "menu-bottom": {
+        "parent": "wrapper",
+        "children": [
+          "shop-nav-link",
+          "loyalty-nav-link",
+          "parameters"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeTopWeight": 1,
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+        }
+      },
+      "shop-nav-link": {
+        "parent": "menu-bottom",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "display": "stack",
+          "state": "default"
+        }
+      },
+      "loyalty-nav-link": {
+        "parent": "menu-bottom",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "display": "stack",
+          "state": "default"
+        }
+      },
+      "parameters": {
+        "parent": "menu-bottom",
+        "children": [
+          "geolocation",
+          "currency",
+          "accessibility"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "geolocation": {
+        "parent": "parameters",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "currency": {
+        "parent": "parameters",
+        "styles": {
+          "visible": false,
+          "layoutSizingVertical": "HUG",
+          "width": 311
+        }
+      },
+      "accessibility": {
+        "parent": "parameters",
+        "styles": {
+          "visible": false,
+          "width": 311,
+          "height": 24
+        },
+        "propConfigurations": {
+          "more-options": "false",
+          "right-icon2": "152544817",
+          "icon": "81784",
+          "label-2": "true",
+          "right-icon": "true",
+          "focus": "false",
+          "state": "default",
+          "display": "sub-level"
+        }
+      },
+      "level-1": {
+        "children": [
+          "hotel-name",
+          "menu-01",
+          "menu-02"
+        ],
+        "styles": {
+          "width": 424,
+          "height": 812,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "hotel-name": {
+        "children": [
+          "contributed-title"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 10
+        }
+      },
+      "contributed-title": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-05"
+        }
+      },
+      "menu-01": {
+        "children": [
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item",
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "simple-nav-item": {
+        "styles": {
+          "visible": false,
+          "locked": true,
+          "layoutSizingVertical": "HUG",
+          "width": 339
+        },
+        "propConfigurations": {
+          "emphasis": "low",
+          "state": "default"
+        }
+      },
+      "item": {
+        "styles": {
+          "visible": false,
+          "x": 279.5,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 34
+        },
+        "propConfigurations": {
+          "has-absolute": "false"
+        }
+      },
+      "webbutton": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "right-icon": "true",
+          "label": "view-all-category-name",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "menu-02": {
+        "children": [
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "simple-nav-item",
+          "item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "image": {
+        "styles": {
+          "height": 812,
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "webmedia-fixed": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutPositioning": "ABSOLUTE",
+          "width": 915,
+          "height": 812
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "caption": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01",
+          "textAlignVertical": "BOTTOM"
+        }
+      },
+      "webbutton-icon": {
+        "styles": {
+          "locked": true,
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "x": 812,
+          "y": 64,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propConfigurations": {
+          "icon": "152545018",
+          "size": "sm",
+          "function": "secondary",
+          "state": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/2xl"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959
+          }
+        },
+        "header-menu": {
+          "propConfigurations": {
+            "menu-item": "false"
+          }
+        },
+        "shop-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "loyalty-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "accessibility": {
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215
+          }
+        },
+        "header-menu": {
+          "propConfigurations": {
+            "menu-item": "false"
+          }
+        },
+        "shop-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "loyalty-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "accessibility": {
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "paddingLeft": 0,
+            "paddingRight": 0
+          }
+        },
+        "wrapper": {
+          "children": [
+            "level-1",
+            "image"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": 1339,
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        },
+        "level-1": {
+          "parent": "wrapper"
+        },
+        "hotel-name": {
+          "parent": "level-1"
+        },
+        "contributed-title": {
+          "parent": "hotel-name"
+        },
+        "menu-01": {
+          "parent": "level-1"
+        },
+        "simple-nav-item": {
+          "parent": "menu-02"
+        },
+        "item": {
+          "parent": "menu-02"
+        },
+        "webbutton": {
+          "parent": "menu-01",
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "menu-02": {
+          "parent": "level-1"
+        },
+        "image": {
+          "parent": "wrapper"
+        },
+        "webmedia-fixed": {
+          "parent": "image",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "caption": {
+          "parent": "image"
+        },
+        "webbutton-icon": {
+          "parent": "image"
+        },
+        "header-menu": {
+          "propConfigurations": {
+            "menu-item": "false"
+          }
+        },
+        "shop-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "loyalty-nav-link": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "accessibility": {
+          "propConfigurations": {
+            "more-options": "false",
+            "focus": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-08T12:58:44.244Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "13025:12144",
+      "nodeId": "3557:6848"
+    }
+  }
+}

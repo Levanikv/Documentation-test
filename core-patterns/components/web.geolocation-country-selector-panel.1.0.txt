@@ -1,0 +1,397 @@
+{
+  "title": "💠 web.geolocation-country-selector-panel",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "back": {
+      "type": "container"
+    },
+    "webbreadcrumbs": {
+      "type": "instance",
+      "instanceOf": "webbreadcrumbs"
+    },
+    "webseparator": {
+      "type": "instance",
+      "instanceOf": "webseparator"
+    },
+    "title": {
+      "type": "text"
+    },
+    "selects": {
+      "type": "container"
+    },
+    "webselect": {
+      "type": "instance",
+      "instanceOf": "webselect"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "col": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "width": 375,
+          "height": 667,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "back",
+          "title",
+          "selects",
+          "webbutton"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/5xl"
+        }
+      },
+      "back": {
+        "parent": "wrapper",
+        "children": [
+          "webbreadcrumbs",
+          "webseparator"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 12
+        }
+      },
+      "webbreadcrumbs": {
+        "parent": "back",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "variant": "back",
+          "state": "default"
+        }
+      },
+      "webseparator": {
+        "parent": "back",
+        "styles": {
+          "visible": false,
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "width": 343,
+          "height": 1
+        }
+      },
+      "title": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-05",
+          "textAlignHorizontal": "CENTER",
+          "width": 342
+        }
+      },
+      "selects": {
+        "parent": "wrapper",
+        "children": [
+          "webselect",
+          "webselect"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xl"
+        }
+      },
+      "webselect": {
+        "parent": "selects",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "message": "message",
+          "assist-txt": "assistive-text",
+          "optional": "false",
+          "assistive-text": "false",
+          "label": "countryregion-language",
+          "state": "filled"
+        }
+      },
+      "webbutton": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "label": "confirm-my-location-and-language",
+          "right-icon": "152545102",
+          "size": "lg",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "col": {
+        "styles": {
+          "minWidth": 37,
+          "maxWidth": 79,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "height": 1024,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959,
+            "counterAxisAlignItems": "CENTER",
+            "layoutSizingVertical": "FILL"
+          }
+        },
+        "title": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          }
+        },
+        "selects": {
+          "styles": {
+            "width": 340,
+            "layoutSizingHorizontal": "FIXED"
+          }
+        },
+        "webselect": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "false"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "col",
+            "col",
+            "wrapper",
+            "col",
+            "col"
+          ],
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "col": {
+          "parent": "root"
+        },
+        "wrapper": {
+          "children": [
+            "title",
+            "selects",
+            "webbutton"
+          ],
+          "styles": {
+            "minWidth": 632,
+            "maxWidth": null,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "title": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          }
+        },
+        "selects": {
+          "styles": {
+            "width": 304,
+            "layoutSizingHorizontal": "FIXED"
+          }
+        },
+        "webselect": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "false"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "col",
+            "col",
+            "wrapper",
+            "col",
+            "col"
+          ],
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "col": {
+          "parent": "root",
+          "styles": {
+            "minWidth": 74,
+            "maxWidth": 87
+          }
+        },
+        "wrapper": {
+          "children": [
+            "title",
+            "selects",
+            "webbutton"
+          ],
+          "styles": {
+            "minWidth": 760,
+            "maxWidth": 866,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "title": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          }
+        },
+        "selects": {
+          "styles": {
+            "width": 388,
+            "layoutSizingHorizontal": "FIXED"
+          }
+        },
+        "webselect": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "false"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-08T13:01:34.703Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "13025:10341",
+      "nodeId": "23:8972"
+    }
+  }
+}
