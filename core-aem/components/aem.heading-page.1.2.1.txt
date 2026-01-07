@@ -1,0 +1,451 @@
+{
+  "title": "aemheading-page",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "heading": {
+      "type": "instance",
+      "instanceOf": "heading"
+    },
+    "hero": {
+      "type": "container"
+    },
+    "webbooking-engine-aem-light": {
+      "type": "instance",
+      "instanceOf": "webbooking-engine-aem-light"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "wrapper": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image-hero=none, display=full-grid"
+    },
+    "media": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), image-hero=overlay, display=full-grid",
+      "instanceOf": "webmedia-fixed"
+    },
+    "heading-container": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image-hero=overlay, display=full-grid"
+    }
+  },
+  "props": {
+    "booking-engine": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "image-hero": {
+      "type": "string",
+      "default": "bottom",
+      "enum": [
+        "bottom",
+        "none",
+        "overlay"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "full-grid",
+      "enum": [
+        "full-grid",
+        "full-width"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), image-hero=bottom, display=full-grid",
+    "elements": {
+      "root": {
+        "children": [
+          "heading",
+          "hero"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/4xl"
+        }
+      },
+      "heading": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "title": "true",
+          "subtitle": "true",
+          "button-2": "false",
+          "kicker": "false",
+          "action": "true",
+          "align": "center"
+        }
+      },
+      "hero": {
+        "parent": "root",
+        "children": [
+          "webbooking-engine-aem-light",
+          "webmedia-fixed"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemReverseZIndex": true,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/2xl-neg"
+        }
+      },
+      "webbooking-engine-aem-light": {
+        "parent": "hero",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "breakpoint": "mobile-320-767",
+          "display": "button"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/booking-engine"
+          }
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "hero",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/inverse",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "wrapper": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/4xl"
+        }
+      },
+      "media": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/inverse",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "heading-container": {
+        "styles": {
+          "width": 343,
+          "height": 257,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutPositioning": "ABSOLUTE",
+          "y": 0.46,
+          "itemSpacing": 8
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), image-hero=bottom, display=full-width",
+      "configuration": {
+        "display": "full-width"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": 0,
+            "paddingRight": 0
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), image-hero=none, display=full-grid",
+      "configuration": {
+        "image-hero": "none"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "wrapper"
+          ],
+          "styles": {
+            "itemSpacing": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0
+          }
+        },
+        "wrapper": {
+          "parent": "root"
+        },
+        "heading": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), image-hero=overlay, display=full-grid",
+      "configuration": {
+        "image-hero": "overlay"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "wrapper"
+          ],
+          "styles": {
+            "itemSpacing": 0,
+            "paddingTop": 0
+          }
+        },
+        "wrapper": {
+          "parent": "root",
+          "children": [
+            "media",
+            "webbooking-engine-aem-light",
+            "heading-container"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/2xl-neg",
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0
+          }
+        },
+        "media": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "parent": "wrapper"
+        },
+        "heading-container": {
+          "parent": "wrapper"
+        },
+        "heading": {
+          "parent": "heading-container",
+          "styles": {
+            "layoutSizingHorizontal": "FIXED",
+            "width": 311
+          },
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), image-hero=bottom, display=full-grid",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), image-hero=bottom, display=full-grid",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "hero": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/5xl-neg"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279",
+            "display": "form"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), image-hero=bottom, display=full-grid",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": null
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "hero": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/5xl-neg"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439",
+            "display": "form"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

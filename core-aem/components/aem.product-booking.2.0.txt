@@ -1,0 +1,436 @@
+{
+  "title": "💠 aem.product-booking",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "content": {
+      "type": "container"
+    },
+    "opening-info": {
+      "type": "container"
+    },
+    "opening-hours": {
+      "type": "text"
+    },
+    "open-seasons": {
+      "type": "text"
+    },
+    "buttons": {
+      "type": "container"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "phone-number": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767)"
+    },
+    "appsstrokephone-24": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767)",
+      "instanceOf": "appsstrokephone-24"
+    },
+    "971-4-3249999": {
+      "type": "text",
+      "detectedIn": "breakpoint=mobile (320-767)"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "tablet (768-1023)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=tablet (768-1023)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "webmedia-fixed",
+          "content"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "content": {
+        "parent": "wrapper",
+        "children": [
+          "opening-info",
+          "buttons"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "opening-info": {
+        "parent": "content",
+        "children": [
+          "opening-hours",
+          "open-seasons"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "opening-hours": {
+        "parent": "opening-info",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "open-seasons": {
+        "parent": "opening-info",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "buttons": {
+        "parent": "content",
+        "children": [
+          "webbutton",
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "webbutton": {
+        "parent": "buttons",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "discover-the-menu",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        }
+      },
+      "phone-number": {
+        "children": [
+          "appsstrokephone-24",
+          "971-4-3249999"
+        ],
+        "styles": {
+          "visible": false,
+          "width": 468,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 16
+        }
+      },
+      "appsstrokephone-24": {
+        "styles": {
+          "width": 24,
+          "height": 24
+        }
+      },
+      "971-4-3249999": {
+        "styles": {
+          "fills": "#916F41",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "ui/label-01-underline (1rem)"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767)",
+      "configuration": {
+        "breakpoint": "mobile (320-767)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "webmedia-fixed"
+          ],
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/inline/xl"
+          }
+        },
+        "content": {
+          "children": [
+            "opening-info",
+            "buttons",
+            "phone-number"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "buttons": {
+          "styles": {
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+            "counterAxisSpacing": 16
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "phone-number": {
+          "parent": "content"
+        },
+        "appsstrokephone-24": {
+          "parent": "phone-number"
+        },
+        "971-4-3249999": {
+          "parent": "phone-number"
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/3xl"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "content": {
+          "children": [
+            "opening-info",
+            "buttons",
+            "phone-number"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "phone-number": {
+          "parent": "content",
+          "styles": {
+            "width": 343
+          }
+        },
+        "appsstrokephone-24": {
+          "parent": "phone-number"
+        },
+        "971-4-3249999": {
+          "parent": "phone-number"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "webmedia-fixed"
+          ],
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1376,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/inline/xl"
+          }
+        },
+        "content": {
+          "children": [
+            "opening-info",
+            "buttons",
+            "phone-number"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "buttons": {
+          "styles": {
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+            "counterAxisSpacing": 16
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "phone-number": {
+          "parent": "content",
+          "styles": {
+            "width": 387
+          }
+        },
+        "appsstrokephone-24": {
+          "parent": "phone-number"
+        },
+        "971-4-3249999": {
+          "parent": "phone-number"
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T13:40:11.568Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2323:15013",
+      "nodeId": "2323:15025"
+    }
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "title": "💠 aem.top-informations",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "top-info-1": {
+      "type": "container"
+    },
+    "size": {
+      "type": "instance",
+      "instanceOf": "size"
+    },
+    "label": {
+      "type": "instance",
+      "instanceOf": "base-label"
+    },
+    "top-info-2": {
+      "type": "container"
+    },
+    "view": {
+      "type": "instance",
+      "instanceOf": "view"
+    },
+    "top-info-3": {
+      "type": "container"
+    },
+    "occupant-adult": {
+      "type": "instance",
+      "instanceOf": "occupant-adult"
+    },
+    "top-info-4": {
+      "type": "container"
+    },
+    "pin-24": {
+      "type": "instance",
+      "instanceOf": "pin-24"
+    },
+    "base-label": {
+      "type": "instance",
+      "instanceOf": "base-label"
+    }
+  },
+  "props": {
+    "info-2": {
+      "type": "boolean",
+      "default": true
+    },
+    "info-3": {
+      "type": "boolean",
+      "default": true
+    },
+    "info-4": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "top-info-1",
+          "top-info-2",
+          "top-info-3",
+          "top-info-4"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "layoutMode": "VERTICAL",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/4xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/4xl"
+        }
+      },
+      "top-info-1": {
+        "parent": "root",
+        "children": [
+          "size",
+          "label"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "size": {
+        "parent": "top-info-1",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/md",
+          "height": "breakpoints/wel/sem/sizing/icon/md"
+        }
+      },
+      "label": {
+        "parent": "top-info-3",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "link": "false"
+        }
+      },
+      "top-info-2": {
+        "parent": "root",
+        "children": [
+          "view",
+          "label"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/info-2"
+          }
+        }
+      },
+      "view": {
+        "parent": "top-info-2",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/md",
+          "height": "breakpoints/wel/sem/sizing/icon/md"
+        }
+      },
+      "top-info-3": {
+        "parent": "root",
+        "children": [
+          "occupant-adult",
+          "label"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/info-3"
+          }
+        }
+      },
+      "occupant-adult": {
+        "parent": "top-info-3",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/md",
+          "height": "breakpoints/wel/sem/sizing/icon/md"
+        }
+      },
+      "top-info-4": {
+        "parent": "root",
+        "children": [
+          "pin-24",
+          "base-label"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/info-4"
+          }
+        }
+      },
+      "pin-24": {
+        "parent": "top-info-4",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/md",
+          "height": "breakpoints/wel/sem/sizing/icon/md"
+        }
+      },
+      "base-label": {
+        "parent": "top-info-4",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "link": "true"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "top-info-1": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "label": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-2": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "top-info-3": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "top-info-4": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "base-label": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/6xl",
+            "counterAxisSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "top-info-1": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "label": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-2": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-3": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-4": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER",
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "base-label": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": null,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/6xl",
+            "counterAxisSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "top-info-1": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "label": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-2": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-3": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "top-info-4": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "CENTER",
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "base-label": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T13:29:27.368Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2491:7868",
+      "nodeId": "2491:7876"
+    }
+  }
+}

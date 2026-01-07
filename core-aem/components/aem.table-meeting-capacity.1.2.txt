@@ -1,0 +1,240 @@
+{
+  "title": "aem.table-meeting-capacity",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "room-section": {
+      "type": "container"
+    },
+    "webtable-row": {
+      "type": "instance",
+      "instanceOf": "webtable-row"
+    },
+    "accordion-content": {
+      "type": "container"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "room-section",
+          "webtable-row",
+          "webtable-row",
+          "webtable-row",
+          "webtable-row",
+          "webtable-row"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "room-section": {
+        "parent": "wrapper",
+        "children": [
+          "webtable-row",
+          "accordion-content"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "webtable-row": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "expanded": "false",
+          "dropdown-text": "enjoy-complimentary-breakfast-at-weekends-when-you-book-a-stay-through-direct-channels-allaccorcom-the-accor-all-app-our-call-centers-or-the-hotel-regular-breakfast-will-be-served-free-of-charge-to-all-guests-staying-in-the-members-room-excluding-room-service-and-gratuities-hotels-that-do-not-have-a-restaurant-or-only-offer-rates-where-breakfast-is-already-included-do-not-participate-in-this-offer-in-asia-pacific-enjoy-complimentary-breakfast",
+          "background": "false",
+          "breakpoint": "mobile-320-767",
+          "type": "accordion"
+        }
+      },
+      "accordion-content": {
+        "parent": "room-section",
+        "children": [
+          "webtable-row",
+          "webtable-row",
+          "webtable-row",
+          "webtable-row",
+          "webtable-row",
+          "webtable-row"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959
+          }
+        },
+        "webtable-row": {
+          "propConfigurations": {
+            "expanded": "false",
+            "background": "false",
+            "breakpoint": "tablet-768-1023"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "children": [
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row"
+          ],
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215,
+            "itemSpacing": 0
+          }
+        },
+        "webtable-row": {
+          "propConfigurations": {
+            "expanded": "false",
+            "background": "false",
+            "breakpoint": "desktop-sm-1024-1279",
+            "type": "default"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row",
+            "webtable-row"
+          ],
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311,
+            "itemSpacing": 0
+          }
+        },
+        "webtable-row": {
+          "propConfigurations": {
+            "expanded": "false",
+            "background": "false",
+            "breakpoint": "desktop-sm-1024-1279",
+            "type": "default"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T14:02:56.077Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2535:30928",
+      "nodeId": "2535:31187"
+    }
+  }
+}

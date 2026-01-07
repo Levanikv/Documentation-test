@@ -1,0 +1,151 @@
+{
+  "title": "💠 aem.separator-with-icon",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webseparator-start": {
+      "type": "instance",
+      "instanceOf": "webseparator"
+    },
+    "webicon-slot": {
+      "type": "slot"
+    },
+    "webseparator-end": {
+      "type": "instance",
+      "instanceOf": "webseparator"
+    },
+    "weblogo-slot": {
+      "type": "slot",
+      "detectedIn": "asset type=logo"
+    }
+  },
+  "props": {
+    "asset": {
+      "type": "boolean",
+      "default": true
+    },
+    "asset-type": {
+      "type": "string",
+      "default": "icon",
+      "enum": [
+        "icon",
+        "logo"
+      ]
+    }
+  },
+  "default": {
+    "name": "asset type=icon",
+    "elements": {
+      "root": {
+        "children": [
+          "webseparator-start",
+          "webicon-slot",
+          "webseparator-end"
+        ],
+        "styles": {
+          "width": 1212,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "webseparator-start": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1
+        }
+      },
+      "webicon-slot": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "207151536",
+          "size": "md",
+          "display": "default",
+          "background": "brand"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/asset"
+          }
+        }
+      },
+      "webseparator-end": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1
+        }
+      },
+      "weblogo-slot": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "layoutSizingHorizontal": "HUG",
+          "height": 56
+        },
+        "propConfigurations": {
+          "appendix": "false",
+          "logo-icon": "206125177",
+          "logo": "206125174",
+          "display": "page",
+          "logo-shape": "rectangle",
+          "size": "md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/asset"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "asset type=logo",
+      "configuration": {
+        "asset type": "logo"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webseparator-start",
+            "weblogo-slot",
+            "webseparator-end"
+          ]
+        },
+        "weblogo-slot": {
+          "parent": "root",
+          "propConfigurations": {
+            "appendix": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T13:55:01.569Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2484:146",
+      "nodeId": "2484:148"
+    }
+  }
+}

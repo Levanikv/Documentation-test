@@ -1,0 +1,485 @@
+{
+  "title": "💠 aem.special-touches-mga",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "st-item-mga": {
+      "type": "instance",
+      "instanceOf": "st-item-mga"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "instanceOf": "webpagination-condensed"
+    },
+    "separator": {
+      "type": "vector"
+    },
+    "item-1": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023)",
+      "instanceOf": "st-item-mga"
+    },
+    "item-2": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023)",
+      "instanceOf": "st-item-mga"
+    },
+    "item-3": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)",
+      "instanceOf": "st-item-mga"
+    },
+    "item-4": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)",
+      "instanceOf": "st-item-mga"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "item-4": {
+      "type": "boolean",
+      "default": true
+    },
+    "item-3": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "webmedia-fixed",
+          "st-item-mga",
+          "webpagination-condensed",
+          "separator"
+        ],
+        "styles": {
+          "width": 375,
+          "height": 667.7,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "maxHeight": 667.7,
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": -48,
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutPositioning": "ABSOLUTE",
+          "width": 375,
+          "height": 668
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "false",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "st-item-mga": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "subtitle": "true",
+          "state": "expanded"
+        }
+      },
+      "webpagination-condensed": {
+        "parent": "root",
+        "styles": {
+          "x": 16,
+          "y": 620,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 343
+        },
+        "propConfigurations": {
+          "counter": "false",
+          "step": "",
+          "size": "sm",
+          "align": "right",
+          "loop": "false"
+        }
+      },
+      "separator": {
+        "parent": "root",
+        "styles": {
+          "rotation": -17,
+          "opacity": 0.4,
+          "fills": "colorModes/wel/sem/color/on-neutral-container",
+          "width": 1,
+          "height": 668,
+          "x": 508.62,
+          "y": 20.56,
+          "layoutPositioning": "ABSOLUTE"
+        }
+      },
+      "item-1": {
+        "styles": {
+          "layoutSizingVertical": "HUG",
+          "width": 522
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "subtitle": "true",
+          "state": "expanded"
+        }
+      },
+      "item-2": {
+        "styles": {
+          "locked": true,
+          "width": 522,
+          "height": 960
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "subtitle": "true",
+          "state": "collapsed"
+        }
+      },
+      "item-3": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "height": 28
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "subtitle": "true",
+          "state": "collapsed"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/item 3"
+          }
+        }
+      },
+      "item-4": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "height": 28
+        },
+        "propConfigurations": {
+          "focus": "false",
+          "subtitle": "true",
+          "state": "collapsed"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/item 4"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-fixed",
+            "item-1",
+            "separator",
+            "item-2",
+            "webpagination-condensed"
+          ],
+          "styles": {
+            "width": 768,
+            "height": 960,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "maxHeight": 960,
+            "primaryAxisAlignItems": "MIN",
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "paddingLeft": 32,
+            "paddingRight": 32
+          }
+        },
+        "webmedia-fixed": {
+          "styles": {
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "controllers": "false",
+            "placeholder": "true",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "item-1": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "separator": {
+          "styles": {
+            "layoutPositioning": "AUTO",
+            "layoutSizingVertical": "FILL"
+          }
+        },
+        "item-2": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "webpagination-condensed": {
+          "styles": {
+            "x": 32,
+            "y": 888
+          },
+          "propConfigurations": {
+            "counter": "true",
+            "step": "1-4",
+            "size": "md"
+          }
+        },
+        "st-item-mga": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-fixed",
+            "item-1",
+            "separator",
+            "item-2",
+            "separator",
+            "item-3",
+            "separator",
+            "item-4"
+          ],
+          "styles": {
+            "width": 1024,
+            "height": 576,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "maxHeight": 576,
+            "primaryAxisAlignItems": "MIN",
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "paddingLeft": 32,
+            "paddingRight": 32
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "placeholder": "true",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "item-1": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "separator": {
+          "styles": {
+            "layoutPositioning": "AUTO",
+            "layoutSizingVertical": "FILL"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/item 4"
+            }
+          }
+        },
+        "item-2": {
+          "parent": "root",
+          "styles": {
+            "locked": false,
+            "layoutSizingHorizontal": "FILL"
+          },
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "item-3": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "item-4": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "st-item-mga": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "counter": "true",
+            "step": "1-4"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-fixed",
+            "item-1",
+            "separator",
+            "item-2",
+            "separator",
+            "item-3",
+            "separator",
+            "item-4"
+          ],
+          "styles": {
+            "width": 1340,
+            "height": 754,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "maxHeight": 810,
+            "primaryAxisAlignItems": "MIN",
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "paddingLeft": 64,
+            "paddingRight": 64
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "placeholder": "true",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "item-1": {
+          "parent": "root",
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "separator": {
+          "styles": {
+            "layoutPositioning": "AUTO",
+            "layoutSizingVertical": "FILL"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/item 4"
+            }
+          }
+        },
+        "item-2": {
+          "parent": "root",
+          "styles": {
+            "locked": false,
+            "layoutSizingHorizontal": "FILL",
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "item-3": {
+          "parent": "root",
+          "styles": {
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "item-4": {
+          "parent": "root",
+          "styles": {
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "st-item-mga": {
+          "propConfigurations": {
+            "focus": "false"
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "counter": "true",
+            "step": "1-4"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T14:14:35.075Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2021:13853",
+      "nodeId": "2032:7276"
+    }
+  }
+}

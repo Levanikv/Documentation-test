@@ -1,0 +1,515 @@
+{
+  "title": "💠 aem.newsletter",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "card": {
+      "type": "container"
+    },
+    "content": {
+      "type": "container"
+    },
+    "titledesc": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "webinput-text": {
+      "type": "instance",
+      "instanceOf": "webinput-text"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "webmodal": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), display=modal",
+      "instanceOf": "webmodal"
+    },
+    "webmedia-free": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023), display=page",
+      "instanceOf": "webmedia-free"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "page",
+      "enum": [
+        "modal",
+        "page"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), display=page",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "webmedia-fixed",
+          "card"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "card": {
+        "parent": "wrapper",
+        "children": [
+          "content",
+          "webbutton"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "primaryAxisAlignItems": "MAX",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/xl",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/xl",
+          "paddingTop": 24,
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/xl",
+          "bottomLeftRadius": 6,
+          "bottomRightRadius": 6
+        }
+      },
+      "content": {
+        "parent": "card",
+        "children": [
+          "titledesc",
+          "webinput-text"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "titledesc": {
+        "parent": "content",
+        "children": [
+          "title",
+          "description"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "title": {
+        "parent": "titledesc",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-04"
+        }
+      },
+      "description": {
+        "parent": "titledesc",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "webinput-text": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "message": "message",
+          "optional": "false",
+          "label": "your-email",
+          "assist-txt": "assistive-text",
+          "assistive-text": "false",
+          "state": "default"
+        }
+      },
+      "webbutton": {
+        "parent": "card",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "right-icon": "false",
+          "label": "sign-up",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "webmodal": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "buttons": "true",
+          "button-2": "true",
+          "breakpoint": "mobile-320-767",
+          "type": "slot"
+        }
+      },
+      "webmedia-free": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutPositioning": "ABSOLUTE",
+          "width": 704,
+          "height": 392
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "gradient-overlay": "false",
+          "overlay": "false",
+          "caption": "false",
+          "placeholder": "true",
+          "type": "image"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), display=modal",
+      "configuration": {
+        "display": "modal"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmodal"
+          ],
+          "styles": {
+            "fills": "colorModes/wel/sem/color/overlay-hi",
+            "height": 667,
+            "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+            "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+            "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/xl"
+          }
+        },
+        "webmodal": {
+          "parent": "root"
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), display=page",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 959,
+            "counterAxisAlignItems": "MIN",
+            "itemSpacing": 8
+          }
+        },
+        "wrapper": {
+          "children": [
+            "webmedia-free",
+            "card"
+          ],
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959,
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MAX",
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/2xl"
+          }
+        },
+        "webmedia-free": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "cornerRadius": 4,
+            "width": 419,
+            "layoutSizingHorizontal": "FIXED",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/xl"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), display=page",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "counterAxisAlignItems": "MIN",
+            "itemSpacing": 8
+          }
+        },
+        "wrapper": {
+          "children": [
+            "webmedia-free",
+            "card"
+          ],
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215,
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MAX",
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/2xl"
+          }
+        },
+        "webmedia-free": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "cornerRadius": 4,
+            "width": 359,
+            "layoutSizingHorizontal": "FIXED",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/xl"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), display=page",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "itemSpacing": 8
+          }
+        },
+        "wrapper": {
+          "children": [
+            "webmedia-free",
+            "card"
+          ],
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311,
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MAX",
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/2xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/2xl"
+          }
+        },
+        "webmedia-free": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "cornerRadius": 4,
+            "width": 438,
+            "layoutSizingHorizontal": "FIXED",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/xl"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T14:04:20.514Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2542:37846",
+      "nodeId": "2542:37872"
+    }
+  }
+}

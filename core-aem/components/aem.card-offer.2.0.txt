@@ -1,0 +1,614 @@
+{
+  "title": "💠 aem.card-offer",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "content": {
+      "type": "container"
+    },
+    "heading": {
+      "type": "container"
+    },
+    "badgecountdown": {
+      "type": "container"
+    },
+    "webbadge": {
+      "type": "instance",
+      "instanceOf": "webbadge"
+    },
+    "webcountdown": {
+      "type": "instance",
+      "instanceOf": "webcountdown"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "container"
+    },
+    "card-offer-content": {
+      "type": "instance",
+      "instanceOf": "card-offer-content"
+    },
+    "action": {
+      "type": "container"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "webmedia-free": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)",
+      "instanceOf": "webmedia-free"
+    },
+    "qr-code": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)"
+    },
+    "flex": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)"
+    },
+    "push-app-web-banner-qr-code-3": {
+      "type": "vector",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)"
+    },
+    "scan-to-download-the-app": {
+      "type": "text",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279)"
+    }
+  },
+  "props": {
+    "action": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "badge": {
+      "type": "boolean",
+      "default": true
+    },
+    "countdown": {
+      "type": "boolean",
+      "default": true
+    },
+    "qr-code": {
+      "type": "boolean",
+      "default": true
+    },
+    "badge-countdown": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "webmedia-fixed",
+          "content"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "content": {
+        "parent": "content",
+        "children": [
+          "heading",
+          "description"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "heading": {
+        "parent": "content",
+        "children": [
+          "badgecountdown",
+          "title"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "badgecountdown": {
+        "parent": "heading",
+        "children": [
+          "webbadge",
+          "webcountdown"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutWrap": "WRAP",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs",
+          "counterAxisSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/badge + countdown"
+          }
+        }
+      },
+      "webbadge": {
+        "parent": "badgecountdown",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/offer",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "label": "bagde-offer-max",
+          "right-icon": "false",
+          "size": "sm",
+          "function": "offer",
+          "emphasis": "high",
+          "style": "filled"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/-> badge"
+          }
+        }
+      },
+      "webcountdown": {
+        "parent": "badgecountdown",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "background": "false"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/-> countdown"
+          }
+        }
+      },
+      "title": {
+        "parent": "heading",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03"
+        }
+      },
+      "description": {
+        "parent": "content",
+        "children": [
+          "card-offer-content"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "card-offer-content": {
+        "parent": "description",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "type": "description"
+        }
+      },
+      "action": {
+        "parent": "content",
+        "children": [
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 10
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/action"
+          }
+        }
+      },
+      "webbutton": {
+        "parent": "action",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "width": 279,
+          "height": 48
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "right-icon": "false",
+          "label": "download-the-app",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "webmedia-free": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "gradient-overlay": "false",
+          "overlay": "false",
+          "caption": "false",
+          "placeholder": "true",
+          "type": "image"
+        }
+      },
+      "qr-code": {
+        "children": [
+          "flex",
+          "scan-to-download-the-app"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "effectStyleId": "strong-bottom",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/static-lg",
+          "width": 176,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutPositioning": "ABSOLUTE",
+          "x": 760,
+          "y": 229.81,
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/sm",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/QR code"
+          }
+        }
+      },
+      "flex": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/loyalty-container-low",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/static-md",
+          "width": 120,
+          "height": 121,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL"
+        }
+      },
+      "push-app-web-banner-qr-code-3": {
+        "styles": {
+          "width": 102,
+          "height": 102,
+          "strokes": "#FFFFFF",
+          "strokeAlign": "OUTSIDE",
+          "strokeWeight": 4.55
+        }
+      },
+      "scan-to-download-the-app": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "title-03",
+          "textAlignHorizontal": "CENTER"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+          }
+        },
+        "badgecountdown": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "webbadge": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "true",
+            "size": "md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "webmedia-free",
+            "qr-code"
+          ],
+          "styles": {
+            "height": 472,
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "layoutSizingVertical": "FIXED"
+          }
+        },
+        "content": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+          }
+        },
+        "badgecountdown": {
+          "styles": {
+            "counterAxisAlignItems": "MIN"
+          }
+        },
+        "webbadge": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "true",
+            "size": "md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "label": "download-the-app",
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-free": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "qr-code": {
+          "parent": "wrapper"
+        },
+        "flex": {
+          "parent": "qr-code"
+        },
+        "push-app-web-banner-qr-code-3": {
+          "parent": "flex"
+        },
+        "scan-to-download-the-app": {
+          "parent": "qr-code"
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": 1440
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "webmedia-free",
+            "qr-code"
+          ],
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311,
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "layoutSizingVertical": "FILL"
+          }
+        },
+        "content": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+          }
+        },
+        "badgecountdown": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "webbadge": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "true",
+            "size": "md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "HUG"
+          },
+          "propConfigurations": {
+            "label": "download-the-app",
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-free": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "qr-code": {
+          "parent": "wrapper",
+          "styles": {
+            "x": 1012,
+            "y": 173.81
+          }
+        },
+        "flex": {
+          "parent": "qr-code"
+        },
+        "push-app-web-banner-qr-code-3": {
+          "parent": "flex"
+        },
+        "scan-to-download-the-app": {
+          "parent": "qr-code"
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T08:07:13.130Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "10418:388",
+      "nodeId": "10680:1069"
+    }
+  }
+}

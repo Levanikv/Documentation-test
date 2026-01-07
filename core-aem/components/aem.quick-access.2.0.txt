@@ -1,0 +1,211 @@
+{
+  "title": "💠 aem.quick-access",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webdropdown": {
+      "type": "instance",
+      "instanceOf": "webdropdown"
+    },
+    "menu": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279), align=flex-start",
+      "instanceOf": "webtabs"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "align": {
+      "type": "string",
+      "default": "flex-start",
+      "enum": [
+        "flex-start",
+        "center"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), align=flex-start",
+    "elements": {
+      "root": {
+        "children": [
+          "webdropdown"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeBottomWeight": "breakpoints/wel/sem/borderWidth/default",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "webdropdown": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "label": "label",
+          "text": "assistive-text",
+          "assistive-txt": "false",
+          "optional": "false",
+          "trigger": "input",
+          "state": "default"
+        }
+      },
+      "menu": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "tabs": "1745255441",
+          "left-button": "false",
+          "more-tabs": "false",
+          "truncation": "false",
+          "right-button": "true",
+          "align": "flex-start",
+          "display": "inline"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), align=center",
+      "configuration": {
+        "align": "center"
+      },
+      "elements": {
+        "webdropdown": {
+          "propConfigurations": {
+            "assistive-txt": "false",
+            "optional": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), align=flex-start",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "webdropdown": {
+          "propConfigurations": {
+            "assistive-txt": "false",
+            "optional": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), align=flex-start",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "menu"
+          ],
+          "styles": {
+            "width": 1024,
+            "height": 80,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        },
+        "menu": {
+          "parent": "root",
+          "propConfigurations": {
+            "left-button": "false",
+            "more-tabs": "false",
+            "truncation": "false"
+          }
+        },
+        "webdropdown": {
+          "propConfigurations": {
+            "assistive-txt": "false",
+            "optional": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), align=flex-start",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "menu"
+          ],
+          "styles": {
+            "width": 1340,
+            "height": 80,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        },
+        "menu": {
+          "parent": "root",
+          "propConfigurations": {
+            "left-button": "false",
+            "more-tabs": "false",
+            "truncation": "false"
+          }
+        },
+        "webdropdown": {
+          "propConfigurations": {
+            "assistive-txt": "false",
+            "optional": "true"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T13:24:12.109Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2443:476",
+      "nodeId": "2443:884"
+    }
+  }
+}

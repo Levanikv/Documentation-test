@@ -1,0 +1,975 @@
+{
+  "title": "💠 aem.highlight",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "image": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "weblogo-slot": {
+      "type": "slot"
+    },
+    "content": {
+      "type": "container"
+    },
+    "texts": {
+      "type": "container"
+    },
+    "kickerhighlight": {
+      "type": "instance",
+      "instanceOf": "kickerhighlight"
+    },
+    "title": {
+      "type": "text"
+    },
+    "contenthighlight": {
+      "type": "instance",
+      "instanceOf": "contenthighlight"
+    },
+    "cta": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image=wide, image-location=left"
+    },
+    "images": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image=2, image-location=left"
+    },
+    "kicker": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279), image=1, image-location=left",
+      "instanceOf": "kickerhighlight"
+    },
+    "description": {
+      "type": "text",
+      "detectedIn": "breakpoint=mobile (320-767), image=mosaic, image-location=left"
+    },
+    "col-1": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image=mosaic, image-location=left"
+    },
+    "col-2": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image=mosaic, image-location=left"
+    },
+    "card-container": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image=wide, image-location=left"
+    },
+    "card": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), image=wide, image-location=left"
+    },
+    "webbutton": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), image=wide, image-location=left",
+      "instanceOf": "webbutton"
+    },
+    "col": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279), image=1, image-location=left"
+    }
+  },
+  "props": {
+    "logo-slot": {
+      "type": "boolean",
+      "default": true
+    },
+    "cta": {
+      "type": "boolean",
+      "default": true
+    },
+    "kicker": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "image": {
+      "type": "string",
+      "default": "1",
+      "enum": [
+        "1",
+        "2",
+        "mosaic",
+        "wide"
+      ]
+    },
+    "image-location": {
+      "type": "string",
+      "default": "left",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "button-2": {
+      "type": "boolean",
+      "default": true
+    },
+    "image-3": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), image=1, image-location=left",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "image",
+          "content"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "image": {
+        "parent": "wrapper",
+        "children": [
+          "webmedia-fixed",
+          "weblogo-slot"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 8
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "image",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "weblogo-slot": {
+        "parent": "image",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "x": 16,
+          "y": 16,
+          "layoutPositioning": "ABSOLUTE",
+          "height": 40
+        },
+        "propConfigurations": {
+          "appendix": "false",
+          "logo-icon": "206125177",
+          "logo": "206125174",
+          "display": "nested",
+          "logo-shape": "rectangle",
+          "size": "sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/logo-slot"
+          }
+        }
+      },
+      "content": {
+        "parent": "wrapper",
+        "children": [
+          "texts",
+          "cta"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "texts": {
+        "parent": "content",
+        "children": [
+          "kickerhighlight",
+          "title",
+          "contenthighlight"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "kickerhighlight": {
+        "parent": "texts",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "logos": "1593432",
+          "logo-3": "796587438",
+          "logo-2": "796587428",
+          "text": "kicker",
+          "logo-1": "216344934",
+          "more-logos": "false",
+          "content": "text"
+        }
+      },
+      "title": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-05"
+        }
+      },
+      "contenthighlight": {
+        "parent": "texts",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "highlight-3": "true",
+          "list-1": "true",
+          "list-6": "false",
+          "list-3": "true",
+          "highlight-4": "true",
+          "list-5": "false",
+          "highlight-1": "true",
+          "highlight-2": "true",
+          "list-2": "true",
+          "list-4": "true",
+          "text": "description-260-characters-max-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incidunt-ut-labore-et-dolore-magna-maximus-prius-torti-colim-ipsum-dolor-sit-amen-conjecture-cour-adipisicing-elit-sed",
+          "variants": "desc"
+        }
+      },
+      "cta": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/cta"
+          }
+        }
+      },
+      "images": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+        }
+      },
+      "kicker": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "logos": "1593432",
+          "logo-3": "796587438",
+          "logo-2": "796587428",
+          "text": "kicker",
+          "logo-1": "216344934",
+          "more-logos": "false",
+          "content": "text"
+        }
+      },
+      "description": {
+        "styles": {
+          "fills": "#3E3D48",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "ui/body-01"
+        }
+      },
+      "col-1": {
+        "children": [
+          "webmedia-fixed"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "col-2": {
+        "children": [
+          "webmedia-fixed",
+          "webmedia-fixed"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "card-container": {
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 8,
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/pinchHorizontal/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/pinchHorizontal/md"
+        }
+      },
+      "card": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "cornerRadius": 6,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/4xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/4xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/4xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+        }
+      },
+      "webbutton": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/button 2"
+          }
+        }
+      },
+      "col": {
+        "styles": {
+          "minWidth": 58,
+          "maxWidth": 79,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), image=2, image-location=left",
+      "configuration": {
+        "image": "2"
+      },
+      "elements": {
+        "wrapper": {
+          "children": [
+            "images",
+            "content"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "images": {
+          "parent": "wrapper"
+        },
+        "webmedia-fixed": {
+          "parent": "images",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "kickerhighlight": {
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "contenthighlight": {
+          "propConfigurations": {
+            "list-6": "false",
+            "list-5": "false"
+          }
+        },
+        "cta": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "cta-style": "button"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/cta"
+            }
+          }
+        },
+        "weblogo-slot": {
+          "propConfigurations": {
+            "appendix": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), image=mosaic, image-location=left",
+      "configuration": {
+        "image": "mosaic"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "images"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "content": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "texts": {
+          "children": [
+            "kicker",
+            "title",
+            "description"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs"
+          }
+        },
+        "kicker": {
+          "parent": "texts"
+        },
+        "description": {
+          "parent": "texts"
+        },
+        "cta": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "cta-style": "button"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/cta"
+            }
+          }
+        },
+        "images": {
+          "parent": "wrapper",
+          "children": [
+            "col-1",
+            "col-2"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+          }
+        },
+        "col-1": {
+          "parent": "images"
+        },
+        "webmedia-fixed": {
+          "parent": "col-2",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/image 3"
+            }
+          }
+        },
+        "col-2": {
+          "parent": "images"
+        },
+        "weblogo-slot": {
+          "propConfigurations": {
+            "appendix": "false"
+          }
+        },
+        "kickerhighlight": {
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "contenthighlight": {
+          "propConfigurations": {
+            "list-6": "false",
+            "list-5": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), image=wide, image-location=left",
+      "configuration": {
+        "image": "wide"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "counterAxisAlignItems": "CENTER",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/3xl-neg"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "image",
+            "card-container"
+          ],
+          "styles": {
+            "counterAxisAlignItems": "CENTER",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/3xl-neg"
+          }
+        },
+        "image": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "weblogo-slot": {
+          "propConfigurations": {
+            "appendix": "false"
+          }
+        },
+        "card-container": {
+          "parent": "wrapper"
+        },
+        "card": {
+          "parent": "card-container"
+        },
+        "texts": {
+          "parent": "card",
+          "children": [
+            "kicker",
+            "title",
+            "content"
+          ]
+        },
+        "kicker": {
+          "parent": "texts",
+          "styles": {
+            "fills": null
+          },
+          "propConfigurations": {
+            "logos": "1593432",
+            "logo-3": "796587438",
+            "logo-2": "796587428",
+            "text": "kicker",
+            "logo-1": "216344934",
+            "more-logos": "false",
+            "content": "text"
+          },
+          "propReferences": {
+            "visible": null
+          }
+        },
+        "content": {
+          "parent": "texts",
+          "propConfigurations": {
+            "highlight-3": "true",
+            "list-1": "true",
+            "list-6": "false",
+            "list-3": "true",
+            "highlight-4": "true",
+            "list-5": "false",
+            "highlight-1": "true",
+            "highlight-2": "true",
+            "list-2": "true",
+            "list-4": "true",
+            "text": "description-260-characters-max-consectetur-adipisicing-elit-sed-amen-conjecture-do-eiusmod-tempor-incidunt-ut-labore-et-dolore-magna-maximus-prius-torti-colim-ipsum-dolor-sit-amen-conjecture-cour-adipisicing-elit-sed-incidunt-ut-labore-et-dolore-magna",
+            "variants": "desc"
+          }
+        },
+        "cta": {
+          "parent": "card"
+        },
+        "webbutton": {
+          "parent": "cta",
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "kickerhighlight": {
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "contenthighlight": {
+          "propConfigurations": {
+            "list-6": "false",
+            "list-5": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), image=1, image-location=left",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "image": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "weblogo-slot": {
+          "propConfigurations": {
+            "appendix": "false",
+            "size": "md"
+          }
+        },
+        "kickerhighlight": {
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "title": {
+          "styles": {
+            "textStyleId": "display-04"
+          }
+        },
+        "contenthighlight": {
+          "propConfigurations": {
+            "list-6": "false",
+            "list-5": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), image=1, image-location=left",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "image",
+            "col",
+            "content",
+            "col"
+          ],
+          "styles": {
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "image": {
+          "styles": {
+            "minWidth": 386,
+            "maxWidth": 492,
+            "itemSpacing": 0
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "weblogo-slot": {
+          "propConfigurations": {
+            "appendix": "false",
+            "size": "md"
+          }
+        },
+        "col": {
+          "parent": "wrapper"
+        },
+        "content": {
+          "styles": {
+            "minWidth": 386,
+            "maxWidth": 492,
+            "layoutSizingVertical": "FILL"
+          }
+        },
+        "texts": {
+          "children": [
+            "kicker",
+            "title",
+            "contenthighlight"
+          ]
+        },
+        "kicker": {
+          "parent": "texts",
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "title": {
+          "styles": {
+            "textStyleId": "display-03"
+          }
+        },
+        "contenthighlight": {
+          "propConfigurations": {
+            "list-6": "false",
+            "list-5": "false"
+          }
+        },
+        "cta": {
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/cta"
+            }
+          }
+        },
+        "kickerhighlight": {
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), image=1, image-location=left",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": 1439,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0
+          }
+        },
+        "wrapper": {
+          "children": [
+            "image",
+            "col",
+            "content",
+            "col"
+          ],
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1312,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "image": {
+          "styles": {
+            "minWidth": 466,
+            "maxWidth": 533,
+            "itemSpacing": 0,
+            "paddingRight": 96
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "weblogo-slot": {
+          "propConfigurations": {
+            "appendix": "false",
+            "size": "md"
+          }
+        },
+        "col": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 74,
+            "maxWidth": 87
+          }
+        },
+        "content": {
+          "styles": {
+            "minWidth": 466,
+            "maxWidth": 533
+          }
+        },
+        "texts": {
+          "children": [
+            "kicker",
+            "title",
+            "contenthighlight"
+          ]
+        },
+        "kicker": {
+          "parent": "texts",
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "title": {
+          "styles": {
+            "textStyleId": "display-03"
+          }
+        },
+        "contenthighlight": {
+          "propConfigurations": {
+            "list-6": "false",
+            "list-5": "false"
+          }
+        },
+        "cta": {
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/cta"
+            }
+          }
+        },
+        "kickerhighlight": {
+          "propConfigurations": {
+            "more-logos": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "image-location": "right"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T08:40:40.727Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2163:44933",
+      "nodeId": "2163:45278"
+    }
+  }
+}

@@ -1,0 +1,562 @@
+{
+  "title": "💠 aem.text-section",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "content": {
+      "type": "container"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "weblink": {
+      "type": "instance",
+      "instanceOf": "weblink"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "webseparator": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), variation=action",
+      "instanceOf": "webseparator"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), variation=1 image",
+      "instanceOf": "webmedia-fixed"
+    },
+    "images": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), variation=2 images"
+    },
+    "textsactions": {
+      "type": "container",
+      "detectedIn": "breakpoint=tablet (768-1023), variation=default"
+    },
+    "col": {
+      "type": "container",
+      "detectedIn": "breakpoint=tablet (768-1023), variation=default"
+    }
+  },
+  "props": {
+    "button": {
+      "type": "boolean",
+      "default": true
+    },
+    "link": {
+      "type": "boolean",
+      "default": true
+    },
+    "subtitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "variation": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "action",
+        "1 image",
+        "2 images"
+      ]
+    },
+    "external-link": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), variation=default",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "subtitle",
+          "content"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/2xl"
+        }
+      },
+      "subtitle": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-04"
+        }
+      },
+      "content": {
+        "parent": "wrapper",
+        "children": [
+          "paragraph",
+          "weblink",
+          "weblink",
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "paragraph": {
+        "parent": "content",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "weblink": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "label": "link-label",
+          "right-icon": "true",
+          "variant": "icon",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/external link"
+          }
+        }
+      },
+      "webbutton": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/button"
+          }
+        }
+      },
+      "webseparator": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "layoutSizingHorizontal": "FILL",
+          "height": 1
+        }
+      },
+      "webmedia-fixed": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "images": {
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "textsactions": {
+        "children": [
+          "paragraph",
+          "weblink",
+          "weblink",
+          "webbutton"
+        ],
+        "styles": {
+          "minWidth": 582,
+          "maxWidth": 793,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 24
+        }
+      },
+      "col": {
+        "styles": {
+          "height": 32,
+          "minWidth": 37,
+          "maxWidth": 58,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), variation=action",
+      "configuration": {
+        "variation": "action"
+      },
+      "elements": {
+        "wrapper": {
+          "children": [
+            "subtitle",
+            "content",
+            "webseparator",
+            "content"
+          ]
+        },
+        "subtitle": {
+          "parent": "content",
+          "styles": {
+            "textStyleId": "title-02"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/subtitle"
+            }
+          }
+        },
+        "content": {
+          "children": [
+            "subtitle",
+            "paragraph",
+            "weblink",
+            "weblink",
+            "webbutton"
+          ]
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webseparator": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), variation=1 image",
+      "configuration": {
+        "variation": "1 image"
+      },
+      "elements": {
+        "content": {
+          "children": [
+            "paragraph",
+            "weblink",
+            "weblink",
+            "webbutton",
+            "webmedia-fixed"
+          ]
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "parent": "content",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), variation=2 images",
+      "configuration": {
+        "variation": "2 images"
+      },
+      "elements": {
+        "content": {
+          "children": [
+            "paragraph",
+            "weblink",
+            "weblink",
+            "webbutton",
+            "images"
+          ]
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "images": {
+          "parent": "content"
+        },
+        "webmedia-fixed": {
+          "parent": "images",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), variation=default",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "primaryAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959,
+            "layoutSizingVertical": "FILL"
+          }
+        },
+        "content": {
+          "children": [
+            "textsactions",
+            "col",
+            "col"
+          ],
+          "styles": {
+            "minWidth": 288,
+            "maxWidth": 959,
+            "layoutMode": "HORIZONTAL"
+          }
+        },
+        "textsactions": {
+          "parent": "content"
+        },
+        "paragraph": {
+          "parent": "textsactions",
+          "styles": {
+            "layoutSizingVertical": "FIXED",
+            "height": 120
+          }
+        },
+        "weblink": {
+          "parent": "textsactions",
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "parent": "textsactions",
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "col": {
+          "parent": "content"
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), variation=default",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": null,
+            "maxWidth": null,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), variation=default",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T14:16:58.723Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2491:6320",
+      "nodeId": "2491:6418"
+    }
+  }
+}

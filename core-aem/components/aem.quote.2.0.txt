@@ -1,0 +1,322 @@
+{
+  "title": "💠 aem.quote",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "icon": {
+      "type": "instance",
+      "instanceOf": "webicon-slot"
+    },
+    "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-justo-ullamcorper-morbi-ac-sociis-iaculis-facilisi-mus-dui-viverra-sapien": {
+      "type": "text"
+    },
+    "source": {
+      "type": "container"
+    },
+    "avatar": {
+      "type": "instance",
+      "instanceOf": "webavatar"
+    },
+    "user-text": {
+      "type": "container"
+    },
+    "name": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "text": {
+      "type": "text",
+      "detectedIn": "breakpoint=tablet (768-1023), user=true"
+    },
+    "quote-48": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279), user=true",
+      "instanceOf": "quote-48"
+    }
+  },
+  "props": {
+    "icon": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "user": {
+      "type": "string",
+      "default": "true",
+      "enum": [
+        "true"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), user=true",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "height": 224,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "icon",
+          "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-justo-ullamcorper-morbi-ac-sociis-iaculis-facilisi-mus-dui-viverra-sapien",
+          "source"
+        ],
+        "styles": {
+          "width": 343,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "x": 16,
+          "y": -18,
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+        }
+      },
+      "icon": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "205136500",
+          "size": "lg",
+          "display": "default",
+          "background": "brand"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/icon"
+          }
+        }
+      },
+      "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit-justo-ullamcorper-morbi-ac-sociis-iaculis-facilisi-mus-dui-viverra-sapien": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "sub-01",
+          "textAlignHorizontal": "CENTER"
+        }
+      },
+      "source": {
+        "parent": "wrapper",
+        "children": [
+          "avatar",
+          "user-text"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "avatar": {
+        "parent": "source",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/lg",
+          "height": "breakpoints/wel/sem/sizing/icon/lg"
+        },
+        "propConfigurations": {
+          "content": "image",
+          "size": "lg"
+        }
+      },
+      "user-text": {
+        "parent": "source",
+        "children": [
+          "name",
+          "description"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/2xs"
+        }
+      },
+      "name": {
+        "parent": "user-text",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "title-03"
+        }
+      },
+      "description": {
+        "parent": "user-text",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "text": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "sub-01",
+          "textAlignHorizontal": "CENTER"
+        }
+      },
+      "quote-48": {
+        "styles": {
+          "width": 48,
+          "height": 48
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/icon"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023), user=true",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "height": 288,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "children": [
+            "icon",
+            "text",
+            "source"
+          ],
+          "styles": {
+            "width": 461,
+            "x": 154,
+            "y": 14,
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "text": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), user=true",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "height": 288,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "children": [
+            "quote-48",
+            "text",
+            "source"
+          ],
+          "styles": {
+            "width": 630,
+            "x": 197,
+            "y": 14,
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "quote-48": {
+          "parent": "wrapper"
+        },
+        "text": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), user=true",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "height": 288,
+            "minWidth": 1024,
+            "maxWidth": null
+          }
+        },
+        "wrapper": {
+          "children": [
+            "icon",
+            "text",
+            "source"
+          ],
+          "styles": {
+            "width": 762,
+            "x": 259,
+            "y": 30,
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "text": {
+          "parent": "wrapper"
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T13:50:17.198Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2453:225",
+      "nodeId": "2453:263"
+    }
+  }
+}

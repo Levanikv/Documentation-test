@@ -1,0 +1,207 @@
+{
+  "title": "aemslideshow-dual",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webseparator": {
+      "type": "instance",
+      "instanceOf": "webseparator"
+    },
+    "controllers": {
+      "type": "instance",
+      "instanceOf": "controllers"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "left",
+        "right"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "slide-left",
+          "slide-right",
+          "webseparator",
+          "controllers"
+        ],
+        "styles": {
+          "width": 375,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL"
+        }
+      },
+      "webseparator": {
+        "parent": "root",
+        "styles": {
+          "rotation": -90,
+          "opacity": 0.4,
+          "fills": "colorModes/wel/sem/color/outline-low",
+          "x": 188.5,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 667,
+          "height": 1
+        }
+      },
+      "controllers": {
+        "parent": "root",
+        "styles": {
+          "rotation": -180,
+          "fills": "#000000, 30%",
+          "x": 350,
+          "y": 587,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 325
+        },
+        "propConfigurations": {
+          "position": "default"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), state=left",
+      "configuration": {
+        "state": "left"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "slide-left",
+            "controllers"
+          ]
+        },
+        "controllers": {
+          "styles": {
+            "y": 587.4,
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "position": "left"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), state=right",
+      "configuration": {
+        "state": "right"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "slide-right",
+            "controllers"
+          ]
+        },
+        "controllers": {
+          "styles": {
+            "y": 586.8,
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "position": "right"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), state=default",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768
+          }
+        },
+        "webseparator": {
+          "styles": {
+            "x": 384.5
+          }
+        },
+        "controllers": {
+          "styles": {
+            "x": 546,
+            "y": 431,
+            "layoutSizingHorizontal": "HUG"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), state=default",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024
+          }
+        },
+        "webseparator": {
+          "styles": {
+            "x": 512.5
+          }
+        },
+        "controllers": {
+          "styles": {
+            "x": 673,
+            "y": 384,
+            "layoutSizingHorizontal": "HUG"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), state=default",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "maxWidth": 1440
+          }
+        },
+        "webseparator": {
+          "styles": {
+            "x": 670.5
+          }
+        },
+        "controllers": {
+          "styles": {
+            "x": 831,
+            "y": 528,
+            "layoutSizingHorizontal": "HUG"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

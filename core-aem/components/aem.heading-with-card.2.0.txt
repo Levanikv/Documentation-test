@@ -1,0 +1,553 @@
+{
+  "title": "💠 aem.heading-with-card",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "card": {
+      "type": "container"
+    },
+    "texts": {
+      "type": "container"
+    },
+    "kicker": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), display=default, # cards=multiple",
+      "instanceOf": "webpagination-condensed"
+    },
+    "webbooking-engine-aem-light": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), display=booking-engine, # cards=single",
+      "instanceOf": "webbooking-engine-aem-light"
+    }
+  },
+  "props": {
+    "title": {
+      "type": "string",
+      "default": "Title"
+    },
+    "kicker": {
+      "type": "string",
+      "default": "KICKER"
+    },
+    "description": {
+      "type": "boolean",
+      "default": true
+    },
+    "button": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "full-grid",
+        "wide",
+        "booking-engine"
+      ]
+    },
+    "": {
+      "type": "string",
+      "default": "single",
+      "enum": [
+        "single",
+        "multiple"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), display=default, # cards=single",
+    "elements": {
+      "root": {
+        "children": [
+          "webmedia-fixed",
+          "card"
+        ],
+        "styles": {
+          "width": 375,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL"
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "card": {
+        "parent": "root",
+        "children": [
+          "texts",
+          "webbutton"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/surface",
+          "width": 343,
+          "layoutMode": "VERTICAL",
+          "layoutPositioning": "ABSOLUTE",
+          "x": 16,
+          "y": 266,
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/4xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/4xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/4xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/4xl"
+        }
+      },
+      "texts": {
+        "parent": "card",
+        "children": [
+          "kicker",
+          "title",
+          "description"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "kicker": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "detail"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/kicker"
+          },
+          "content": {
+            "$ref": "#/props/-> kicker"
+          }
+        }
+      },
+      "title": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03"
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/title"
+          }
+        }
+      },
+      "description": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/description"
+          }
+        }
+      },
+      "webbutton": {
+        "parent": "card",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/button"
+          }
+        }
+      },
+      "webpagination-condensed": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "counter": "true",
+          "step": "1-4",
+          "size": "sm",
+          "align": "right",
+          "loop": "false"
+        }
+      },
+      "webbooking-engine-aem-light": {
+        "styles": {
+          "y": 441,
+          "layoutPositioning": "ABSOLUTE",
+          "width": 375
+        },
+        "propConfigurations": {
+          "breakpoint": "mobile-320-767",
+          "display": "button"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), display=default, # cards=multiple",
+      "configuration": {
+        "# cards": "multiple"
+      },
+      "elements": {
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "children": [
+            "texts",
+            "webbutton",
+            "webpagination-condensed"
+          ],
+          "styles": {
+            "counterAxisAlignItems": "CENTER",
+            "y": 254,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+          }
+        },
+        "texts": {
+          "children": [
+            "kicker",
+            "title"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs"
+          }
+        },
+        "kicker": {
+          "styles": {
+            "textAlignHorizontal": "CENTER"
+          }
+        },
+        "title": {
+          "styles": {
+            "textAlignHorizontal": "CENTER"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/primary"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false",
+            "function": "secondary"
+          }
+        },
+        "webpagination-condensed": {
+          "parent": "card"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), display=full-grid, # cards=single",
+      "configuration": {
+        "display": "full-grid"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+            "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "width": 311,
+            "x": 32,
+            "y": 239
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), display=wide, # cards=single",
+      "configuration": {
+        "display": "wide"
+      },
+      "elements": {
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "y": 422,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), display=booking-engine, # cards=single",
+      "configuration": {
+        "display": "booking-engine"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-fixed",
+            "card",
+            "webbooking-engine-aem-light"
+          ]
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "y": 129
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), display=default, # cards=single",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "width": 582,
+            "x": 93,
+            "y": 290
+          }
+        },
+        "texts": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), display=default, # cards=single",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "counterAxisAlignItems": "MAX"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "width": 468,
+            "primaryAxisAlignItems": "MAX",
+            "x": 524,
+            "y": 234
+          }
+        },
+        "texts": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), display=default, # cards=single",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "counterAxisAlignItems": "MAX"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "card": {
+          "styles": {
+            "width": 594,
+            "primaryAxisAlignItems": "MAX",
+            "x": 682,
+            "y": 363
+          }
+        },
+        "texts": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-08T11:29:39.462Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2163:2313",
+      "nodeId": "2163:37280"
+    }
+  }
+}

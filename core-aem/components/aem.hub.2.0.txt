@@ -1,0 +1,306 @@
+{
+  "title": "💠 aem.hub",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "texts": {
+      "type": "container"
+    },
+    "kicker": {
+      "type": "text"
+    },
+    "title-texts": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "text-section-1": {
+      "type": "container"
+    },
+    "paragraph-title": {
+      "type": "text"
+    },
+    "description-text": {
+      "type": "text"
+    },
+    "weblink": {
+      "type": "instance",
+      "instanceOf": "weblink"
+    },
+    "text-section-2": {
+      "type": "container"
+    },
+    "text-section-3": {
+      "type": "container"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "image-alignement": {
+      "type": "string",
+      "default": "center",
+      "enum": [
+        "right",
+        "left",
+        "center"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), image alignement=center",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 787,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "webmedia-fixed",
+          "texts"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xl"
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "texts": {
+        "parent": "wrapper",
+        "children": [
+          "kicker",
+          "title-texts"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "kicker": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "detail"
+        }
+      },
+      "title-texts": {
+        "parent": "texts",
+        "children": [
+          "title",
+          "text-section-1",
+          "text-section-2",
+          "text-section-3"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+        }
+      },
+      "title": {
+        "parent": "title-texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-04"
+        }
+      },
+      "text-section-1": {
+        "parent": "title-texts",
+        "children": [
+          "paragraph-title",
+          "weblink"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "paragraph-title": {
+        "parent": "paragraph-title",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "title-03"
+        }
+      },
+      "description-text": {
+        "parent": "paragraph-title",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "weblink": {
+        "parent": "text-section-3",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "true",
+          "left-icon": "false",
+          "label": "link-label",
+          "variant": "icon",
+          "state": "default"
+        }
+      },
+      "text-section-2": {
+        "parent": "title-texts",
+        "children": [
+          "paragraph-title",
+          "weblink"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "text-section-3": {
+        "parent": "title-texts",
+        "children": [
+          "paragraph-title",
+          "weblink"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023), image alignement=center",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 788,
+            "minWidth": 788,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "title": {
+          "styles": {
+            "textStyleId": "display-03"
+          }
+        },
+        "weblink": {
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "image alignement": "right"
+    },
+    {
+      "image alignement": "left"
+    },
+    {
+      "breakpoint": "desktop-sm (1024-1279)"
+    },
+    {
+      "breakpoint": "desktop-md (1280-1439)"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T09:01:23.045Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2163:49098",
+      "nodeId": "2163:49236"
+    }
+  }
+}

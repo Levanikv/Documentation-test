@@ -1,0 +1,236 @@
+{
+  "title": "💠 aem.modal-qrcode",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "modal": {
+      "type": "container"
+    },
+    "baseheader": {
+      "type": "instance",
+      "instanceOf": "baseheader"
+    },
+    "content": {
+      "type": "container"
+    },
+    "qr-code": {
+      "type": "container"
+    },
+    "flex": {
+      "type": "container"
+    },
+    "push-app-web-banner-qr-code-3": {
+      "type": "vector"
+    },
+    "appstores-badges": {
+      "type": "container"
+    },
+    "app-storebadge": {
+      "type": "instance",
+      "instanceOf": "app-storebadge"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-sm (1024-1279)",
+      "enum": [
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=desktop-sm (1024-1279)",
+    "elements": {
+      "root": {
+        "children": [
+          "modal"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/overlay-hi",
+          "width": "breakpoints/wel/sem/sizing/grid/fullWidth",
+          "height": 768,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/xl"
+        }
+      },
+      "modal": {
+        "parent": "root",
+        "children": [
+          "baseheader",
+          "content"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/surface",
+          "width": 640,
+          "minWidth": 640,
+          "maxWidth": 1280,
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "VERTICAL",
+          "layoutSizingVertical": "HUG",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/xl"
+        }
+      },
+      "baseheader": {
+        "parent": "modal",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "back": "false",
+          "title": "true",
+          "close": "true",
+          "condensed": "false"
+        }
+      },
+      "content": {
+        "parent": "modal",
+        "children": [
+          "qr-code",
+          "appstores-badges"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/xl"
+        }
+      },
+      "qr-code": {
+        "parent": "content",
+        "children": [
+          "flex"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "effectStyleId": "strong-bottom",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/static-lg",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        }
+      },
+      "flex": {
+        "parent": "qr-code",
+        "children": [
+          "push-app-web-banner-qr-code-3"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/loyalty-container-low",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/static-md",
+          "width": 120,
+          "height": 121,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inline/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inline/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/stack/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "push-app-web-banner-qr-code-3": {
+        "parent": "flex",
+        "styles": {
+          "width": 102,
+          "height": 102,
+          "strokes": "#FFFFFF",
+          "strokeAlign": "OUTSIDE",
+          "strokeWeight": 4.55
+        }
+      },
+      "appstores-badges": {
+        "parent": "content",
+        "children": [
+          "app-storebadge",
+          "app-storebadge"
+        ],
+        "styles": {
+          "height": 48,
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "itemSpacing": 14
+        }
+      },
+      "app-storebadge": {
+        "parent": "appstores-badges",
+        "styles": {
+          "width": 162,
+          "height": 48
+        },
+        "propConfigurations": {
+          "os": "android"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "height": 800
+          }
+        },
+        "baseheader": {
+          "propConfigurations": {
+            "back": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T13:18:05.341Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "13807:15068",
+      "nodeId": "13807:15267"
+    }
+  }
+}

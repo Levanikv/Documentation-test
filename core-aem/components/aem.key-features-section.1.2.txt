@@ -1,0 +1,212 @@
+{
+  "title": "💠 aem.key-features-section",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "key-features": {
+      "type": "instance",
+      "instanceOf": "key-features"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "instanceOf": "webpagination-condensed"
+    },
+    "wrapper": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1289-1439)"
+    }
+  },
+  "props": {
+    "pagination": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1289-1439)"
+      ]
+    },
+    "3rd-key": {
+      "type": "boolean",
+      "default": true
+    },
+    "4th-key": {
+      "type": "boolean",
+      "default": true
+    },
+    "5th-key": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "key-features",
+          "webpagination-condensed"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 16
+        }
+      },
+      "key-features": {
+        "parent": "key-features",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutSizingHorizontal": "FILL",
+          "height": 288
+        },
+        "propConfigurations": {
+          "description": "true",
+          "state": "default"
+        }
+      },
+      "webpagination-condensed": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "counter": "true",
+          "step": "1-5",
+          "size": "md",
+          "align": "right",
+          "loop": "false"
+        }
+      },
+      "wrapper": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "key-features": {
+          "styles": {
+            "layoutSizingVertical": "FILL"
+          }
+        },
+        "webpagination-condensed": {
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/pagination"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "itemSpacing": 24
+          }
+        },
+        "key-features": {
+          "styles": {
+            "layoutSizingVertical": "FILL"
+          },
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/3rd key"
+            }
+          }
+        },
+        "webpagination-condensed": {
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/pagination"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1289-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1289-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "wrapper"
+          ],
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": 1439,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+          }
+        },
+        "wrapper": {
+          "parent": "root"
+        },
+        "key-features": {
+          "parent": "wrapper",
+          "propReferences": {
+            "visible": {
+              "$ref": "#/props/5th key"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T13:26:11.228Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2277:1018",
+      "nodeId": "2277:1404"
+    }
+  }
+}

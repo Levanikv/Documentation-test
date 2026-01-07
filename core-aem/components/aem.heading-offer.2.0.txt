@@ -1,0 +1,652 @@
+{
+  "title": "💠 aem.heading-offer",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "media": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "webbooking-engine-aem": {
+      "type": "instance",
+      "instanceOf": "webbooking-engine-aem-full-option"
+    },
+    "header-content": {
+      "type": "container"
+    },
+    "webbreadcrumbs": {
+      "type": "instance",
+      "instanceOf": "webbreadcrumbs"
+    },
+    "countdown": {
+      "type": "container"
+    },
+    "webbadge": {
+      "type": "instance",
+      "instanceOf": "webbadge"
+    },
+    "webcountdown": {
+      "type": "instance",
+      "instanceOf": "webcountdown"
+    },
+    "content": {
+      "type": "container"
+    },
+    "page-title": {
+      "type": "text"
+    },
+    "list": {
+      "type": "container"
+    },
+    "list-item": {
+      "type": "container"
+    },
+    "icon": {
+      "type": "icon"
+    },
+    "label": {
+      "type": "text"
+    },
+    "weblink": {
+      "type": "instance",
+      "instanceOf": "weblink"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023)",
+      "instanceOf": "webmedia-fixed"
+    },
+    "webbooking-engine-aem-full-option": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023)",
+      "instanceOf": "webbooking-engine-aem-full-option"
+    }
+  },
+  "props": {
+    "countdown": {
+      "type": "boolean",
+      "default": true
+    },
+    "list": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "media",
+          "webbooking-engine-aem",
+          "header-content",
+          "weblink"
+        ],
+        "styles": {
+          "width": 375,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/5xl-neg"
+        }
+      },
+      "media": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "webbooking-engine-aem": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/sem/brands/surface-container-low",
+          "layoutSizingVertical": "HUG",
+          "width": 343
+        },
+        "propConfigurations": {
+          "rooms": "false",
+          "date-picker": "false",
+          "location-history": "false",
+          "location-autocomplete": "false",
+          "loyalty-benefits-activation": "false",
+          "country-cities-hotels": "false",
+          "loyalty-offer-activation": "true",
+          "country-cities-hotels-hide": "true",
+          "breakpoint": "mobile",
+          "display": "form"
+        }
+      },
+      "header-content": {
+        "parent": "root",
+        "children": [
+          "webbreadcrumbs",
+          "countdown",
+          "content"
+        ],
+        "styles": {
+          "width": 343,
+          "height": 340,
+          "layoutMode": "VERTICAL",
+          "layoutPositioning": "ABSOLUTE",
+          "x": 16,
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+        }
+      },
+      "webbreadcrumbs": {
+        "parent": "header-content",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "variant": "back",
+          "state": "default"
+        }
+      },
+      "countdown": {
+        "parent": "header-content",
+        "children": [
+          "webbadge",
+          "webcountdown"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs"
+        }
+      },
+      "webbadge": {
+        "parent": "countdown",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/offer",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "true",
+          "label": "label",
+          "right-icon": "false",
+          "size": "md",
+          "function": "offer",
+          "emphasis": "high",
+          "style": "filled"
+        }
+      },
+      "webcountdown": {
+        "parent": "countdown",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/offer",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "background": "true"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/countdown"
+          }
+        }
+      },
+      "content": {
+        "parent": "header-content",
+        "children": [
+          "page-title",
+          "list"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+        }
+      },
+      "page-title": {
+        "parent": "content",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03"
+        }
+      },
+      "list": {
+        "parent": "content",
+        "children": [
+          "list-item",
+          "list-item",
+          "list-item",
+          "list-item"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/list"
+          }
+        }
+      },
+      "list-item": {
+        "parent": "list",
+        "children": [
+          "icon",
+          "label"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "icon": {
+        "parent": "list-item",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        }
+      },
+      "label": {
+        "parent": "list-item",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "weblink": {
+        "parent": "root",
+        "styles": {
+          "x": 291,
+          "y": 349,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propConfigurations": {
+          "label": "link-label",
+          "left-icon": "false",
+          "right-icon": "205137902",
+          "variant": "default",
+          "state": "default"
+        }
+      },
+      "webmedia-fixed": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "webbooking-engine-aem-full-option": {
+        "styles": {
+          "layoutSizingVertical": "HUG",
+          "width": 768
+        },
+        "propConfigurations": {
+          "country-cities-hotels": "false",
+          "rooms": "false",
+          "date-picker": "false",
+          "location-history": "false",
+          "location-autocomplete": "false",
+          "loyalty-offer-activation": "true",
+          "loyalty-benefits-activation": "false",
+          "country-cities-hotels-hide": "true",
+          "breakpoint": "tablet",
+          "display": "form"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-fixed",
+            "weblink",
+            "webbooking-engine-aem-full-option",
+            "header-content"
+          ],
+          "styles": {
+            "width": 768
+          }
+        },
+        "webmedia-fixed": {
+          "parent": "root",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "weblink": {
+          "styles": {
+            "x": 668,
+            "y": 520
+          },
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbooking-engine-aem-full-option": {
+          "parent": "root",
+          "propConfigurations": {
+            "country-cities-hotels": "false",
+            "rooms": "false",
+            "date-picker": "false",
+            "location-history": "false",
+            "location-autocomplete": "false",
+            "loyalty-benefits-activation": "false"
+          }
+        },
+        "header-content": {
+          "styles": {
+            "width": 704,
+            "layoutSizingVertical": "HUG",
+            "x": 32
+          }
+        },
+        "webbreadcrumbs": {
+          "propConfigurations": {
+            "variant": "full"
+          }
+        },
+        "webbadge": {
+          "propConfigurations": {
+            "right-icon": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "maxWidth": "breakpoints/wel/sem/sizing/grid/10-cols"
+          }
+        },
+        "list": {
+          "styles": {
+            "width": 583,
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "layoutSizingHorizontal": "FIXED",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter",
+            "counterAxisSpacing": "breakpoints/wel/sem/spacingDynamic/stack/md"
+          }
+        },
+        "list-item": {
+          "styles": {
+            "minWidth": "breakpoints/wel/sem/sizing/grid/4-cols"
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "webbooking-engine-aem": {
+          "propConfigurations": {
+            "rooms": "false",
+            "date-picker": "false",
+            "location-history": "false",
+            "location-autocomplete": "false",
+            "loyalty-benefits-activation": "false",
+            "country-cities-hotels": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "media",
+            "header-content",
+            "webbooking-engine-aem-full-option",
+            "weblink"
+          ],
+          "styles": {
+            "width": 1024
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "header-content": {
+          "styles": {
+            "width": 960,
+            "layoutSizingVertical": "HUG",
+            "x": 32
+          }
+        },
+        "webbreadcrumbs": {
+          "propConfigurations": {
+            "variant": "full"
+          }
+        },
+        "webbadge": {
+          "propConfigurations": {
+            "right-icon": "false"
+          }
+        },
+        "list": {
+          "styles": {
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter",
+            "counterAxisSpacing": "breakpoints/wel/sem/spacingDynamic/stack/md"
+          }
+        },
+        "list-item": {
+          "styles": {
+            "width": "breakpoints/wel/sem/sizing/grid/5-cols",
+            "layoutSizingHorizontal": "FIXED",
+            "counterAxisSpacing": 16
+          }
+        },
+        "webbooking-engine-aem-full-option": {
+          "parent": "root",
+          "propConfigurations": {
+            "country-cities-hotels": "false",
+            "rooms": "false",
+            "date-picker": "false",
+            "location-history": "false",
+            "location-autocomplete": "false",
+            "loyalty-benefits-activation": "false",
+            "breakpoint": "desktop"
+          }
+        },
+        "weblink": {
+          "styles": {
+            "x": 924,
+            "y": 345
+          },
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webbooking-engine-aem": {
+          "propConfigurations": {
+            "rooms": "false",
+            "date-picker": "false",
+            "location-history": "false",
+            "location-autocomplete": "false",
+            "loyalty-benefits-activation": "false",
+            "country-cities-hotels": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "media",
+            "header-content",
+            "webbooking-engine-aem",
+            "weblink"
+          ],
+          "styles": {
+            "width": 1340
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "header-content": {
+          "styles": {
+            "width": 1212,
+            "layoutSizingVertical": "HUG",
+            "x": 64
+          }
+        },
+        "webbreadcrumbs": {
+          "propConfigurations": {
+            "variant": "full"
+          }
+        },
+        "webbadge": {
+          "propConfigurations": {
+            "right-icon": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "maxWidth": "breakpoints/wel/sem/sizing/grid/10-cols"
+          }
+        },
+        "list": {
+          "styles": {
+            "layoutMode": "HORIZONTAL",
+            "layoutWrap": "WRAP",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+            "counterAxisSpacing": 16
+          }
+        },
+        "webbooking-engine-aem": {
+          "styles": {
+            "fills": null
+          },
+          "propConfigurations": {
+            "country-cities-hotels": "false",
+            "rooms": "false",
+            "date-picker": "false",
+            "location-autocomplete": "false",
+            "loyalty-benefits-activation": "false",
+            "location-history": "false",
+            "breakpoint": "desktop"
+          }
+        },
+        "weblink": {
+          "styles": {
+            "x": 1208,
+            "y": 395
+          },
+          "propConfigurations": {
+            "left-icon": "false"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "webbooking-engine-aem-full-option": {
+          "propConfigurations": {
+            "country-cities-hotels": "false",
+            "rooms": "false",
+            "date-picker": "false",
+            "location-history": "false",
+            "location-autocomplete": "false",
+            "loyalty-benefits-activation": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T13:00:00.458Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2163:2313",
+      "nodeId": "2163:31785"
+    }
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "title": "aemheading-rich",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "container": {
+      "type": "container"
+    },
+    "image": {
+      "type": "container"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "content": {
+      "type": "container"
+    },
+    "asset": {
+      "type": "container"
+    },
+    "basewatermark": {
+      "type": "instance",
+      "instanceOf": "basewatermark"
+    },
+    "heading": {
+      "type": "instance",
+      "instanceOf": "heading"
+    },
+    "webbooking-engine-aem-light": {
+      "type": "instance",
+      "instanceOf": "webbooking-engine-aem-light"
+    },
+    "gradiant": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), description=no, gradiant=yes"
+    }
+  },
+  "props": {
+    "watermark": {
+      "type": "boolean",
+      "default": true
+    },
+    "booking-engine": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "default": "no",
+      "enum": [
+        "no",
+        "yes"
+      ]
+    },
+    "gradiant": {
+      "type": "string",
+      "default": "no",
+      "enum": [
+        "no",
+        "yes"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), description=no, gradiant=no",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "container",
+          "webbooking-engine-aem-light"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/2xl-neg"
+        }
+      },
+      "container": {
+        "parent": "wrapper",
+        "children": [
+          "image",
+          "content"
+        ],
+        "styles": {
+          "cornerRadius": "radius/wel/sem/borderRadius/sm",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "image": {
+        "parent": "container",
+        "children": [
+          "webmedia-fixed"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 8
+        }
+      },
+      "webmedia-fixed": {
+        "parent": "image",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/inverse",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "placeholder": "true",
+          "controllers": "false",
+          "overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "content": {
+        "parent": "container",
+        "children": [
+          "asset",
+          "heading"
+        ],
+        "styles": {
+          "width": 343,
+          "height": 343,
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutPositioning": "ABSOLUTE",
+          "x": 0.33,
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        }
+      },
+      "asset": {
+        "parent": "content",
+        "children": [
+          "basewatermark"
+        ],
+        "styles": {
+          "width": 343,
+          "height": 343,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutPositioning": "ABSOLUTE",
+          "y": 0.5,
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        }
+      },
+      "basewatermark": {
+        "parent": "asset",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "logo-icon": "5126183041"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/watermark"
+          }
+        }
+      },
+      "heading": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingVertical": "HUG",
+          "width": 311
+        },
+        "propConfigurations": {
+          "action": "true",
+          "kicker": "false",
+          "button-2": "false",
+          "subtitle": "false",
+          "title": "true"
+        }
+      },
+      "webbooking-engine-aem-light": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "breakpoint": "mobile-320-767",
+          "display": "button"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/booking-engine"
+          }
+        }
+      },
+      "gradiant": {
+        "styles": {
+          "rotation": -90,
+          "fills": "colorModes/wel/sem/color/gradient-white-max",
+          "width": 128,
+          "height": 343,
+          "layoutPositioning": "ABSOLUTE",
+          "x": 343
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), description=no, gradiant=yes",
+      "configuration": {
+        "gradiant": "yes"
+      },
+      "elements": {
+        "wrapper": {
+          "styles": {
+            "minWidth": 343,
+            "maxWidth": 736
+          }
+        },
+        "container": {
+          "children": [
+            "content",
+            "image"
+          ],
+          "styles": {
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "VERTICAL"
+          }
+        },
+        "content": {
+          "children": [
+            "heading"
+          ],
+          "styles": {
+            "fills": "colorModes/wel/sem/color/surface-container-low",
+            "primaryAxisAlignItems": "MIN",
+            "layoutPositioning": "AUTO",
+            "layoutSizingHorizontal": "FILL",
+            "layoutSizingVertical": "HUG"
+          }
+        },
+        "heading": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          },
+          "propConfigurations": {
+            "kicker": "false",
+            "button-2": "false",
+            "subtitle": "true"
+          }
+        },
+        "image": {
+          "children": [
+            "webmedia-fixed",
+            "gradiant"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "MAX"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "gradiant": {
+          "parent": "image"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), description=yes, gradiant=no",
+      "configuration": {
+        "description": "yes"
+      },
+      "elements": {
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "subtitle": "true",
+            "button-2": "false",
+            "kicker": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), description=no, gradiant=no",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 736,
+            "maxWidth": 991
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "width": 355,
+            "height": 413,
+            "x": 0,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/scale/4xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/scale/4xl",
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        },
+        "asset": {
+          "styles": {
+            "width": 413,
+            "height": 413,
+            "primaryAxisAlignItems": "MIN",
+            "y": 0,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/xl"
+          }
+        },
+        "heading": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          },
+          "propConfigurations": {
+            "kicker": "false",
+            "button-2": "false",
+            "subtitle": "true"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), description=no, gradiant=no",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 992,
+            "maxWidth": 1247,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/5xl-neg"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "width": 483,
+            "height": 290,
+            "x": 0,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/scale/4xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/scale/4xl",
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        },
+        "asset": {
+          "styles": {
+            "width": 381,
+            "height": 381,
+            "primaryAxisAlignItems": "MIN",
+            "y": 0,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/xl"
+          }
+        },
+        "heading": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          },
+          "propConfigurations": {
+            "kicker": "false",
+            "button-2": "false",
+            "subtitle": "true"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279",
+            "display": "form"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), description=no, gradiant=no",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": null
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 1232,
+            "maxWidth": 1392,
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/5xl-neg"
+          }
+        },
+        "webmedia-fixed": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "caption": "false"
+          }
+        },
+        "content": {
+          "styles": {
+            "width": 496,
+            "height": 566,
+            "x": 0,
+            "y": 474,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/scale/4xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/scale/4xl",
+            "paddingTop": 0,
+            "paddingBottom": 0
+          }
+        },
+        "asset": {
+          "styles": {
+            "width": 496,
+            "height": 496,
+            "primaryAxisAlignItems": "MIN",
+            "y": 80,
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/xl",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/xl"
+          }
+        },
+        "heading": {
+          "styles": {
+            "layoutSizingHorizontal": "FILL"
+          },
+          "propConfigurations": {
+            "kicker": "false",
+            "button-2": "false",
+            "subtitle": "true"
+          }
+        },
+        "webbooking-engine-aem-light": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439",
+            "display": "form"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

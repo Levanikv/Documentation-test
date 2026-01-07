@@ -1,0 +1,390 @@
+{
+  "title": "💠 aem.faq",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "questions": {
+      "type": "container"
+    },
+    "accordions": {
+      "type": "container"
+    },
+    "webaccordion": {
+      "type": "instance",
+      "instanceOf": "webaccordion"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "content": {
+      "type": "container",
+      "detectedIn": "breakpoint=tablet (768-1023), display=stack"
+    },
+    "empty-col-figma-workaround": {
+      "type": "container",
+      "detectedIn": "breakpoint=tablet (768-1023), display=stack"
+    }
+  },
+  "props": {
+    "button": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "stack",
+      "enum": [
+        "stack",
+        "inline"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), display=stack",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "title",
+          "questions"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/2xl"
+        }
+      },
+      "title": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03"
+        }
+      },
+      "questions": {
+        "parent": "wrapper",
+        "children": [
+          "accordions",
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+        }
+      },
+      "accordions": {
+        "parent": "questions",
+        "children": [
+          "webaccordion",
+          "webaccordion",
+          "webaccordion",
+          "webaccordion",
+          "webaccordion"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "webaccordion": {
+        "parent": "accordions",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "appendix": "true",
+          "emphasis": "default",
+          "state": "default"
+        }
+      },
+      "webbutton": {
+        "parent": "questions",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "see-all-questions",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/button"
+          }
+        }
+      },
+      "content": {
+        "styles": {
+          "minWidth": 460,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+        }
+      },
+      "empty-col-figma-workaround": {
+        "styles": {
+          "minWidth": 37,
+          "maxWidth": 58,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023), display=stack",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "itemSpacing": 0
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": null,
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "content": {
+          "parent": "wrapper"
+        },
+        "title": {
+          "parent": "content"
+        },
+        "questions": {
+          "parent": "content",
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "empty-col-figma-workaround": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), display=stack",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": null,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "content": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 632,
+            "maxWidth": 802,
+            "itemSpacing": 56
+          }
+        },
+        "title": {
+          "parent": "content"
+        },
+        "questions": {
+          "parent": "content",
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "empty-col-figma-workaround": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 58
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), display=stack",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": 1440,
+            "counterAxisAlignItems": "CENTER",
+            "itemSpacing": 0
+          }
+        },
+        "wrapper": {
+          "children": [
+            "content",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": 1311,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "content": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 760,
+            "maxWidth": 867,
+            "itemSpacing": 56
+          }
+        },
+        "title": {
+          "parent": "content"
+        },
+        "questions": {
+          "parent": "content",
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/3xl"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "empty-col-figma-workaround": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 74,
+            "maxWidth": 74
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "display": "inline"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T13:36:14.445Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2160:940",
+      "nodeId": "2160:1352"
+    }
+  }
+}

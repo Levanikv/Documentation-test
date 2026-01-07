@@ -1,0 +1,430 @@
+{
+  "title": "💠 aem.card-editorial",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "media": {
+      "type": "instance",
+      "instanceOf": "webmedia-fixed"
+    },
+    "content": {
+      "type": "container"
+    },
+    "heading": {
+      "type": "container"
+    },
+    "kicker": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "list": {
+      "type": "container"
+    },
+    "list-item": {
+      "type": "container"
+    },
+    "listing-24": {
+      "type": "instance",
+      "instanceOf": "listing-24"
+    },
+    "default": {
+      "type": "text"
+    },
+    "slot-vertical2": {
+      "type": "slot"
+    },
+    "action": {
+      "type": "instance",
+      "instanceOf": "contentaction"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "instanceOf": "webpagination-condensed"
+    },
+    "webmedia-fixed": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023), image-position=top",
+      "instanceOf": "webmedia-fixed"
+    }
+  },
+  "props": {
+    "kicker": {
+      "type": "boolean",
+      "default": true
+    },
+    "description": {
+      "type": "boolean",
+      "default": true
+    },
+    "list": {
+      "type": "boolean",
+      "default": false
+    },
+    "more-items": {
+      "type": "boolean",
+      "default": false
+    },
+    "action": {
+      "type": "boolean",
+      "default": true
+    },
+    "navigation": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "image-position": {
+      "type": "string",
+      "default": "top",
+      "enum": [
+        "left",
+        "right",
+        "top"
+      ]
+    },
+    "items": {
+      "type": "string",
+      "default": "17452:50923"
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), image-position=top",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "strokeWeight": "borders/wel/sem/borderWidth/default",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "media",
+          "content"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/surface",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeWeight": "breakpoints/wel/sem/borderWidth/default"
+        }
+      },
+      "media": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      },
+      "content": {
+        "parent": "content",
+        "children": [
+          "heading",
+          "desc",
+          "list",
+          "action"
+        ],
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/2xl"
+        }
+      },
+      "heading": {
+        "parent": "content",
+        "children": [
+          "kicker",
+          "title"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "kicker": {
+        "parent": "heading",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "detail"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/kicker"
+          }
+        }
+      },
+      "title": {
+        "parent": "heading",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03"
+        }
+      },
+      "desc": {
+        "parent": "content",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/description"
+          }
+        }
+      },
+      "list": {
+        "parent": "content",
+        "children": [
+          "list-item",
+          "list-item",
+          "list-item",
+          "slot-vertical2"
+        ],
+        "styles": {
+          "visible": false,
+          "width": 263,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/list"
+          }
+        }
+      },
+      "list-item": {
+        "parent": "list",
+        "children": [
+          "listing-24",
+          "default"
+        ],
+        "styles": {
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "listing-24": {
+        "parent": "list-item",
+        "styles": {
+          "width": 24,
+          "height": 24
+        }
+      },
+      "default": {
+        "parent": "list-item",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL",
+          "textStyleId": "body-default-01"
+        }
+      },
+      "slot-vertical2": {
+        "parent": "list",
+        "styles": {
+          "visible": false,
+          "layoutSizingVertical": "HUG",
+          "width": 263
+        },
+        "propConfigurations": {
+          "content": "2100917088"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/more-items"
+          },
+          "mainComponent": {
+            "$ref": "#/props/items "
+          }
+        }
+      },
+      "action": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "action": "link"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/action"
+          }
+        }
+      },
+      "webpagination-condensed": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "counter": "true",
+          "step": "1-4",
+          "size": "sm",
+          "align": "right",
+          "loop": "false"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/navigation"
+          }
+        }
+      },
+      "webmedia-fixed": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "placeholder": "true",
+          "overlay": "false",
+          "gradient-overlay": "false",
+          "caption": "false",
+          "type": "image"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023), image-position=top",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768
+          }
+        },
+        "wrapper": {
+          "children": [
+            "webmedia-fixed",
+            "content"
+          ]
+        },
+        "webmedia-fixed": {
+          "parent": "wrapper",
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        },
+        "list": {
+          "styles": {
+            "width": 576
+          }
+        },
+        "slot-vertical2": {
+          "propConfigurations": {
+            "content": "1745250920"
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "size": "md"
+          }
+        },
+        "media": {
+          "propConfigurations": {
+            "controllers": "false",
+            "overlay": "false",
+            "gradient-overlay": "false",
+            "caption": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "image-position": "left"
+    },
+    {
+      "image-position": "right"
+    },
+    {
+      "breakpoint": "desktop-sm (1024-1279)"
+    },
+    {
+      "breakpoint": "desktop-md (1280-1439)"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T16:59:30.653Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "5273:26199",
+      "nodeId": "160:6034"
+    }
+  }
+}

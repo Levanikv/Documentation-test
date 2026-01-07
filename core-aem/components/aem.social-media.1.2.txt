@@ -1,0 +1,450 @@
+{
+  "title": "💠 aem.social-media",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "aemheading-section-secondary": {
+      "type": "instance",
+      "instanceOf": "aemheading-section-secondary"
+    },
+    "tint-grid": {
+      "type": "container"
+    },
+    "line-1": {
+      "type": "container"
+    },
+    "tint-image": {
+      "type": "instance",
+      "instanceOf": "basetint-image"
+    },
+    "line-2": {
+      "type": "container"
+    },
+    "line-3": {
+      "type": "container"
+    },
+    "line-4": {
+      "type": "container"
+    },
+    "social-networks": {
+      "type": "container"
+    },
+    "webicon-slot": {
+      "type": "slot"
+    },
+    "basetint-image": {
+      "type": "instance",
+      "detectedIn": "breakpoint=tablet (768-1023)",
+      "instanceOf": "basetint-image"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "aemheading-section-secondary",
+          "tint-grid",
+          "social-networks"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "aemheading-section-secondary": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "subtitle": "false",
+          "action": "true",
+          "title": "follow-us-on-socials-network",
+          "breakpoint": "mobile-320-767",
+          "variant": "within-section"
+        }
+      },
+      "tint-grid": {
+        "parent": "wrapper",
+        "children": [
+          "line-1",
+          "line-2",
+          "line-3",
+          "line-4"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl"
+        }
+      },
+      "line-1": {
+        "parent": "tint-grid",
+        "children": [
+          "tint-image",
+          "tint-image"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl"
+        }
+      },
+      "tint-image": {
+        "parent": "line-4",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "hover-tap": "true",
+          "breakpoint": "md"
+        }
+      },
+      "line-2": {
+        "parent": "tint-grid",
+        "children": [
+          "tint-image",
+          "tint-image"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl"
+        }
+      },
+      "line-3": {
+        "parent": "tint-grid",
+        "children": [
+          "tint-image",
+          "tint-image"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl"
+        }
+      },
+      "line-4": {
+        "parent": "tint-grid",
+        "children": [
+          "tint-image"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl"
+        }
+      },
+      "social-networks": {
+        "parent": "wrapper",
+        "children": [
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot",
+          "webicon-slot"
+        ],
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutWrap": "WRAP",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 32,
+          "counterAxisSpacing": 32
+        }
+      },
+      "webicon-slot": {
+        "parent": "social-networks",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "205136210",
+          "size": "md",
+          "display": "default",
+          "background": "brand"
+        }
+      },
+      "basetint-image": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "hover-tap": "true",
+          "breakpoint": "md"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 704,
+            "maxWidth": 959
+          }
+        },
+        "aemheading-section-secondary": {
+          "propConfigurations": {
+            "subtitle": "true",
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "tint-grid": {
+          "children": [
+            "line-1",
+            "line-2"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "line-1": {
+          "children": [
+            "tint-image",
+            "tint-image",
+            "tint-image"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "tint-image": {
+          "parent": "line-2",
+          "propConfigurations": {
+            "hover-tap": "false"
+          }
+        },
+        "line-2": {
+          "children": [
+            "tint-image",
+            "tint-image",
+            "basetint-image"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "basetint-image": {
+          "parent": "line-2"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 960,
+            "maxWidth": 1215
+          }
+        },
+        "aemheading-section-secondary": {
+          "propConfigurations": {
+            "subtitle": "true",
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "tint-grid": {
+          "children": [
+            "line-1",
+            "line-2"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "line-1": {
+          "children": [
+            "tint-image",
+            "tint-image",
+            "tint-image",
+            "tint-image"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "tint-image": {
+          "parent": "line-2",
+          "propConfigurations": {
+            "hover-tap": "false"
+          }
+        },
+        "line-2": {
+          "children": [
+            "tint-image",
+            "tint-image",
+            "tint-image",
+            "basetint-image"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "basetint-image": {
+          "parent": "line-2"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": null
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "minWidth": 1152,
+            "maxWidth": 1311
+          }
+        },
+        "aemheading-section-secondary": {
+          "propConfigurations": {
+            "subtitle": "true",
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "tint-grid": {
+          "children": [
+            "line-1",
+            "line-2"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "line-1": {
+          "children": [
+            "tint-image",
+            "tint-image",
+            "tint-image",
+            "tint-image"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "tint-image": {
+          "parent": "line-2",
+          "propConfigurations": {
+            "hover-tap": "false"
+          }
+        },
+        "line-2": {
+          "children": [
+            "tint-image",
+            "tint-image",
+            "tint-image",
+            "basetint-image"
+          ],
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+          }
+        },
+        "basetint-image": {
+          "parent": "line-2"
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T14:10:12.149Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2489:5370",
+      "nodeId": "2489:5512"
+    }
+  }
+}

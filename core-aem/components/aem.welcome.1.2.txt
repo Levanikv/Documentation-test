@@ -1,0 +1,389 @@
+{
+  "title": "💠 aem.welcome",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "aemheading-section-primary": {
+      "type": "instance",
+      "instanceOf": "aemheading-section-primary"
+    },
+    "content": {
+      "type": "container"
+    },
+    "signature": {
+      "type": "text"
+    },
+    "aemtop-informations": {
+      "type": "instance",
+      "instanceOf": "aemtop-informations"
+    },
+    "actions": {
+      "type": "container"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "webbutton-1": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "webbutton"
+    },
+    "webbutton-2": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439)",
+      "instanceOf": "webbutton"
+    }
+  },
+  "props": {
+    "signature": {
+      "type": "boolean",
+      "default": true
+    },
+    "actions": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (375-767)",
+      "enum": [
+        "mobile (375-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "default": "INSERT HOTEL MANAGER NAME"
+    },
+    "top-informations": {
+      "type": "boolean",
+      "default": true
+    },
+    "button-2": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (375-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "aemheading-section-primary",
+          "content"
+        ],
+        "styles": {
+          "width": 375,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/3xl"
+        }
+      },
+      "aemheading-section-primary": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "subtitle": "true",
+          "action": "true",
+          "kicker": "true",
+          "breakpoint": "mobile-320-767",
+          "watermark": "false"
+        }
+      },
+      "content": {
+        "parent": "root",
+        "children": [
+          "signature",
+          "aemtop-informations",
+          "actions"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "signature": {
+        "parent": "signature",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "detail",
+          "textAlignHorizontal": "CENTER"
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/-> text"
+          }
+        }
+      },
+      "aemtop-informations": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "info-4": "false",
+          "info-3": "true",
+          "info-2": "true",
+          "breakpoint": "mobile-320-767"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/top informations"
+          }
+        }
+      },
+      "actions": {
+        "parent": "content",
+        "children": [
+          "webbutton",
+          "webbutton"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/stack/3xl"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/actions"
+          }
+        }
+      },
+      "webbutton": {
+        "parent": "actions",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/-> button 2"
+          }
+        }
+      },
+      "webbutton-1": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "left-icon": "false",
+          "right-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "secondary",
+          "state": "default"
+        }
+      },
+      "webbutton-2": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/-> button 2"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768
+          }
+        },
+        "aemheading-section-primary": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "aemtop-informations": {
+          "styles": {
+            "layoutSizingHorizontal": "FIXED",
+            "width": 768
+          },
+          "propConfigurations": {
+            "info-4": "true",
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "actions": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024
+          }
+        },
+        "aemheading-section-primary": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "aemtop-informations": {
+          "propConfigurations": {
+            "info-4": "true",
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "actions": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340
+          }
+        },
+        "aemheading-section-primary": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "aemtop-informations": {
+          "propConfigurations": {
+            "info-4": "true",
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "actions": {
+          "children": [
+            "webbutton-1",
+            "webbutton-2"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+            "paddingLeft": 64,
+            "paddingRight": 64,
+            "paddingTop": 48
+          }
+        },
+        "webbutton-1": {
+          "parent": "actions",
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webbutton-2": {
+          "parent": "actions",
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T14:07:17.459Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2491:8265",
+      "nodeId": "2491:8381"
+    }
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "title": "💠 aem.text",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "column-01": {
+      "type": "instance",
+      "instanceOf": "basetext"
+    },
+    "column-02": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), # columns=02",
+      "instanceOf": "basetext"
+    },
+    "column-03": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), # columns=03",
+      "instanceOf": "basetext"
+    },
+    "empty": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-sm (1024-1279), # columns=01"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "": {
+      "type": "string",
+      "default": "01",
+      "enum": [
+        "01",
+        "02",
+        "03"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), # columns=01",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "HORIZONTAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "column-01"
+        ],
+        "styles": {
+          "minWidth": 288,
+          "maxWidth": 735,
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "column-01": {
+        "parent": "wrapper",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "here-is-the-place-for-content-paragraphs-and-listings-80-characters-max-per-line-listing-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore"
+        }
+      },
+      "column-02": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "here-is-the-place-for-content-paragraphs-and-listings-80-characters-max-per-line-listing-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore"
+        }
+      },
+      "column-03": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "here-is-the-place-for-content-paragraphs-and-listings-80-characters-max-per-line-listing-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore"
+        }
+      },
+      "empty": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), # columns=02",
+      "configuration": {
+        "# columns": "02"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "layoutMode": "VERTICAL"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "column-01",
+            "column-02"
+          ]
+        },
+        "column-02": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # columns=03",
+      "configuration": {
+        "# columns": "03"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "layoutMode": "VERTICAL"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "column-01",
+            "column-02",
+            "column-03"
+          ]
+        },
+        "column-02": {
+          "parent": "wrapper"
+        },
+        "column-03": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), # columns=01",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "layoutMode": "VERTICAL"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "height": 120,
+            "minWidth": 704,
+            "maxWidth": 959,
+            "layoutMode": "HORIZONTAL",
+            "layoutSizingVertical": "FIXED",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), # columns=01",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "column-01",
+            "empty"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": 1311,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        },
+        "empty": {
+          "parent": "wrapper"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # columns=01",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1280,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "column-01",
+            "empty"
+          ],
+          "styles": {
+            "minWidth": null,
+            "maxWidth": 1311,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        },
+        "empty": {
+          "parent": "wrapper"
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-05T14:06:12.768Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2491:6105",
+      "nodeId": "2491:6198"
+    }
+  }
+}

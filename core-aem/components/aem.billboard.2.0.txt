@@ -1,0 +1,672 @@
+{
+  "title": "💠 aem.billboard",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "texts": {
+      "type": "container"
+    },
+    "heading": {
+      "type": "container"
+    },
+    "kicker": {
+      "type": "text"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "action": {
+      "type": "container"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "webinput-text": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), type=form",
+      "instanceOf": "webinput-text"
+    },
+    "list": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    },
+    "list-item-01": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    },
+    "listing-36": {
+      "type": "instance",
+      "detectedIn": "breakpoint=mobile (320-767), type=list",
+      "instanceOf": "listing-36"
+    },
+    "list-label": {
+      "type": "text",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    },
+    "list-item-02": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    },
+    "list-item-03": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    },
+    "list-item-04": {
+      "type": "container",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    },
+    "additional-text-or-link": {
+      "type": "text",
+      "detectedIn": "breakpoint=mobile (320-767), type=list"
+    }
+  },
+  "props": {
+    "kicker": {
+      "type": "boolean",
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Billboard title"
+    },
+    "description": {
+      "type": "boolean",
+      "default": true
+    },
+    "action": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "form",
+        "list"
+      ]
+    },
+    "button-2": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), type=default",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "texts",
+          "action"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/surface",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/2xl",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inset/5xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inset/5xl",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/inset/5xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/inset/5xl"
+        }
+      },
+      "texts": {
+        "parent": "wrapper",
+        "children": [
+          "heading",
+          "description"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl"
+        }
+      },
+      "heading": {
+        "parent": "texts",
+        "children": [
+          "kicker",
+          "title"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "kicker": {
+        "parent": "heading",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "textStyleId": "detail",
+          "textAlignHorizontal": "CENTER",
+          "height": 16
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/kicker"
+          }
+        }
+      },
+      "title": {
+        "parent": "heading",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03",
+          "textAlignHorizontal": "CENTER"
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/title"
+          }
+        }
+      },
+      "description": {
+        "parent": "description",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-01",
+          "textAlignHorizontal": "CENTER"
+        }
+      },
+      "action": {
+        "parent": "wrapper",
+        "children": [
+          "webbutton",
+          "webbutton"
+        ],
+        "styles": {
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/action"
+          }
+        }
+      },
+      "webbutton": {
+        "parent": "action",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "left-icon": "false",
+          "label": "button-label",
+          "size": "md",
+          "function": "tertiary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/button 2"
+          }
+        }
+      },
+      "webinput-text": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "message": "message",
+          "optional": "false",
+          "label": "label",
+          "assist-txt": "assistive-text",
+          "assistive-text": "false",
+          "state": "default"
+        }
+      },
+      "list": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/xs",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/xs"
+        }
+      },
+      "list-item-01": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "listing-36": {
+        "styles": {
+          "width": 36,
+          "height": 36
+        }
+      },
+      "list-label": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL",
+          "textStyleId": "body-default-01",
+          "textAlignHorizontal": "CENTER",
+          "textAlignVertical": "CENTER"
+        }
+      },
+      "list-item-02": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "list-item-03": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "list-item-04": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/md"
+        }
+      },
+      "additional-text-or-link": {
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "Remote, read only style",
+          "textAlignHorizontal": "CENTER"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/description"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), type=form",
+      "configuration": {
+        "type": "form"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "counterAxisAlignItems": "MIN"
+          }
+        },
+        "texts": {
+          "styles": {
+            "counterAxisAlignItems": "MIN"
+          }
+        },
+        "kicker": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "title": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "description": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "action": {
+          "children": [
+            "webinput-text",
+            "webbutton"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "MIN"
+          },
+          "propReferences": {
+            "visible": null
+          }
+        },
+        "webinput-text": {
+          "parent": "action",
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/primary"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false",
+            "function": "secondary"
+          },
+          "propReferences": {
+            "visible": null
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), type=list",
+      "configuration": {
+        "type": "list"
+      },
+      "elements": {
+        "wrapper": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetStretch/lg-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetStretch/lg-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetStretch/lg-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetStretch/lg-v"
+          }
+        },
+        "texts": {
+          "children": [
+            "heading",
+            "list",
+            "additional-text-or-link"
+          ]
+        },
+        "list": {
+          "parent": "texts"
+        },
+        "list-item-01": {
+          "parent": "list"
+        },
+        "listing-36": {
+          "parent": "list-item-04"
+        },
+        "list-label": {
+          "parent": "list-item-04"
+        },
+        "list-item-02": {
+          "parent": "list"
+        },
+        "list-item-03": {
+          "parent": "list"
+        },
+        "list-item-04": {
+          "parent": "list"
+        },
+        "additional-text-or-link": {
+          "parent": "texts"
+        },
+        "action": {
+          "styles": {
+            "layoutSizingVertical": "FIXED",
+            "height": 112
+          },
+          "propReferences": {
+            "visible": null
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), type=default",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingDynamic/insetStretch/4xl-h",
+            "paddingRight": "breakpoints/wel/sem/spacingDynamic/insetStretch/4xl-h",
+            "paddingTop": "breakpoints/wel/sem/spacingDynamic/insetStretch/4xl-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingDynamic/insetStretch/4xl-v"
+          }
+        },
+        "action": {
+          "styles": {
+            "width": 640,
+            "layoutMode": "HORIZONTAL",
+            "layoutSizingHorizontal": "FIXED",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), type=default",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "layoutMode": "HORIZONTAL"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL"
+          }
+        },
+        "texts": {
+          "styles": {
+            "counterAxisAlignItems": "MIN",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/pinchHorizontal/xl"
+          }
+        },
+        "kicker": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "title": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "description": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "action": {
+          "styles": {
+            "primaryAxisAlignItems": "MAX",
+            "layoutMode": "HORIZONTAL",
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "FILL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), type=default",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "layoutMode": "HORIZONTAL"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "counterAxisAlignItems": "CENTER",
+            "layoutMode": "HORIZONTAL"
+          }
+        },
+        "texts": {
+          "styles": {
+            "counterAxisAlignItems": "MIN",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/pinchHorizontal/xl"
+          }
+        },
+        "kicker": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "title": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "description": {
+          "styles": {
+            "textAlignHorizontal": "LEFT"
+          }
+        },
+        "action": {
+          "styles": {
+            "primaryAxisAlignItems": "MAX",
+            "layoutMode": "HORIZONTAL",
+            "layoutSizingHorizontal": "HUG",
+            "layoutSizingVertical": "FILL",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        },
+        "webinput-text": {
+          "propConfigurations": {
+            "optional": "false",
+            "assistive-text": "true"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-08T11:18:50.825Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "64:59",
+      "nodeId": "5390:5662"
+    }
+  }
+}

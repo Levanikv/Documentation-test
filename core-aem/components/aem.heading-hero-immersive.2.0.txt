@@ -1,0 +1,385 @@
+{
+  "title": "💠 aem.heading-hero-immersive",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webmedia-free": {
+      "type": "instance",
+      "instanceOf": "webmedia-free"
+    },
+    "webheader-navigation-all": {
+      "type": "instance",
+      "instanceOf": "webheader-navigation-all"
+    },
+    "message": {
+      "type": "instance",
+      "instanceOf": "message"
+    },
+    "heading": {
+      "type": "instance",
+      "instanceOf": "heading"
+    },
+    "info-control": {
+      "type": "container"
+    },
+    "webbadge-counter": {
+      "type": "instance",
+      "instanceOf": "webbadge-counter"
+    },
+    "webbutton-icon": {
+      "type": "instance",
+      "instanceOf": "webbutton-icon"
+    },
+    "base-anchor": {
+      "type": "instance",
+      "instanceOf": "base-anchor"
+    }
+  },
+  "props": {
+    "anchor": {
+      "type": "boolean",
+      "default": false
+    },
+    "message": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "item-counter": {
+      "type": "boolean",
+      "default": false
+    },
+    "sound": {
+      "type": "boolean",
+      "default": false
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "webmedia-free",
+          "webheader-navigation-all",
+          "message",
+          "heading",
+          "info-control",
+          "base-anchor"
+        ],
+        "styles": {
+          "width": 375,
+          "height": 667,
+          "minWidth": 375,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL"
+        }
+      },
+      "webmedia-free": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/neutral-container",
+          "layoutPositioning": "ABSOLUTE",
+          "width": 375,
+          "height": 667
+        },
+        "propConfigurations": {
+          "controllers": "false",
+          "gradient-overlay": "false",
+          "overlay": "false",
+          "caption": "false",
+          "placeholder": "true",
+          "type": "image"
+        }
+      },
+      "webheader-navigation-all": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "user-menu-modal": "2100929060",
+          "user-menu-popover": "2100929059",
+          "breakpoint": "mobile-320-767",
+          "variation": "default"
+        }
+      },
+      "message": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "fills": "colorModes/wel/sem/color/overlay-low",
+          "layoutSizingVertical": "HUG",
+          "width": 375
+        },
+        "propConfigurations": {
+          "link": "33-01-23455678"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/message"
+          }
+        }
+      },
+      "heading": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        },
+        "propConfigurations": {
+          "title": "true",
+          "subtitle": "true",
+          "button-2": "false",
+          "kicker": "false",
+          "action": "true",
+          "align": "center"
+        }
+      },
+      "info-control": {
+        "parent": "root",
+        "children": [
+          "webbadge-counter",
+          "webbutton-icon",
+          "webbutton-icon"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/2xl"
+        }
+      },
+      "webbadge-counter": {
+        "parent": "info-control",
+        "styles": {
+          "visible": false,
+          "fills": "colorModes/wel/sem/color/overlay-hi",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "text": "13",
+          "gallery": "false"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/item-counter"
+          }
+        }
+      },
+      "webbutton-icon": {
+        "parent": "info-control",
+        "styles": {
+          "visible": false,
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "205136406",
+          "size": "sm",
+          "function": "secondary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/sound"
+          }
+        }
+      },
+      "base-anchor": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "layoutSizingVertical": "HUG",
+          "width": 375
+        },
+        "propConfigurations": {
+          "text": "explore-more"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/anchor"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "height": 960,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "webmedia-free": {
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "caption": "false",
+            "overlay": "false"
+          }
+        },
+        "webheader-navigation-all": {
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webbadge-counter": {
+          "propConfigurations": {
+            "gallery": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-free",
+            "webheader-navigation-all",
+            "base-anchor",
+            "heading",
+            "info-control",
+            "message"
+          ],
+          "styles": {
+            "width": 1024,
+            "height": 698,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "webmedia-free": {
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "caption": "false",
+            "overlay": "false"
+          }
+        },
+        "webheader-navigation-all": {
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webbadge-counter": {
+          "propConfigurations": {
+            "gallery": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "webmedia-free",
+            "webheader-navigation-all",
+            "base-anchor",
+            "heading",
+            "info-control",
+            "message"
+          ],
+          "styles": {
+            "width": 1340,
+            "height": 698,
+            "minWidth": 1280,
+            "maxWidth": null,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "webmedia-free": {
+          "propConfigurations": {
+            "controllers": "false",
+            "gradient-overlay": "false",
+            "caption": "false",
+            "overlay": "false"
+          }
+        },
+        "webheader-navigation-all": {
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        },
+        "heading": {
+          "propConfigurations": {
+            "button-2": "false",
+            "kicker": "false"
+          }
+        },
+        "webbadge-counter": {
+          "propConfigurations": {
+            "gallery": "true"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T11:24:01.423Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2163:2313",
+      "nodeId": "2163:5396"
+    }
+  }
+}

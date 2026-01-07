@@ -1,0 +1,463 @@
+{
+  "title": "💠 aem.heading-section-primary",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "kickertitle": {
+      "type": "container"
+    },
+    "kicker": {
+      "type": "text"
+    },
+    "titlewatermark": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "watermark": {
+      "type": "instance",
+      "instanceOf": "basewatermark"
+    },
+    "content": {
+      "type": "container"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "heading-section-primary-action": {
+      "type": "instance",
+      "instanceOf": "heading-section-primary-action"
+    },
+    "empty-col-figma-workaround": {
+      "type": "container",
+      "detectedIn": "breakpoint=tablet (768-1023), watermark=true"
+    }
+  },
+  "props": {
+    "kicker": {
+      "type": "boolean",
+      "default": true
+    },
+    "action": {
+      "type": "boolean",
+      "default": true
+    },
+    "subtitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "watermark": {
+      "type": "boolean",
+      "default": true,
+      "x-platform": {
+        "FIGMA": {
+          "type": "VARIANT"
+        }
+      }
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), watermark=true",
+    "elements": {
+      "root": {
+        "children": [
+          "wrapper"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "layoutMode": "VERTICAL",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins"
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "kickertitle",
+          "content"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "kickertitle": {
+        "parent": "wrapper",
+        "children": [
+          "kicker",
+          "titlewatermark"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "kicker": {
+        "parent": "kickertitle",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "detail",
+          "textAlignHorizontal": "CENTER",
+          "textAlignVertical": "CENTER"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/kicker"
+          }
+        }
+      },
+      "titlewatermark": {
+        "parent": "kickertitle",
+        "children": [
+          "title",
+          "watermark"
+        ],
+        "styles": {
+          "minHeight": 104,
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": -104
+        }
+      },
+      "title": {
+        "parent": "titlewatermark",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "display-03",
+          "textAlignHorizontal": "CENTER",
+          "textAlignVertical": "CENTER"
+        }
+      },
+      "watermark": {
+        "parent": "titlewatermark",
+        "styles": {
+          "x": 119.5,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propConfigurations": {
+          "logo-icon": "5126183041",
+          "size": "sm"
+        }
+      },
+      "content": {
+        "parent": "wrapper",
+        "children": [
+          "subtitle",
+          "heading-section-primary-action"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/lg"
+        }
+      },
+      "subtitle": {
+        "parent": "content",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "sub-01",
+          "textAlignHorizontal": "CENTER",
+          "textAlignVertical": "BOTTOM"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/subtitle"
+          }
+        }
+      },
+      "heading-section-primary-action": {
+        "parent": "content",
+        "styles": {
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "type": "button"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/action"
+          }
+        }
+      },
+      "empty-col-figma-workaround": {
+        "styles": {
+          "minWidth": 36,
+          "maxWidth": 58,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), watermark=false",
+      "configuration": {
+        "watermark": false
+      },
+      "elements": {
+        "wrapper": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/2xl"
+          }
+        },
+        "kicker": {
+          "styles": {
+            "fills": null
+          },
+          "propConfigurations": {
+            "text": "kicker",
+            "label": "true"
+          }
+        },
+        "titlewatermark": {
+          "children": [
+            "title"
+          ],
+          "styles": {
+            "minHeight": null,
+            "primaryAxisAlignItems": "MIN",
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/scale/4xl-neg"
+          }
+        },
+        "content": {
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), watermark=true",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "content",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "empty-col-figma-workaround": {
+          "parent": "wrapper"
+        },
+        "content": {
+          "parent": "content",
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "kickertitle": {
+          "parent": "content"
+        },
+        "titlewatermark": {
+          "styles": {
+            "minHeight": 132,
+            "itemSpacing": -132
+          }
+        },
+        "watermark": {
+          "styles": {
+            "x": 165
+          },
+          "propConfigurations": {
+            "size": "md"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), watermark=true",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "content",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "empty-col-figma-workaround": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 58,
+            "maxWidth": 79
+          }
+        },
+        "content": {
+          "parent": "content",
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "kickertitle": {
+          "parent": "content"
+        },
+        "titlewatermark": {
+          "styles": {
+            "minHeight": 156,
+            "itemSpacing": -156
+          }
+        },
+        "watermark": {
+          "styles": {
+            "x": 238
+          },
+          "propConfigurations": {
+            "size": "xl"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), watermark=true",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1280,
+            "maxWidth": 1439,
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "wrapper": {
+          "children": [
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround",
+            "content",
+            "empty-col-figma-workaround",
+            "empty-col-figma-workaround"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "counterAxisAlignItems": "MIN",
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": "breakpoints/wel/sem/sizing/grid/gutter"
+          }
+        },
+        "empty-col-figma-workaround": {
+          "parent": "wrapper",
+          "styles": {
+            "minWidth": 74,
+            "maxWidth": 87
+          }
+        },
+        "content": {
+          "parent": "content",
+          "styles": {
+            "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/xl"
+          }
+        },
+        "kickertitle": {
+          "parent": "content"
+        },
+        "titlewatermark": {
+          "styles": {
+            "minHeight": 156,
+            "itemSpacing": -156
+          }
+        },
+        "watermark": {
+          "styles": {
+            "x": 306
+          },
+          "propConfigurations": {
+            "size": "xl"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-04T13:40:28.376Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "5496:209743",
+      "nodeId": "2163:37075"
+    }
+  }
+}

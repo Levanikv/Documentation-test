@@ -1,0 +1,121 @@
+{
+  "title": "aemmodal-download",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webmodal": {
+      "type": "instance",
+      "instanceOf": "webmodal"
+    }
+  },
+  "props": {
+    "breakpoints": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoints=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "webmodal"
+        ],
+        "styles": {
+          "height": 667,
+          "layoutMode": "VERTICAL"
+        }
+      },
+      "webmodal": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface",
+          "layoutSizingVertical": "HUG",
+          "width": 375
+        },
+        "propConfigurations": {
+          "buttons": "true",
+          "button-2": "true",
+          "breakpoint": "mobile-320-767",
+          "type": "information"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoints=tablet (768-1023)",
+      "configuration": {
+        "breakpoints": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "height": 1024
+          }
+        },
+        "webmodal": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/overlay-hi",
+            "layoutSizingVertical": "FILL"
+          },
+          "propConfigurations": {
+            "breakpoint": "tablet-768-1023"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoints=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoints": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "height": 768
+          }
+        },
+        "webmodal": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/overlay-hi",
+            "layoutSizingVertical": "FILL"
+          },
+          "propConfigurations": {
+            "breakpoint": "desktop-sm-1024-1279"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoints=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoints": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "height": 800
+          }
+        },
+        "webmodal": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/overlay-hi",
+            "layoutSizingVertical": "FILL"
+          },
+          "propConfigurations": {
+            "breakpoint": "desktop-md-1280-1439"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

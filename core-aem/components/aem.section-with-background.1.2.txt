@@ -1,0 +1,111 @@
+{
+  "title": "aemsection-with-background",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "slot": {
+      "type": "slot"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "more-content": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767)",
+    "elements": {
+      "root": {
+        "children": [
+          "slot",
+          "slot",
+          "slot",
+          "slot",
+          "slot"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "width": 375,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/withinSection/xl",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingDynamic/pinchVertical/2xl",
+          "paddingBottom": "breakpoints/wel/sem/spacingDynamic/pinchVertical/2xl"
+        }
+      },
+      "slot": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 343
+        },
+        "propConfigurations": {
+          "description": "true"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/more content"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=tablet (768-1023)",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279)",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439)",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}
