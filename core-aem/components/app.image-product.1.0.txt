@@ -1,0 +1,124 @@
+{
+  "title": "💠app.image-product",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "app-media": {
+      "type": "instance",
+      "instanceOf": "app-media"
+    },
+    "icon-wrapper": {
+      "type": "container"
+    },
+    "favourite": {
+      "type": "instance",
+      "instanceOf": "base-favourite"
+    },
+    "logo": {
+      "type": "instance",
+      "instanceOf": "app-logo-slot"
+    }
+  },
+  "default": {
+    "name": "DEFAULT",
+    "layout": [
+      {
+        "root": [
+          "💠 app.media",
+          {
+            "icon-wrapper": [
+              "favourite"
+            ]
+          },
+          "logo"
+        ]
+      }
+    ],
+    "elements": {
+      "root": {
+        "styles": {
+          "width": 343,
+          "minWidth": "screenSize/layout/min-width",
+          "maxWidth": "screenSize/layout/max-width",
+          "layoutMode": "VERTICAL"
+        }
+      },
+      "app-media": {
+        "styles": {
+          "fills": "#FFFFFF",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "placeholder": true,
+          "gradient-overlay": false,
+          "overlay": false
+        },
+        "instanceOf": "app-media"
+      },
+      "icon-wrapper": {
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutPositioning": "ABSOLUTE",
+          "x": 267,
+          "itemSpacing": 8,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "paddingTop": 16,
+          "paddingBottom": 16
+        }
+      },
+      "favourite": {
+        "styles": {
+          "fills": "#FFFFFF",
+          "width": 44,
+          "height": 44
+        },
+        "propConfigurations": {
+          "selected": false
+        },
+        "instanceOf": "base-favourite"
+      },
+      "logo": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "x": 16,
+          "y": 16,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propConfigurations": {
+          "show-border": false,
+          "choose-label": "576-1227437",
+          "show-label": false,
+          "choose-logo-icon": "7045-99150",
+          "choose-logo": "7045-99147",
+          "display": "nested",
+          "style": "rectangle",
+          "size": "small"
+        },
+        "instanceOf": "app-logo-slot"
+      }
+    }
+  },
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Levani",
+    "lastUpdated": "2026-01-20T10:06:59.707Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 6,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.5.0"
+    },
+    "source": {
+      "pageId": "7526:10667",
+      "nodeId": "7526:12093",
+      "nodeType": "COMPONENT"
+    }
+  }
+}
