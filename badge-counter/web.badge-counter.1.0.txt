@@ -1,0 +1,74 @@
+{
+  "title": "webbadge-counter",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "gallery": {
+      "type": "instance",
+      "instanceOf": "gallery"
+    },
+    "label": {
+      "type": "text"
+    }
+  },
+  "props": {
+    "gallery": {
+      "type": "boolean",
+      "default": true
+    },
+    "text": {
+      "type": "string",
+      "default": "Label"
+    }
+  },
+  "default": {
+    "name": "DEFAULT",
+    "elements": {
+      "root": {
+        "children": [
+          "gallery",
+          "label"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/overlay-hi",
+          "cornerRadius": "radius/wel/sem/borderRadius/xs",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-h",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-h",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-v",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-v"
+        }
+      },
+      "gallery": {
+        "parent": "root",
+        "styles": {
+          "width": 24,
+          "height": 24
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/gallery"
+          }
+        }
+      },
+      "label": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "label-regular-01"
+        },
+        "propReferences": {
+          "characters": {
+            "$ref": "#/props/text"
+          }
+        }
+      }
+    }
+  },
+  "invalidConfigurations": []
+}

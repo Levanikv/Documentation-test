@@ -1,0 +1,443 @@
+{
+  "title": "💠 web.banner",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "icon": {
+      "type": "icon"
+    },
+    "content": {
+      "type": "container"
+    },
+    "title-desc": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "action": {
+      "type": "container"
+    },
+    "link": {
+      "type": "text"
+    },
+    "webbutton": {
+      "type": "instance",
+      "instanceOf": "webbutton"
+    },
+    "close": {
+      "type": "instance",
+      "instanceOf": "close-24"
+    }
+  },
+  "props": {
+    "title": {
+      "type": "string",
+      "default": "Title or most important part of the message, in Body 01 Strong"
+    },
+    "description": {
+      "type": "string",
+      "default": "Banner description in Body 01. The color used is on-surface-mid as all default body texts"
+    },
+    "icon": {
+      "type": "string",
+      "default": "141183:67380"
+    },
+    "closable": {
+      "type": "boolean",
+      "default": true
+    },
+    "link": {
+      "type": "string",
+      "default": "Optional Body 01 link"
+    },
+    "button": {
+      "type": "boolean",
+      "default": false
+    },
+    "function": {
+      "type": "string",
+      "default": "neutral",
+      "enum": [
+        "neutral",
+        "accent",
+        "default",
+        "success",
+        "warning",
+        "danger"
+      ]
+    }
+  },
+  "default": {
+    "name": "function=neutral",
+    "elements": {
+      "root": {
+        "children": [
+          "icon",
+          "content",
+          "close"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-mid",
+          "width": 1340,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+          "paddingLeft": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingRight": "breakpoints/wel/sem/sizing/grid/margins",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/md"
+        }
+      },
+      "icon": {
+        "parent": "root",
+        "styles": {
+          "width": 24,
+          "height": 24
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/icon"
+          },
+          "mainComponent": {
+            "$ref": "#/props/-> icon"
+          }
+        }
+      },
+      "content": {
+        "parent": "root",
+        "children": [
+          "title-desc",
+          "action"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "title-desc": {
+        "parent": "content",
+        "children": [
+          "title",
+          "desc"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/3xs"
+        }
+      },
+      "title": {
+        "parent": "title-desc",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fontFamily": "Roboto",
+          "fontWeight": "Medium",
+          "lineHeight": 24
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/title"
+          }
+        }
+      },
+      "desc": {
+        "parent": "title-desc",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "fontFamily": "Roboto",
+          "fontWeight": "Regular",
+          "lineHeight": 24
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/description"
+          }
+        }
+      },
+      "action": {
+        "parent": "content",
+        "children": [
+          "link",
+          "webbutton"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "link": {
+        "parent": "action",
+        "styles": {
+          "visible": false,
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "textStyleId": "body-default-01",
+          "width": 1132,
+          "height": 24
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/link"
+          },
+          "content": {
+            "$ref": "#/props/-> link"
+          }
+        }
+      },
+      "webbutton": {
+        "parent": "action",
+        "styles": {
+          "visible": false,
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "right-icon": "false",
+          "label": "button-label",
+          "left-icon": "false",
+          "size": "sm",
+          "function": "secondary",
+          "state": "default"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/button"
+          }
+        }
+      },
+      "close": {
+        "parent": "root",
+        "styles": {
+          "width": 24,
+          "height": 24
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/closable"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "function=accent",
+      "configuration": {
+        "function": "accent"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/accent-container-low"
+          }
+        },
+        "title": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-accent-container"
+          }
+        },
+        "desc": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-accent-container"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/accent"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false",
+            "function": "primary"
+          }
+        }
+      }
+    },
+    {
+      "name": "function=default",
+      "configuration": {
+        "function": "default"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/primary-container-low"
+          }
+        },
+        "title": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-primary-container"
+          }
+        },
+        "desc": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-primary-container"
+          }
+        },
+        "link": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-primary-container"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "function=success",
+      "configuration": {
+        "function": "success"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/success-container-low"
+          }
+        },
+        "icon": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "title": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-success-container-hi"
+          }
+        },
+        "desc": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-success-container-low"
+          }
+        },
+        "link": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-success-container-low"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "function=warning",
+      "configuration": {
+        "function": "warning"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/warning-container-low"
+          }
+        },
+        "icon": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "title": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-warning-container"
+          }
+        },
+        "desc": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-warning-container"
+          }
+        },
+        "link": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-warning-container"
+          }
+        },
+        "webbutton": {
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false"
+          }
+        }
+      }
+    },
+    {
+      "name": "function=danger",
+      "configuration": {
+        "function": "danger"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger-container-low"
+          }
+        },
+        "icon": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "title": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-danger-container-hi"
+          }
+        },
+        "desc": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-danger-container-low"
+          }
+        },
+        "link": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-danger-container-low"
+          }
+        },
+        "webbutton": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger"
+          },
+          "propConfigurations": {
+            "right-icon": "false",
+            "left-icon": "false",
+            "function": "destructive-primary"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-03T10:11:48.971Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "135874:222",
+      "nodeId": "129578:39930"
+    }
+  }
+}

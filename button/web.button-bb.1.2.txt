@@ -1,0 +1,404 @@
+{
+  "title": "webbutton-bb",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "left-icon": {
+      "type": "instance",
+      "instanceOf": "arrow-right-24"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "label": {
+      "type": "text"
+    },
+    "right-icon": {
+      "type": "instance",
+      "instanceOf": "arrow-right-24"
+    },
+    "focus": {
+      "type": "vector",
+      "detectedIn": "size=md, function=primary, :state=focus"
+    },
+    "spinner": {
+      "type": "instance",
+      "detectedIn": "size=md, function=primary, :state=loading",
+      "instanceOf": "spinner"
+    }
+  },
+  "props": {
+    "left-icon": {
+      "type": "string",
+      "default": "161760:86207"
+    },
+    "right-icon": {
+      "type": "string",
+      "default": "161760:86207"
+    },
+    "label": {
+      "type": "string",
+      "default": "Button label"
+    },
+    "size": {
+      "type": "string",
+      "default": "md",
+      "enum": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary",
+        "destructive-primary",
+        "destructive-secondary"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "hover",
+        "pressed",
+        "focus",
+        "disabled",
+        "loading"
+      ]
+    }
+  },
+  "default": {
+    "name": "size=md, function=primary, :state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "left-icon",
+          "wrapper",
+          "right-icon"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/gradient-primary-hi-end",
+          "cornerRadius": "radius/wel/sem/borderRadius/2xl",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/comp/btn/primary/border-color",
+          "strokeWeight": "borders/wel/sem/borderWidth/default",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/md-h",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/md-h",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/md-v",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/md-v"
+        }
+      },
+      "left-icon": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/left-icon"
+          }
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "label"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 10,
+          "paddingLeft": 4,
+          "paddingRight": 4
+        }
+      },
+      "label": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/comp/btn/primary/fg-color",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "label-regular-01",
+          "textAlignHorizontal": "CENTER"
+        },
+        "propReferences": {
+          "characters": {
+            "$ref": "#/props/label"
+          }
+        }
+      },
+      "right-icon": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/right-icon"
+          }
+        }
+      },
+      "focus": {
+        "styles": {
+          "width": 129,
+          "height": 52,
+          "x": -2,
+          "y": -2,
+          "layoutPositioning": "ABSOLUTE",
+          "strokes": "colorModes/wel/sem/color/focus",
+          "strokeAlign": "OUTSIDE",
+          "strokeWeight": "borders/wel/sem/borderWidth/strong"
+        }
+      },
+      "spinner": {
+        "styles": {
+          "x": 51,
+          "y": 12,
+          "layoutPositioning": "ABSOLUTE",
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "size=md, function=primary, :state=hover",
+      "configuration": {
+        ":state": "hover"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/gradient-primary-low-end",
+            "strokes": "colorModes/wel/comp/btn/primary/hover/border-color"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/primary/hover/fg-color"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=pressed",
+      "configuration": {
+        ":state": "pressed"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/primary/pressed/bg-color",
+            "strokes": "colorModes/wel/comp/btn/primary/pressed/border-color"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-accent"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=focus",
+      "configuration": {
+        ":state": "focus"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "left-icon",
+            "wrapper",
+            "right-icon",
+            "focus"
+          ]
+        },
+        "focus": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=disabled",
+      "configuration": {
+        ":state": "disabled"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "opacity": 0.38
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=loading",
+      "configuration": {
+        ":state": "loading"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "left-icon",
+            "wrapper",
+            "right-icon",
+            "spinner"
+          ],
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/primary/bg-color",
+            "strokes": null,
+            "strokeWeight": null
+          }
+        },
+        "left-icon": {
+          "styles": {
+            "opacity": 0
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "opacity": 0
+          }
+        },
+        "right-icon": {
+          "styles": {
+            "opacity": 0
+          }
+        },
+        "spinner": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "size=md, function=secondary, :state=default",
+      "configuration": {
+        "function": "secondary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/secondary/bg-color",
+            "strokes": "colorModes/wel/comp/btn/secondary/border-color"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/secondary/fg-color"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=destructive-primary, :state=default",
+      "configuration": {
+        "function": "destructive-primary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger",
+            "strokes": null,
+            "strokeWeight": null
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-danger"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=destructive-secondary, :state=default",
+      "configuration": {
+        "function": "destructive-secondary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": null,
+            "strokes": "colorModes/wel/sem/color/danger"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=default",
+      "configuration": {
+        "size": "sm"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-v"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=lg, function=primary, :state=default",
+      "configuration": {
+        "size": "lg"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-v"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

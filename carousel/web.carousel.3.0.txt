@@ -1,0 +1,392 @@
+{
+  "title": "💠 web.carousel",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "displayed-items": {
+      "type": "container"
+    },
+    "list-items": {
+      "type": "container"
+    },
+    "item-3": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "item-1": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "item-2": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "gradient-left-figma-mask-work-around": {
+      "type": "vector"
+    },
+    "gradient-right-figma-mask-work-around": {
+      "type": "vector"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "instanceOf": "webpagination-condensed"
+    }
+  },
+  "props": {
+    "gradient-mask": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "mobile (320-767)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "": {
+      "type": "string",
+      "default": "1",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    "align": {
+      "type": "string",
+      "default": "center",
+      "enum": [
+        "center",
+        "left"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "full-width",
+      "enum": [
+        "full-width",
+        "full-grid"
+      ]
+    },
+    "scroll": {
+      "type": "string",
+      "default": "start",
+      "enum": [
+        "start",
+        "middle",
+        "end"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=1, align=center, display=full-width, scroll=start",
+    "elements": {
+      "root": {
+        "children": [
+          "displayed-items",
+          "webpagination-condensed"
+        ],
+        "styles": {
+          "width": 375,
+          "minWidth": 320,
+          "maxWidth": 767,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+        }
+      },
+      "displayed-items": {
+        "parent": "root",
+        "children": [
+          "list-items",
+          "gradient-left-figma-mask-work-around",
+          "gradient-right-figma-mask-work-around"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 8
+        }
+      },
+      "list-items": {
+        "parent": "displayed-items",
+        "children": [
+          "item-3",
+          "item-1",
+          "item-2"
+        ],
+        "styles": {
+          "width": 998,
+          "primaryAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/inline/xl",
+          "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inline/xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inline/xl"
+        }
+      },
+      "item-3": {
+        "parent": "list-items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-1": {
+        "parent": "list-items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-2": {
+        "parent": "list-items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "gradient-left-figma-mask-work-around": {
+        "parent": "displayed-items",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/gradient-white-max",
+          "width": 48,
+          "height": 102,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/gradient-mask"
+          }
+        }
+      },
+      "gradient-right-figma-mask-work-around": {
+        "parent": "displayed-items",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/gradient-white-max",
+          "width": 48,
+          "height": 102,
+          "x": 327,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/gradient-mask"
+          }
+        }
+      },
+      "webpagination-condensed": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "counter": "true",
+          "step": "1-3",
+          "size": "sm",
+          "align": "right",
+          "loop": "true"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=1, align=center, display=full-width, scroll=middle",
+      "configuration": {
+        "scroll": "middle"
+      },
+      "invalid": true
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=1, align=center, display=full-width, scroll=end",
+      "configuration": {
+        "scroll": "end"
+      },
+      "invalid": true
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=1, align=center, display=full-grid, scroll=start",
+      "configuration": {
+        "display": "full-grid"
+      },
+      "invalid": true
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=1, align=left, display=full-width, scroll=start",
+      "configuration": {
+        "align": "left"
+      },
+      "invalid": true
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=2, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "2"
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=3, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "3"
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=4, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "4"
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # items displayed on desktop-md=5, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "5"
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), # items displayed on desktop-md=1, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 768,
+            "minWidth": 768,
+            "maxWidth": 1023
+          }
+        },
+        "displayed-items": {
+          "children": [
+            "list-items"
+          ]
+        },
+        "list-items": {
+          "styles": {
+            "width": 2112
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "size": "md"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), # items displayed on desktop-md=1, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1024,
+            "minWidth": 1024,
+            "maxWidth": 1279
+          }
+        },
+        "displayed-items": {
+          "children": [
+            "list-items"
+          ]
+        },
+        "list-items": {
+          "styles": {
+            "width": 2880
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "size": "md"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=1, align=center, display=full-width, scroll=start",
+      "configuration": {
+        "breakpoint": "desktop-md (1280-1439)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 1340,
+            "minWidth": 1279,
+            "maxWidth": 1439
+          }
+        },
+        "displayed-items": {
+          "children": [
+            "list-items"
+          ]
+        },
+        "list-items": {
+          "styles": {
+            "width": 3668,
+            "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inline/3xl",
+            "paddingRight": "breakpoints/wel/sem/spacingDynamic/inline/3xl"
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "size": "md"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "scroll": "middle"
+    },
+    {
+      "scroll": "end"
+    },
+    {
+      "display": "full-grid"
+    },
+    {
+      "align": "left"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-03T11:12:22.047Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "11467:31543",
+      "nodeId": "163526:3398"
+    }
+  }
+}

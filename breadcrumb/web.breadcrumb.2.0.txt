@@ -1,0 +1,158 @@
+{
+  "title": "💠 web.breadcrumbs",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "label": {
+      "type": "text"
+    },
+    "divider": {
+      "type": "instance",
+      "instanceOf": "chevron-right-18"
+    },
+    "current": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "icon",
+      "detectedIn": "variant=back, :state=default"
+    },
+    "previous": {
+      "type": "text",
+      "detectedIn": "variant=back, :state=default"
+    }
+  },
+  "props": {
+    "variant": {
+      "type": "string",
+      "default": "full",
+      "enum": [
+        "full",
+        "back"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "hover"
+      ]
+    }
+  },
+  "default": {
+    "name": "variant=full, :state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "label",
+          "divider",
+          "label",
+          "divider",
+          "label",
+          "divider",
+          "current"
+        ],
+        "styles": {
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "layoutWrap": "WRAP",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/2xs",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/sm",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/sm",
+          "counterAxisSpacing": "breakpoints/wel/sem/spacingStatic/stack/2xs"
+        }
+      },
+      "label": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/link",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "link-default-02"
+        }
+      },
+      "divider": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/2xs",
+          "height": "breakpoints/wel/sem/sizing/icon/2xs"
+        }
+      },
+      "current": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-default-02"
+        }
+      },
+      "icon": {
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/2xs",
+          "height": "breakpoints/wel/sem/sizing/icon/2xs"
+        }
+      },
+      "previous": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/link",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "link-alternative-02"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "variant=full, :state=hover",
+      "configuration": {
+        ":state": "hover"
+      }
+    },
+    {
+      "name": "variant=back, :state=default",
+      "configuration": {
+        "variant": "back"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "icon",
+            "previous"
+          ],
+          "styles": {
+            "layoutWrap": "NO_WRAP",
+            "counterAxisSpacing": 0
+          }
+        },
+        "icon": {
+          "parent": "root"
+        },
+        "previous": {
+          "parent": "root"
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-03T10:20:35.018Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "11410:49",
+      "nodeId": "16152:52705"
+    }
+  }
+}

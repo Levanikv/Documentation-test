@@ -1,0 +1,479 @@
+components:
+  webaccordion:
+    title: 💠 web.accordion
+    anatomy:
+      root:
+        type: container
+      appendix:
+        type: instance
+        instanceOf: content-appendix
+      labels:
+        type: instance
+        instanceOf: content-labels
+      chevron:
+        type: instance
+        instanceOf: chevron-down-24
+      content-icon:
+        type: container
+        detectedIn: emphasis=default, :state=open
+      spacing:
+        type: vector
+        detectedIn: emphasis=default, :state=open
+      content:
+        type: container
+        detectedIn: emphasis=default, :state=open
+      button:
+        type: container
+        detectedIn: emphasis=default, :state=open
+      contentopen:
+        type: instance
+        detectedIn: emphasis=default, :state=open
+        instanceOf: contentopen
+      content-labels:
+        type: instance
+        detectedIn: emphasis=high, :state=default
+        instanceOf: content-labels
+    props:
+      appendix:
+        type: boolean
+        default: true
+      emphasis:
+        type: string
+        default: default
+        enum:
+          - default
+          - high
+      state:
+        type: string
+        default: default
+        enum:
+          - default
+          - hover
+          - pressed
+          - focus
+          - open
+          - disabled
+    default:
+      name: emphasis=default, :state=default
+      elements:
+        root:
+          children:
+            - appendix
+            - labels
+            - chevron
+          styles:
+            width: 343
+            minWidth: 288
+            maxWidth: 867
+            layoutMode: HORIZONTAL
+            strokes: colorModes/wel/sem/color/outline-low
+            strokeTopWeight: breakpoints/wel/sem/borderWidth/default
+            strokeBottomWeight: breakpoints/wel/sem/borderWidth/default
+            itemSpacing: breakpoints/wel/sem/spacingStatic/inline/sm
+            paddingTop: breakpoints/wel/sem/spacingStatic/pinchVertical/md
+            paddingBottom: breakpoints/wel/sem/spacingStatic/pinchVertical/md
+        appendix:
+          parent: root
+          styles:
+            width: breakpoints/wel/sem/sizing/icon/sm
+            height: breakpoints/wel/sem/sizing/icon/sm
+          propConfigurations:
+            icon: "137719280455"
+            type: icon
+          propReferences:
+            visible:
+              $ref: "#/props/appendix"
+        labels:
+          parent: root
+          styles:
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+          propConfigurations:
+            label-2: "false"
+            display: inline
+        chevron:
+          parent: root
+          styles:
+            width: 24
+            height: 24
+        content-icon:
+          styles:
+            layoutMode: VERTICAL
+            layoutSizingHorizontal: HUG
+            layoutSizingVertical: FILL
+            itemSpacing: 16
+          propReferences:
+            visible:
+              $ref: "#/props/appendix"
+        spacing:
+          styles:
+            fills: "#FFFFFF"
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: FILL
+        content:
+          styles:
+            layoutMode: VERTICAL
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+            itemSpacing: breakpoints/wel/sem/spacingStatic/inline/md
+        button:
+          styles:
+            layoutMode: HORIZONTAL
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+            itemSpacing: breakpoints/wel/sem/spacingStatic/inline/sm
+        contentopen:
+          styles:
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+          propConfigurations:
+            state: slot
+        content-labels:
+          styles:
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+          propConfigurations:
+            label-2: "false"
+            display: inline
+    variants:
+      - name: emphasis=default, :state=hover
+        configuration:
+          :state: hover
+        elements:
+          root:
+            styles:
+              strokes: colorModes/wel/sem/color/hover/outline-hi
+              paddingTop: 16
+              paddingBottom: 16
+          labels:
+            propConfigurations:
+              label-2: "true"
+      - name: emphasis=default, :state=pressed
+        configuration:
+          :state: pressed
+        elements:
+          root:
+            styles:
+              strokes: colorModes/wel/sem/color/outline-hi
+          labels:
+            propConfigurations:
+              label-2: "true"
+      - name: emphasis=default, :state=focus
+        configuration:
+          :state: focus
+        elements:
+          root:
+            styles:
+              strokes: colorModes/wel/sem/color/focus
+              strokeAlign: OUTSIDE
+              strokeWeight: breakpoints/wel/sem/borderWidth/strong
+          labels:
+            propConfigurations:
+              label-2: "true"
+      - name: emphasis=default, :state=open
+        configuration:
+          :state: open
+        elements:
+          root:
+            children:
+              - content-icon
+              - content
+            styles:
+              primaryAxisAlignItems: CENTER
+          content-icon:
+            parent: root
+          appendix:
+            parent: content-icon
+            propReferences:
+              visible: null
+          spacing:
+            parent: content-icon
+          content:
+            parent: root
+          button:
+            parent: content
+          labels:
+            parent: button
+            propConfigurations:
+              label-2: "true"
+          chevron:
+            parent: button
+          contentopen:
+            parent: content
+      - name: emphasis=default, :state=disabled
+        configuration:
+          :state: disabled
+        elements:
+          root:
+            styles:
+              opacity: 0.38
+              paddingTop: 16
+              paddingBottom: 16
+          labels:
+            propConfigurations:
+              label-2: "true"
+      - name: emphasis=high, :state=default
+        configuration:
+          emphasis: high
+        elements:
+          root:
+            children:
+              - appendix
+              - content-labels
+              - chevron
+            styles:
+              counterAxisAlignItems: CENTER
+              paddingTop: breakpoints/wel/sem/spacingStatic/pinchVertical/lg
+              paddingBottom: breakpoints/wel/sem/spacingStatic/pinchVertical/lg
+          content-labels:
+            parent: root
+            propConfigurations:
+              label-2: "true"
+          labels:
+            propConfigurations:
+              label-2: "true"
+    invalidVariantCombinations: []
+    metadata:
+      author: Arthur MATHON
+      lastUpdated: 2025-12-03T07:34:57.623Z
+      generator:
+        url: https://www.figma.com/community/plugin/1549454283615386215/anova
+        version: 4
+        name: Directed Edges Anova Figma Plugin
+      schema:
+        url: https://github.com/DirectedEdges/anova/blob/main/anova.schema.json
+        version: 0.3.0
+      source:
+        pageId: 1479:16479
+        nodeId: 101011:4085
+  contentAppendix:
+    title: .content-appendix
+    anatomy:
+      root:
+        type: container
+      webmedia-fixed:
+        type: instance
+        instanceOf: webmedia-fixed
+      placeholder:
+        type: instance
+        detectedIn: type=icon
+        instanceOf: placeholder
+    props:
+      type:
+        type: string
+        default: image
+        enum:
+          - icon
+          - image
+      icon:
+        type: string
+        default: 137719:280455
+    default:
+      name: type=image
+      elements:
+        root:
+          children:
+            - webmedia-fixed
+          styles:
+            layoutMode: VERTICAL
+        webmedia-fixed:
+          parent: root
+          styles:
+            fills: colorModes/wel/sem/color/neutral-container
+            layoutSizingVertical: HUG
+            width: 24
+          propConfigurations:
+            controllers: "false"
+            placeholder: "true"
+            overlay: "false"
+            gradient-overlay: "false"
+            caption: "false"
+            type: image
+        placeholder:
+          styles:
+            width: 24
+            height: 24
+          propReferences:
+            mainComponent:
+              $ref: "#/props/-> icon"
+    variants:
+      - name: type=icon
+        configuration:
+          type: icon
+        elements:
+          root:
+            children:
+              - placeholder
+            styles:
+              width: breakpoints/wel/sem/sizing/icon/sm
+              height: breakpoints/wel/sem/sizing/icon/sm
+              layoutMode: NONE
+          placeholder:
+            parent: root
+          webmedia-fixed:
+            propConfigurations:
+              controllers: "false"
+              overlay: "false"
+              gradient-overlay: "false"
+              caption: "false"
+    invalidVariantCombinations: []
+    metadata:
+      author: Arthur MATHON
+      lastUpdated: 2025-12-03T07:36:47.516Z
+      generator:
+        url: https://www.figma.com/community/plugin/1549454283615386215/anova
+        version: 4
+        name: Directed Edges Anova Figma Plugin
+      schema:
+        url: https://github.com/DirectedEdges/anova/blob/main/anova.schema.json
+        version: 0.3.0
+      source:
+        pageId: 1479:16479
+        nodeId: 101011:4143
+  contentLabels:
+    title: .content-labels
+    anatomy:
+      root:
+        type: container
+      label-1:
+        type: text
+      label-2:
+        type: text
+    props:
+      display:
+        type: string
+        default: inline
+        enum:
+          - inline
+          - stack
+      label-2:
+        type: boolean
+        default: true
+    default:
+      name: display=inline
+      elements:
+        root:
+          children:
+            - label-1
+            - label-2
+          styles:
+            counterAxisAlignItems: BASELINE
+            layoutMode: HORIZONTAL
+            itemSpacing: breakpoints/wel/sem/spacingStatic/inline/2xs
+            counterAxisSpacing: 4
+        label-1:
+          parent: root
+          styles:
+            fills: colorModes/wel/sem/color/on-surface-hi
+            layoutSizingHorizontal: HUG
+            layoutSizingVertical: HUG
+            textStyleId: body-strong-01
+        label-2:
+          parent: root
+          styles:
+            fills: colorModes/wel/sem/color/on-surface-low
+            layoutSizingHorizontal: HUG
+            layoutSizingVertical: HUG
+            textStyleId: body-default-01
+          propReferences:
+            visible:
+              $ref: "#/props/label 2"
+    variants:
+      - name: display=stack
+        configuration:
+          display: stack
+        elements:
+          root:
+            styles:
+              counterAxisAlignItems: MIN
+              layoutMode: VERTICAL
+              itemSpacing: breakpoints/wel/sem/spacingStatic/stack/2xs
+          label-1:
+            styles:
+              layoutSizingHorizontal: FILL
+          label-2:
+            styles:
+              layoutSizingHorizontal: FILL
+    invalidVariantCombinations: []
+    metadata:
+      author: Arthur MATHON
+      lastUpdated: 2025-12-03T07:37:05.794Z
+      generator:
+        url: https://www.figma.com/community/plugin/1549454283615386215/anova
+        version: 4
+        name: Directed Edges Anova Figma Plugin
+      schema:
+        url: https://github.com/DirectedEdges/anova/blob/main/anova.schema.json
+        version: 0.3.0
+      source:
+        pageId: 1479:16479
+        nodeId: 101011:4148
+  contentopen:
+    title: .content.open
+    anatomy:
+      root:
+        type: container
+      slot:
+        type: slot
+      here-is-the-place-for-content-paragraphs-and-listingslisting-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore:
+        type: text
+        detectedIn: state=text filed
+    props:
+      state:
+        type: string
+        default: slot
+        enum:
+          - slot
+          - text filed
+    default:
+      name: state=slot
+      elements:
+        root:
+          children:
+            - slot
+          styles:
+            width: 257
+            layoutMode: VERTICAL
+            itemSpacing: 10
+            paddingRight: 32
+        slot:
+          parent: root
+          styles:
+            fills: Colors/⚙️ doc/purple-overlay-02
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+          propConfigurations:
+            description: "true"
+        here-is-the-place-for-content-paragraphs-and-listingslisting-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore:
+          styles:
+            fills: colorModes/wel/sem/color/on-surface-mid
+            layoutSizingHorizontal: FILL
+            layoutSizingVertical: HUG
+            textStyleId: body-default-02
+            textAlignVertical: CENTER
+    variants:
+      - name: state=text filed
+        configuration:
+          state: text filed
+        elements:
+          root:
+            children:
+              - here-is-the-place-for-content-paragraphs-and-listingslisting-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore
+            styles:
+              width: 343
+          here-is-the-place-for-content-paragraphs-and-listingslisting-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magnaaliqua-ut-enid-minim-veniam-quis-nostrud-exercitation-ullamco-laboris-nisi-ut-lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore:
+            parent: root
+    invalidVariantCombinations: []
+    metadata:
+      author: Arthur MATHON
+      lastUpdated: 2025-12-03T07:37:10.162Z
+      generator:
+        url: https://www.figma.com/community/plugin/1549454283615386215/anova
+        version: 4
+        name: Directed Edges Anova Figma Plugin
+      schema:
+        url: https://github.com/DirectedEdges/anova/blob/main/anova.schema.json
+        version: 0.3.0
+      source:
+        pageId: 1479:16479
+        nodeId: 146969:251

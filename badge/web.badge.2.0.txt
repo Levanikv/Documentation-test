@@ -1,0 +1,400 @@
+{
+  "title": "💠 web.badge",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "prefix": {
+      "type": "instance",
+      "instanceOf": "info-18"
+    },
+    "label": {
+      "type": "text"
+    },
+    "suffix": {
+      "type": "instance",
+      "instanceOf": "arrow-right-18"
+    },
+    "icon": {
+      "type": "icon",
+      "detectedIn": "size=md, function=familyfriendly, emphasis=default, style=stripped"
+    }
+  },
+  "props": {
+    "left-icon": {
+      "type": "string",
+      "default": "163731:16513"
+    },
+    "right-icon": {
+      "type": "string",
+      "default": "163731:16490"
+    },
+    "label": {
+      "type": "string",
+      "default": "Label"
+    },
+    "size": {
+      "type": "string",
+      "default": "md",
+      "enum": [
+        "md",
+        "sm"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "neutral",
+        "loyalty",
+        "offer",
+        "danger",
+        "success",
+        "familyfriendly",
+        "ecocertified",
+        "warning"
+      ]
+    },
+    "emphasis": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "low",
+        "mid",
+        "high"
+      ]
+    },
+    "style": {
+      "type": "string",
+      "default": "stripped",
+      "enum": [
+        "outlined",
+        "stripped",
+        "filled"
+      ]
+    }
+  },
+  "default": {
+    "name": "size=md, function=default, emphasis=default, style=stripped",
+    "elements": {
+      "root": {
+        "children": [
+          "prefix",
+          "label",
+          "suffix"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/static-md",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokeWeight": "breakpoints/wel/sem/borderWidth/default",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/2xs",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/sm"
+        }
+      },
+      "prefix": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/left-icon"
+          },
+          "mainComponent": {
+            "$ref": "#/props/→ left-icon"
+          }
+        }
+      },
+      "label": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "label-default-01"
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/label"
+          }
+        }
+      },
+      "suffix": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/right-icon"
+          },
+          "mainComponent": {
+            "$ref": "#/props/→ right-icon"
+          }
+        }
+      },
+      "icon": {
+        "styles": {
+          "width": 24,
+          "height": 24
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/left-icon"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "size=md, function=default, emphasis=default, style=outlined",
+      "configuration": {
+        "style": "outlined"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/outline-primary-hi"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=default, emphasis=default, style=filled",
+      "configuration": {
+        "style": "filled"
+      },
+      "invalid": true
+    },
+    {
+      "name": "size=md, function=default, emphasis=low, style=stripped",
+      "configuration": {
+        "emphasis": "low"
+      },
+      "invalid": true
+    },
+    {
+      "name": "size=md, function=default, emphasis=mid, style=stripped",
+      "configuration": {
+        "emphasis": "mid"
+      },
+      "invalid": true
+    },
+    {
+      "name": "size=md, function=default, emphasis=high, style=stripped",
+      "configuration": {
+        "emphasis": "high"
+      },
+      "invalid": true
+    },
+    {
+      "name": "size=md, function=neutral, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "neutral"
+      },
+      "elements": {
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-surface-mid"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=loyalty, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "loyalty"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/loyalty"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=offer, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "offer"
+      },
+      "elements": {
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/offer"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=danger, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "danger"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=success, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "success"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/success"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=familyfriendly, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "familyfriendly"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "icon",
+            "label",
+            "suffix"
+          ]
+        },
+        "icon": {
+          "parent": "root"
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-family-container-low"
+          },
+          "propReferences": {
+            "content": null
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=ecocertified, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "ecocertified"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/eco"
+          },
+          "propReferences": {
+            "content": null
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=warning, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "warning"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-warning-container"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=default, emphasis=default, style=stripped",
+      "configuration": {
+        "size": "sm"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/xs-v"
+          }
+        },
+        "label": {
+          "styles": {
+            "textStyleId": "label-default-03"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [
+    {
+      "style": "filled"
+    },
+    {
+      "emphasis": "low"
+    },
+    {
+      "emphasis": "mid"
+    },
+    {
+      "emphasis": "high"
+    }
+  ],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-03T09:38:00.491Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "444:6251",
+      "nodeId": "75505:348072"
+    }
+  }
+}

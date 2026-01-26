@@ -1,0 +1,154 @@
+{
+  "title": "webcard",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "webicon-slot": {
+      "type": "slot"
+    },
+    "texts": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link-arrow": {
+      "type": "instance",
+      "instanceOf": "chevron-right-18"
+    }
+  },
+  "props": {
+    "appendix": {
+      "type": "string",
+      "default": "107135:1052"
+    },
+    "link-arrow": {
+      "type": "boolean",
+      "default": true
+    },
+    "subtitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "description": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "default": {
+    "name": "DEFAULT",
+    "elements": {
+      "root": {
+        "children": [
+          "webicon-slot",
+          "texts",
+          "link-arrow"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "cornerRadius": "radius/wel/sem/borderRadius/sm",
+          "width": 564,
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeWeight": "borders/wel/sem/borderWidth/default",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+        }
+      },
+      "webicon-slot": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "137719280455",
+          "size": "xl",
+          "display": "square",
+          "background": "brand"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/appendix"
+          }
+        }
+      },
+      "texts": {
+        "parent": "root",
+        "children": [
+          "title",
+          "subtitle",
+          "description"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/stack/xs"
+        }
+      },
+      "title": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-hi",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "title-03"
+        }
+      },
+      "subtitle": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-regular-01"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/subtitle"
+          }
+        }
+      },
+      "description": {
+        "parent": "texts",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "body-regular-01"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/description"
+          }
+        }
+      },
+      "link-arrow": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/link-arrow"
+          }
+        }
+      }
+    }
+  },
+  "invalidConfigurations": []
+}

@@ -1,0 +1,356 @@
+{
+  "title": "webcarousel",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "items": {
+      "type": "container"
+    },
+    "item-1": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "item-2": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "instanceOf": "webpagination-condensed"
+    },
+    "item-3": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=1, alignment=center",
+      "instanceOf": "slot"
+    },
+    "item-4": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=3, alignment=left",
+      "instanceOf": "slot"
+    },
+    "item-5": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=4, alignment=left",
+      "instanceOf": "slot"
+    },
+    "item-7": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=5, alignment=left",
+      "instanceOf": "slot"
+    }
+  },
+  "props": {
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-md (1280-1439)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "": {
+      "type": "string",
+      "default": "1",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    "alignment": {
+      "type": "string",
+      "default": "left",
+      "enum": [
+        "left",
+        "center"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=1, alignment=left",
+    "elements": {
+      "root": {
+        "children": [
+          "items",
+          "webpagination-condensed"
+        ],
+        "styles": {
+          "width": 1212,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+        }
+      },
+      "items": {
+        "parent": "root",
+        "children": [
+          "item-1",
+          "item-2"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/inline/xl"
+        }
+      },
+      "item-1": {
+        "parent": "items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 1212
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-2": {
+        "parent": "items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 1212
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "webpagination-condensed": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "step": "1-2",
+          "counter": "true",
+          "size": "md",
+          "align": "right",
+          "loop": "false"
+        }
+      },
+      "item-3": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 1212
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-4": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 388
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-5": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 285
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-7": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingVertical": "HUG",
+          "width": 223
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=1, alignment=center",
+      "configuration": {
+        "alignment": "center"
+      },
+      "elements": {
+        "items": {
+          "children": [
+            "item-3",
+            "item-1",
+            "item-2"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "item-3": {
+          "parent": "items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=2, alignment=left",
+      "configuration": {
+        "# columns on desktop-md": "2"
+      },
+      "elements": {
+        "items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3"
+          ]
+        },
+        "item-3": {
+          "parent": "items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=3, alignment=left",
+      "configuration": {
+        "# columns on desktop-md": "3"
+      },
+      "elements": {
+        "items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4"
+          ]
+        },
+        "item-3": {
+          "parent": "items"
+        },
+        "item-4": {
+          "parent": "items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=4, alignment=left",
+      "configuration": {
+        "# columns on desktop-md": "4"
+      },
+      "elements": {
+        "items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4",
+            "item-5"
+          ]
+        },
+        "item-3": {
+          "parent": "items"
+        },
+        "item-4": {
+          "parent": "items"
+        },
+        "item-5": {
+          "parent": "items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # columns on desktop-md=5, alignment=left",
+      "configuration": {
+        "# columns on desktop-md": "5"
+      },
+      "elements": {
+        "items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4",
+            "item-5",
+            "item-7"
+          ]
+        },
+        "item-3": {
+          "parent": "items"
+        },
+        "item-4": {
+          "parent": "items"
+        },
+        "item-5": {
+          "parent": "items"
+        },
+        "item-7": {
+          "parent": "items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=mobile (320-767), # columns on desktop-md=1, alignment=left",
+      "configuration": {
+        "breakpoint": "mobile (320-767)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 343
+          }
+        },
+        "items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3"
+          ],
+          "styles": {
+            "layoutSizingHorizontal": "HUG"
+          }
+        },
+        "item-3": {
+          "parent": "items"
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "size": "sm"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), # columns on desktop-md=1, alignment=left",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 704
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), # columns on desktop-md=1, alignment=left",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 960
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

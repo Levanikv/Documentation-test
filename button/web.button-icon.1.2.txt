@@ -1,0 +1,213 @@
+{
+  "title": "webbutton-icon",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "icon": {
+      "type": "icon"
+    },
+    "focus": {
+      "type": "vector",
+      "detectedIn": "size=sm, function=primary, :state=focus"
+    }
+  },
+  "props": {
+    "icon": {
+      "type": "string",
+      "default": "161760:86207"
+    },
+    "size": {
+      "type": "string",
+      "default": "sm",
+      "enum": [
+        "xs",
+        "sm",
+        "lg"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "focus",
+        "hover",
+        "pressed",
+        "disabled"
+      ]
+    }
+  },
+  "default": {
+    "name": "size=sm, function=primary, :state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "icon"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/accent",
+          "cornerRadius": "radius/wel/sem/borderRadius/xl",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/sm"
+        }
+      },
+      "icon": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "mainComponent": {
+            "$ref": "#/props/icon"
+          }
+        }
+      },
+      "focus": {
+        "styles": {
+          "width": 44,
+          "height": 44,
+          "x": -2,
+          "y": -2,
+          "layoutPositioning": "ABSOLUTE",
+          "strokes": "colorModes/wel/sem/color/focus",
+          "strokeAlign": "OUTSIDE",
+          "strokeWeight": 2
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "size=sm, function=primary, :state=focus",
+      "configuration": {
+        ":state": "focus"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "focus",
+            "icon"
+          ]
+        },
+        "focus": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=hover",
+      "configuration": {
+        ":state": "hover"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/hover/accent"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=pressed",
+      "configuration": {
+        ":state": "pressed"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/pressed/accent"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=disabled",
+      "configuration": {
+        ":state": "disabled"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "opacity": 0.38
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=secondary, :state=default",
+      "configuration": {
+        "function": "secondary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/primary",
+            "strokeWeight": "borders/wel/sem/borderWidth/default"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=tertiary, :state=default",
+      "configuration": {
+        "function": "tertiary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": null,
+            "strokes": "colorModes/wel/sem/color/primary",
+            "strokeWeight": "borders/wel/sem/borderWidth/default"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=xs, function=primary, :state=default",
+      "configuration": {
+        "size": "xs"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/accent",
+            "strokeWeight": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "size=lg, function=primary, :state=default",
+      "configuration": {
+        "size": "lg"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "cornerRadius": "radius/wel/sem/borderRadius/2xl",
+            "width": 56,
+            "height": 56,
+            "primaryAxisAlignItems": "CENTER"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

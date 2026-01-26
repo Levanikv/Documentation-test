@@ -1,0 +1,344 @@
+{
+  "title": "webaccordion",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "appendix": {
+      "type": "instance",
+      "instanceOf": "content-appendix"
+    },
+    "labels": {
+      "type": "instance",
+      "instanceOf": "content-labels"
+    },
+    "chevron": {
+      "type": "instance",
+      "instanceOf": "chevron-down-24"
+    },
+    "content-icon": {
+      "type": "container",
+      "detectedIn": "emphasis=default, :state=open"
+    },
+    "spacing": {
+      "type": "vector",
+      "detectedIn": "emphasis=default, :state=open"
+    },
+    "content": {
+      "type": "container",
+      "detectedIn": "emphasis=default, :state=open"
+    },
+    "button": {
+      "type": "container",
+      "detectedIn": "emphasis=default, :state=open"
+    },
+    "contentopen": {
+      "type": "instance",
+      "detectedIn": "emphasis=default, :state=open",
+      "instanceOf": "contentopen"
+    },
+    "content-labels": {
+      "type": "instance",
+      "detectedIn": "emphasis=high, :state=default",
+      "instanceOf": "content-labels"
+    }
+  },
+  "props": {
+    "appendix": {
+      "type": "boolean",
+      "default": true
+    },
+    "emphasis": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "high"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "hover",
+        "pressed",
+        "focus",
+        "open",
+        "disabled"
+      ]
+    }
+  },
+  "default": {
+    "name": "emphasis=default, :state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "appendix",
+          "labels",
+          "chevron"
+        ],
+        "styles": {
+          "width": 343,
+          "minWidth": 288,
+          "maxWidth": 867,
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/sem/color/outline-low",
+          "strokeTopWeight": "borders/wel/sem/borderWidth/default",
+          "strokeBottomWeight": "borders/wel/sem/borderWidth/default",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/md",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/md"
+        }
+      },
+      "appendix": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propConfigurations": {
+          "icon": "137719280455",
+          "type": "icon"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/appendix"
+          }
+        }
+      },
+      "labels": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "label-2": "false",
+          "display": "inline"
+        }
+      },
+      "chevron": {
+        "parent": "root",
+        "styles": {
+          "width": 24,
+          "height": 24
+        }
+      },
+      "content-icon": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "FILL",
+          "itemSpacing": 16
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/appendix"
+          }
+        }
+      },
+      "spacing": {
+        "styles": {
+          "fills": "#FFFFFF",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "FILL"
+        }
+      },
+      "content": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/lg"
+        }
+      },
+      "button": {
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/md"
+        }
+      },
+      "contentopen": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "state": "slot"
+        }
+      },
+      "content-labels": {
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "label-2": "false",
+          "display": "inline"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "emphasis=default, :state=hover",
+      "configuration": {
+        ":state": "hover"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/hover/outline-hi",
+            "paddingTop": 16,
+            "paddingBottom": 16
+          }
+        },
+        "labels": {
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "emphasis=default, :state=pressed",
+      "configuration": {
+        ":state": "pressed"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/outline-hi"
+          }
+        },
+        "labels": {
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "emphasis=default, :state=focus",
+      "configuration": {
+        ":state": "focus"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/focus/outline",
+            "strokeAlign": "OUTSIDE",
+            "strokeWeight": "borders/wel/sem/borderWidth/strong"
+          }
+        },
+        "labels": {
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "emphasis=default, :state=open",
+      "configuration": {
+        ":state": "open"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "content-icon",
+            "content"
+          ],
+          "styles": {
+            "primaryAxisAlignItems": "CENTER"
+          }
+        },
+        "content-icon": {
+          "parent": "root"
+        },
+        "appendix": {
+          "parent": "content-icon",
+          "propReferences": {
+            "visible": null
+          }
+        },
+        "spacing": {
+          "parent": "content-icon"
+        },
+        "content": {
+          "parent": "root"
+        },
+        "button": {
+          "parent": "content"
+        },
+        "labels": {
+          "parent": "button",
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        },
+        "chevron": {
+          "parent": "button"
+        },
+        "contentopen": {
+          "parent": "content"
+        }
+      }
+    },
+    {
+      "name": "emphasis=default, :state=disabled",
+      "configuration": {
+        ":state": "disabled"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "opacity": 0.38,
+            "paddingTop": 16,
+            "paddingBottom": 16
+          }
+        },
+        "labels": {
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        }
+      }
+    },
+    {
+      "name": "emphasis=high, :state=default",
+      "configuration": {
+        "emphasis": "high"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "appendix",
+            "content-labels",
+            "chevron"
+          ],
+          "styles": {
+            "counterAxisAlignItems": "CENTER",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/pinchVertical/lg",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/pinchVertical/lg"
+          }
+        },
+        "content-labels": {
+          "parent": "root",
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        },
+        "labels": {
+          "propConfigurations": {
+            "label-2": "true"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

@@ -1,0 +1,345 @@
+{
+  "title": "webbadge",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "prefix": {
+      "type": "instance",
+      "instanceOf": "info-18"
+    },
+    "label": {
+      "type": "text"
+    },
+    "suffix": {
+      "type": "instance",
+      "instanceOf": "arrow-right-18"
+    },
+    "family-friendly-filled": {
+      "type": "instance",
+      "detectedIn": "size=md, function=familyfriendly, emphasis=default, style=stripped",
+      "instanceOf": "family-friendly-filled"
+    }
+  },
+  "props": {
+    "left-icon": {
+      "type": "string",
+      "default": "160402:76429"
+    },
+    "right-icon": {
+      "type": "string",
+      "default": "160404:82045"
+    },
+    "label": {
+      "type": "string",
+      "default": "Label"
+    },
+    "size": {
+      "type": "string",
+      "default": "md",
+      "enum": [
+        "md",
+        "sm"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "neutral",
+        "loyalty",
+        "offer",
+        "danger",
+        "success",
+        "familyfriendly",
+        "ecocertified",
+        "warning"
+      ]
+    },
+    "emphasis": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "low",
+        "mid",
+        "high"
+      ]
+    },
+    "style": {
+      "type": "string",
+      "default": "stripped",
+      "enum": [
+        "outlined",
+        "stripped",
+        "filled"
+      ]
+    }
+  },
+  "default": {
+    "name": "size=md, function=default, emphasis=default, style=stripped",
+    "elements": {
+      "root": {
+        "children": [
+          "prefix",
+          "label",
+          "suffix"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "cornerRadius": "radius/wel/sem/borderRadius/xs",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokeWeight": "borders/wel/sem/borderWidth/default",
+          "itemSpacing": "breakpoints/wel/sem/spacingStatic/inline/xs",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/sm"
+        }
+      },
+      "prefix": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/left-icon"
+          }
+        }
+      },
+      "label": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/primary",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "label-regular-01"
+        },
+        "propReferences": {
+          "characters": {
+            "$ref": "#/props/label"
+          }
+        }
+      },
+      "suffix": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/right-icon"
+          }
+        }
+      },
+      "family-friendly-filled": {
+        "styles": {
+          "width": 24,
+          "height": 24
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/left-icon"
+          }
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "size=md, function=default, emphasis=default, style=outlined",
+      "configuration": {
+        "style": "outlined"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "strokes": "colorModes/wel/sem/color/primary"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=neutral, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "neutral"
+      },
+      "elements": {
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-surface-mid"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=loyalty, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "loyalty"
+      },
+      "elements": {
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/loyalty"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=offer, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "offer"
+      },
+      "elements": {
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/offer"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=danger, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "danger"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=success, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "success"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/success"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=familyfriendly, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "familyfriendly"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "family-friendly-filled",
+            "label",
+            "suffix"
+          ]
+        },
+        "family-friendly-filled": {
+          "parent": "root"
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-family-container-low"
+          },
+          "propReferences": {
+            "characters": null
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=ecocertified, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "ecocertified"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/eco"
+          },
+          "propReferences": {
+            "characters": null
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=warning, emphasis=default, style=stripped",
+      "configuration": {
+        "function": "warning"
+      },
+      "elements": {
+        "prefix": {
+          "propReferences": {
+            "mainComponent": null
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-warning-container"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=default, emphasis=default, style=stripped",
+      "configuration": {
+        "size": "sm"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/2xs-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/2xs-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/2xs-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/2xs-v"
+          }
+        },
+        "label": {
+          "styles": {
+            "textStyleId": "label-regular-03"
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": [
+    {
+      "style": "filled"
+    },
+    {
+      "emphasis": "low"
+    },
+    {
+      "emphasis": "mid"
+    },
+    {
+      "emphasis": "high"
+    }
+  ]
+}

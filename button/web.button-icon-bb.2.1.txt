@@ -1,0 +1,213 @@
+{
+  "title": "💠 web.button-icon-bb",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "left-icon": {
+      "type": "icon"
+    },
+    "focus": {
+      "type": "vector",
+      "detectedIn": "size=sm, function=primary, :state=focus"
+    }
+  },
+  "props": {
+    "icon": {
+      "type": "string",
+      "default": "165065:102"
+    },
+    "size": {
+      "type": "string",
+      "default": "sm",
+      "enum": [
+        "xs",
+        "sm",
+        "lg"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "hover",
+        "pressed",
+        "disabled",
+        "focus"
+      ]
+    }
+  },
+  "default": {
+    "name": "size=sm, function=primary, :state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "left-icon"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/comp/btn/primary/bg-gradient-end",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/full",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "strokes": "colorModes/wel/comp/btn/primary/border-color",
+          "strokeWeight": "breakpoints/wel/sem/borderWidth/default",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/sm",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/sm"
+        }
+      },
+      "left-icon": {
+        "parent": "root",
+        "styles": {
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/icon"
+          },
+          "mainComponent": {
+            "$ref": "#/props/-> icon"
+          }
+        }
+      },
+      "focus": {
+        "styles": {
+          "width": 44,
+          "height": 44,
+          "x": -2,
+          "y": -2,
+          "layoutPositioning": "ABSOLUTE",
+          "strokes": "colorModes/wel/sem/color/focus",
+          "strokeAlign": "OUTSIDE",
+          "strokeWeight": "breakpoints/wel/sem/borderWidth/strong"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "size=sm, function=primary, :state=hover",
+      "configuration": {
+        ":state": "hover"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/primary/hover/bg-gradient-start",
+            "strokes": "colorModes/wel/comp/btn/primary/hover/border-color"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=pressed",
+      "configuration": {
+        ":state": "pressed"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/primary/pressed/bg-color",
+            "strokes": "colorModes/wel/comp/btn/primary/pressed/border-color"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=disabled",
+      "configuration": {
+        ":state": "disabled"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "opacity": 0.38
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=focus",
+      "configuration": {
+        ":state": "focus"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "left-icon",
+            "focus"
+          ]
+        },
+        "focus": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=secondary, :state=default",
+      "configuration": {
+        "function": "secondary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/comp/btn/secondary/bg-color",
+            "strokes": "colorModes/wel/comp/btn/secondary/border-color"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=xs, function=primary, :state=default",
+      "configuration": {
+        "size": "xs"
+      }
+    },
+    {
+      "name": "size=lg, function=primary, :state=default",
+      "configuration": {
+        "size": "lg"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/inset/md",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/inset/md",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/inset/md",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/inset/md"
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-11T14:46:50.643Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2:11",
+      "nodeId": "151923:23613"
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "title": "webavatar",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "icon": {
+      "type": "vector"
+    },
+    "person": {
+      "type": "instance",
+      "detectedIn": "content=image, size=xs",
+      "instanceOf": "contentavatar-image"
+    }
+  },
+  "props": {
+    "content": {
+      "type": "string",
+      "default": "icon",
+      "enum": [
+        "icon",
+        "image"
+      ]
+    },
+    "size": {
+      "type": "string",
+      "default": "xs",
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg"
+      ]
+    }
+  },
+  "default": {
+    "name": "content=icon, size=xs",
+    "elements": {
+      "root": {
+        "children": [
+          "icon"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/inverse",
+          "cornerRadius": "radius/wel/sem/borderRadius/xl",
+          "width": "breakpoints/wel/sem/sizing/icon/2xs",
+          "height": "breakpoints/wel/sem/sizing/icon/2xs"
+        }
+      },
+      "icon": {
+        "parent": "root",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-inverse",
+          "width": 8.91,
+          "height": 12.33,
+          "x": 3.55,
+          "y": 2.67
+        }
+      },
+      "person": {
+        "styles": {
+          "width": 16,
+          "height": 16
+        },
+        "propConfigurations": {
+          "person": "woman-1"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "content=icon, size=sm",
+      "configuration": {
+        "size": "sm"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": "breakpoints/wel/sem/sizing/icon/sm",
+            "height": "breakpoints/wel/sem/sizing/icon/sm"
+          }
+        },
+        "icon": {
+          "styles": {
+            "width": 13.36,
+            "height": 18.5,
+            "x": 5.32,
+            "y": 4
+          }
+        }
+      }
+    },
+    {
+      "name": "content=icon, size=md",
+      "configuration": {
+        "size": "md"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": "breakpoints/wel/sem/sizing/icon/md",
+            "height": "breakpoints/wel/sem/sizing/icon/md"
+          }
+        },
+        "icon": {
+          "styles": {
+            "width": 17.81,
+            "height": 24.67,
+            "x": 7.09,
+            "y": 5.33
+          }
+        }
+      }
+    },
+    {
+      "name": "content=icon, size=lg",
+      "configuration": {
+        "size": "lg"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": "breakpoints/wel/sem/sizing/icon/lg",
+            "height": "breakpoints/wel/sem/sizing/icon/lg"
+          }
+        },
+        "icon": {
+          "styles": {
+            "width": 26.72,
+            "height": 37,
+            "x": 10.64,
+            "y": 8
+          }
+        }
+      }
+    },
+    {
+      "name": "content=image, size=xs",
+      "configuration": {
+        "content": "image"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "person"
+          ],
+          "styles": {
+            "fills": null
+          }
+        },
+        "person": {
+          "parent": "root"
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": []
+}

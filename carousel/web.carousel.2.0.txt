@@ -1,0 +1,552 @@
+{
+  "title": "webcarousel",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "displayed-items": {
+      "type": "container"
+    },
+    "list-items": {
+      "type": "container"
+    },
+    "item-1": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "item-2": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "item-3": {
+      "type": "instance",
+      "instanceOf": "slot"
+    },
+    "gradient-left-figma-mask-work-around": {
+      "type": "vector"
+    },
+    "gradient-right-figma-mask-work-around": {
+      "type": "vector"
+    },
+    "webpagination-condensed": {
+      "type": "instance",
+      "instanceOf": "webpagination-condensed"
+    },
+    "items": {
+      "type": "container",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=1, align=left, display=full-grid, scroll=end"
+    },
+    "item-4": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=2, align=left, display=full-grid, scroll=start",
+      "instanceOf": "slot"
+    },
+    "item-5": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=3, align=left, display=full-grid, scroll=start",
+      "instanceOf": "slot"
+    },
+    "item-6": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=4, align=left, display=full-grid, scroll=start",
+      "instanceOf": "slot"
+    },
+    "item-7": {
+      "type": "instance",
+      "detectedIn": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=5, align=left, display=full-grid, scroll=start",
+      "instanceOf": "slot"
+    }
+  },
+  "props": {
+    "gradient-mask": {
+      "type": "boolean",
+      "default": true
+    },
+    "breakpoint": {
+      "type": "string",
+      "default": "desktop-md (1280-1439)",
+      "enum": [
+        "mobile (320-767)",
+        "tablet (768-1023)",
+        "desktop-sm (1024-1279)",
+        "desktop-md (1280-1439)"
+      ]
+    },
+    "": {
+      "type": "string",
+      "default": "1",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    "align": {
+      "type": "string",
+      "default": "left",
+      "enum": [
+        "center",
+        "left"
+      ]
+    },
+    "display": {
+      "type": "string",
+      "default": "full-grid",
+      "enum": [
+        "full-width",
+        "full-grid"
+      ]
+    },
+    "scroll": {
+      "type": "string",
+      "default": "start",
+      "enum": [
+        "start",
+        "middle",
+        "end"
+      ]
+    }
+  },
+  "default": {
+    "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=1, align=left, display=full-grid, scroll=start",
+    "elements": {
+      "root": {
+        "children": [
+          "displayed-items",
+          "webpagination-condensed"
+        ],
+        "styles": {
+          "width": 1212,
+          "minWidth": 1152,
+          "maxWidth": 1312,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/stack/lg"
+        }
+      },
+      "displayed-items": {
+        "parent": "root",
+        "children": [
+          "list-items",
+          "gradient-left-figma-mask-work-around",
+          "gradient-right-figma-mask-work-around"
+        ],
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 8
+        }
+      },
+      "list-items": {
+        "parent": "displayed-items",
+        "children": [
+          "item-1",
+          "item-2",
+          "item-3"
+        ],
+        "styles": {
+          "width": 3414,
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "breakpoints/wel/sem/spacingDynamic/inline/xl",
+          "paddingRight": "breakpoints/wel/sem/spacingDynamic/inline/xl"
+        }
+      },
+      "item-1": {
+        "parent": "list-items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-2": {
+        "parent": "list-items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-3": {
+        "parent": "list-items",
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "gradient-left-figma-mask-work-around": {
+        "parent": "displayed-items",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/gradient-white-max",
+          "width": 48,
+          "height": 102,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/gradient-mask"
+          }
+        }
+      },
+      "gradient-right-figma-mask-work-around": {
+        "parent": "displayed-items",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/gradient-white-max",
+          "width": 48,
+          "height": 102,
+          "x": 1164,
+          "layoutPositioning": "ABSOLUTE"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/gradient-mask"
+          }
+        }
+      },
+      "webpagination-condensed": {
+        "parent": "root",
+        "styles": {
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "counter": "true",
+          "step": "1-3",
+          "size": "md",
+          "align": "right",
+          "loop": "false"
+        }
+      },
+      "items": {
+        "styles": {
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 8
+        }
+      },
+      "item-4": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-5": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-6": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      },
+      "item-7": {
+        "styles": {
+          "fills": "Colors/⚙️ doc/purple-overlay-02",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "description": "true"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=1, align=left, display=full-grid, scroll=middle",
+      "configuration": {
+        "scroll": "middle"
+      },
+      "elements": {
+        "displayed-items": {
+          "styles": {
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "list-items": {
+          "styles": {
+            "primaryAxisAlignItems": "CENTER",
+            "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inline/xl"
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "step": "2-3"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=1, align=left, display=full-grid, scroll=end",
+      "configuration": {
+        "scroll": "end"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "items",
+            "webpagination-condensed"
+          ],
+          "styles": {
+            "counterAxisAlignItems": "MAX"
+          }
+        },
+        "items": {
+          "parent": "root"
+        },
+        "list-items": {
+          "parent": "items",
+          "styles": {
+            "primaryAxisAlignItems": "MAX",
+            "paddingLeft": "breakpoints/wel/sem/spacingDynamic/inline/xl",
+            "paddingRight": 0
+          }
+        },
+        "gradient-left-figma-mask-work-around": {
+          "parent": "items",
+          "styles": {
+            "visible": false
+          },
+          "propReferences": {
+            "visible": null
+          }
+        },
+        "gradient-right-figma-mask-work-around": {
+          "parent": "items",
+          "propReferences": {
+            "visible": null
+          }
+        },
+        "webpagination-condensed": {
+          "propConfigurations": {
+            "step": "3-3"
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=2, align=left, display=full-grid, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "2"
+      },
+      "elements": {
+        "list-items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4"
+          ],
+          "styles": {
+            "width": 2281.32
+          }
+        },
+        "item-4": {
+          "parent": "list-items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=3, align=left, display=full-grid, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "3"
+      },
+      "elements": {
+        "list-items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4",
+            "item-5"
+          ],
+          "styles": {
+            "width": 1900
+          }
+        },
+        "item-4": {
+          "parent": "list-items"
+        },
+        "item-5": {
+          "parent": "list-items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=4, align=left, display=full-grid, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "4"
+      },
+      "elements": {
+        "list-items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4",
+            "item-5",
+            "item-6"
+          ],
+          "styles": {
+            "width": 1710
+          }
+        },
+        "item-4": {
+          "parent": "list-items"
+        },
+        "item-5": {
+          "parent": "list-items"
+        },
+        "item-6": {
+          "parent": "list-items"
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-md (1280-1439), # items displayed on desktop-md=5, align=left, display=full-grid, scroll=start",
+      "configuration": {
+        "# items displayed on desktop-md": "5"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "counterAxisAlignItems": "CENTER"
+          }
+        },
+        "displayed-items": {
+          "styles": {
+            "itemSpacing": 24
+          }
+        },
+        "list-items": {
+          "children": [
+            "item-1",
+            "item-2",
+            "item-3",
+            "item-4",
+            "item-5",
+            "item-6",
+            "item-7"
+          ],
+          "styles": {
+            "width": 1596
+          }
+        },
+        "item-4": {
+          "parent": "list-items"
+        },
+        "item-5": {
+          "parent": "list-items"
+        },
+        "item-6": {
+          "parent": "list-items"
+        },
+        "item-7": {
+          "parent": "list-items"
+        },
+        "gradient-left-figma-mask-work-around": {
+          "styles": {
+            "height": 116
+          }
+        },
+        "gradient-right-figma-mask-work-around": {
+          "styles": {
+            "height": 116
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=tablet (768-1023), # items displayed on desktop-md=1, align=left, display=full-grid, scroll=start",
+      "configuration": {
+        "breakpoint": "tablet (768-1023)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 704,
+            "minWidth": 704,
+            "maxWidth": 959,
+            "counterAxisAlignItems": "MAX"
+          }
+        },
+        "list-items": {
+          "styles": {
+            "width": 1896
+          }
+        },
+        "gradient-right-figma-mask-work-around": {
+          "styles": {
+            "x": 656
+          }
+        }
+      }
+    },
+    {
+      "name": "breakpoint=desktop-sm (1024-1279), # items displayed on desktop-md=1, align=left, display=full-grid, scroll=start",
+      "configuration": {
+        "breakpoint": "desktop-sm (1024-1279)"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "width": 960,
+            "minWidth": 960,
+            "maxWidth": 1215
+          }
+        },
+        "list-items": {
+          "styles": {
+            "width": 2592
+          }
+        },
+        "gradient-right-figma-mask-work-around": {
+          "styles": {
+            "x": 912
+          }
+        }
+      }
+    }
+  ],
+  "invalidConfigurations": [
+    {
+      "display": "full-width"
+    },
+    {
+      "align": "center"
+    },
+    {
+      "breakpoint": "mobile (320-767)"
+    }
+  ]
+}

@@ -1,0 +1,445 @@
+{
+  "title": "💠 web.button",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "left-icon": {
+      "type": "instance",
+      "instanceOf": "arrow-right-24"
+    },
+    "wrapper": {
+      "type": "container"
+    },
+    "label": {
+      "type": "text"
+    },
+    "right-icon": {
+      "type": "instance",
+      "instanceOf": "arrow-right-24"
+    },
+    "focus": {
+      "type": "vector",
+      "detectedIn": "size=md, function=primary, :state=focus"
+    },
+    "spinner": {
+      "type": "instance",
+      "detectedIn": "size=md, function=primary, :state=loading",
+      "instanceOf": "spinner"
+    }
+  },
+  "props": {
+    "left-icon": {
+      "type": "string",
+      "default": "163731:16540"
+    },
+    "right-icon": {
+      "type": "string",
+      "default": "163731:16540"
+    },
+    "label": {
+      "type": "string",
+      "default": "Button label"
+    },
+    "size": {
+      "type": "string",
+      "default": "md",
+      "enum": [
+        "sm",
+        "md",
+        "lg"
+      ]
+    },
+    "function": {
+      "type": "string",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "destructive-primary",
+        "destructive-secondary"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "hover",
+        "pressed",
+        "focus",
+        "disabled",
+        "loading"
+      ]
+    }
+  },
+  "default": {
+    "name": "size=md, function=primary, :state=default",
+    "elements": {
+      "root": {
+        "children": [
+          "left-icon",
+          "wrapper",
+          "right-icon"
+        ],
+        "styles": {
+          "fills": "colorModes/wel/sem/color/accent",
+          "cornerRadius": "breakpoints/wel/sem/borderRadius/element/interactive-high",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "layoutMode": "HORIZONTAL",
+          "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/md-h",
+          "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/md-h",
+          "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/md-v",
+          "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/md-v"
+        }
+      },
+      "left-icon": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/left-icon"
+          },
+          "mainComponent": {
+            "$ref": "#/props/-> left-icon"
+          }
+        }
+      },
+      "wrapper": {
+        "parent": "root",
+        "children": [
+          "label"
+        ],
+        "styles": {
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": 10,
+          "paddingLeft": 4,
+          "paddingRight": 4
+        }
+      },
+      "label": {
+        "parent": "wrapper",
+        "styles": {
+          "fills": "colorModes/wel/sem/color/on-accent",
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "label-default-01",
+          "textAlignHorizontal": "CENTER"
+        },
+        "propReferences": {
+          "content": {
+            "$ref": "#/props/label"
+          }
+        }
+      },
+      "right-icon": {
+        "parent": "root",
+        "styles": {
+          "visible": false,
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        },
+        "propReferences": {
+          "visible": {
+            "$ref": "#/props/right-icon"
+          },
+          "mainComponent": {
+            "$ref": "#/props/-> right-icon"
+          }
+        }
+      },
+      "focus": {
+        "styles": {
+          "width": 129,
+          "height": 52,
+          "x": -2,
+          "y": -2,
+          "layoutPositioning": "ABSOLUTE",
+          "strokes": "colorModes/wel/sem/color/focus",
+          "strokeAlign": "OUTSIDE",
+          "strokeWeight": "breakpoints/wel/sem/borderWidth/strong"
+        }
+      },
+      "spinner": {
+        "styles": {
+          "x": 51,
+          "y": 12,
+          "layoutPositioning": "ABSOLUTE",
+          "width": "breakpoints/wel/sem/sizing/icon/sm",
+          "height": "breakpoints/wel/sem/sizing/icon/sm"
+        }
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "size=md, function=primary, :state=hover",
+      "configuration": {
+        ":state": "hover"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/hover/accent"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=pressed",
+      "configuration": {
+        ":state": "pressed"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/pressed/accent"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=focus",
+      "configuration": {
+        ":state": "focus"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "left-icon",
+            "wrapper",
+            "right-icon",
+            "focus"
+          ],
+          "styles": {
+            "strokeAlign": "OUTSIDE"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "focus": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=disabled",
+      "configuration": {
+        ":state": "disabled"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "opacity": 0.38
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=primary, :state=loading",
+      "configuration": {
+        ":state": "loading"
+      },
+      "elements": {
+        "root": {
+          "children": [
+            "left-icon",
+            "wrapper",
+            "right-icon",
+            "spinner"
+          ]
+        },
+        "left-icon": {
+          "styles": {
+            "opacity": 0
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "opacity": 0
+          }
+        },
+        "right-icon": {
+          "styles": {
+            "opacity": 0
+          }
+        },
+        "spinner": {
+          "parent": "root"
+        }
+      }
+    },
+    {
+      "name": "size=md, function=secondary, :state=default",
+      "configuration": {
+        "function": "secondary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/primary"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-primary"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=tertiary, :state=default",
+      "configuration": {
+        "function": "tertiary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": null,
+            "strokes": "colorModes/wel/sem/color/primary",
+            "strokeWeight": "breakpoints/wel/sem/borderWidth/default"
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/primary"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=destructive-primary, :state=default",
+      "configuration": {
+        "function": "destructive-primary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/on-danger"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=md, function=destructive-secondary, :state=default",
+      "configuration": {
+        "function": "destructive-secondary"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": null,
+            "strokes": "colorModes/wel/sem/color/danger",
+            "strokeWeight": "breakpoints/wel/sem/borderWidth/default"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        },
+        "label": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/danger"
+          }
+        }
+      }
+    },
+    {
+      "name": "size=sm, function=primary, :state=default",
+      "configuration": {
+        "size": "sm"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/sm-v"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "size=lg, function=primary, :state=default",
+      "configuration": {
+        "size": "lg"
+      },
+      "elements": {
+        "root": {
+          "styles": {
+            "paddingLeft": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-h",
+            "paddingRight": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-h",
+            "paddingTop": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-v",
+            "paddingBottom": "breakpoints/wel/sem/spacingStatic/insetSquish/lg-v"
+          }
+        },
+        "wrapper": {
+          "styles": {
+            "itemSpacing": 0
+          }
+        }
+      }
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Arthur MATHON",
+    "lastUpdated": "2025-12-09T13:40:08.946Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 4,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.3.0"
+    },
+    "source": {
+      "pageId": "2:11",
+      "nodeId": "55549:132583"
+    }
+  }
+}
