@@ -1,0 +1,474 @@
+{
+  "title": "💠 app.advisory",
+  "anatomy": {
+    "root": {
+      "type": "container"
+    },
+    "content": {
+      "type": "container"
+    },
+    "icon": {
+      "type": "instance",
+      "instanceOf": "app-icon-slot"
+    },
+    "text": {
+      "type": "container"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "action": {
+      "type": "container"
+    },
+    "secondary-button": {
+      "type": "instance",
+      "instanceOf": "app-button"
+    },
+    "primary-button": {
+      "type": "instance",
+      "instanceOf": "app-button"
+    },
+    "icon-symbol": {
+      "type": "instance",
+      "detectedIn": "function=icon symbols, width=fixed, background=primary",
+      "instanceOf": "icon-symbol"
+    },
+    "app-icon-slot": {
+      "type": "slot",
+      "detectedIn": "function=warning, width=fixed, background=primary"
+    }
+  },
+  "props": {
+    "has-title": {
+      "type": "boolean",
+      "default": true
+    },
+    "has-description": {
+      "type": "boolean",
+      "default": true
+    },
+    "icon": {
+      "type": "boolean",
+      "default": true
+    },
+    "actions": {
+      "type": "boolean",
+      "default": true
+    },
+    "function": {
+      "type": "string",
+      "default": "default",
+      "enum": [
+        "default",
+        "icon symbols",
+        "warning",
+        "info",
+        "alert"
+      ]
+    },
+    "width": {
+      "type": "string",
+      "default": "fixed",
+      "enum": [
+        "fixed",
+        "full"
+      ]
+    },
+    "background": {
+      "type": "string",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary"
+      ]
+    },
+    "primary-button": {
+      "type": "boolean",
+      "default": true
+    },
+    "secondary-button": {
+      "type": "boolean",
+      "default": true
+    },
+    "title-text": {
+      "type": "string",
+      "default": "One-line message with short title"
+    },
+    "description-text": {
+      "type": "string",
+      "default": "Two-line message with action and short supporting text"
+    }
+  },
+  "default": {
+    "name": "function=default, width=fixed, background=primary",
+    "layout": [
+      {
+        "root": [
+          {
+            "content": [
+              "icon",
+              {
+                "text": [
+                  "title",
+                  "description"
+                ]
+              }
+            ]
+          },
+          {
+            "action": [
+              "secondary-button",
+              "primary-button"
+            ]
+          }
+        ]
+      }
+    ],
+    "elements": {
+      "root": {
+        "styles": {
+          "fills": "colorModes/wel/sem/color/surface-container-low",
+          "cornerRadius": "screenSize/radius/radius-xs",
+          "width": "screenSize/layout/min-width",
+          "minWidth": "screenSize/layout/min-width",
+          "layoutMode": "VERTICAL",
+          "strokeAlign": "CENTER",
+          "itemSpacing": "screenSize/space/Stack/md",
+          "paddingLeft": "screenSize/space/Inset/md",
+          "paddingRight": "screenSize/space/Inset/md",
+          "paddingTop": "screenSize/space/Inset/md",
+          "paddingBottom": "screenSize/space/Inset/md"
+        }
+      },
+      "content": {
+        "styles": {
+          "primaryAxisSizingMode": "FIXED",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "screenSize/space/Inline/sm"
+        }
+      },
+      "icon": {
+        "styles": {
+          "visible": {
+            "$ref": "#/props/icon"
+          },
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "HUG"
+        },
+        "propConfigurations": {
+          "icon": "4756-20152",
+          "size": "24",
+          "background": "primary",
+          "style": "default"
+        },
+        "instanceOf": "app-icon-slot"
+      },
+      "text": {
+        "styles": {
+          "layoutMode": "VERTICAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG"
+        }
+      },
+      "title": {
+        "styles": {
+          "visible": {
+            "$ref": "#/props/has-title"
+          },
+          "fills": "colorModes/wel/sem/color/on-surface-mid",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "text/body-strong-03"
+        },
+        "text": {
+          "$ref": "#/props/-> title-text"
+        }
+      },
+      "description": {
+        "styles": {
+          "visible": {
+            "$ref": "#/props/has-description"
+          },
+          "fills": "colorModes/wel/sem/color/on-surface-low",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "textStyleId": "text/body-03"
+        },
+        "text": {
+          "$ref": "#/props/-> description-text"
+        }
+      },
+      "action": {
+        "styles": {
+          "visible": {
+            "$ref": "#/props/actions"
+          },
+          "primaryAxisAlignItems": "MAX",
+          "primaryAxisSizingMode": "FIXED",
+          "counterAxisAlignItems": "MAX",
+          "layoutMode": "HORIZONTAL",
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "itemSpacing": "screenSize/space/Inline/sm"
+        }
+      },
+      "secondary-button": {
+        "styles": {
+          "visible": {
+            "$ref": "#/props/→ secondary button"
+          },
+          "layoutSizingHorizontal": "HUG",
+          "height": 14
+        },
+        "propConfigurations": {
+          "right-icon": false,
+          "label": "secondary",
+          "left-icon": "7045-98564",
+          "left-symbol": false,
+          "right-symbol": false,
+          "function": "link",
+          "size": "medium",
+          "state": "default"
+        },
+        "instanceOf": "app-button"
+      },
+      "primary-button": {
+        "styles": {
+          "visible": {
+            "$ref": "#/props/→ primary button"
+          },
+          "layoutSizingHorizontal": "HUG",
+          "height": 14
+        },
+        "propConfigurations": {
+          "right-icon": false,
+          "label": "primary",
+          "left-icon": "7045-98564",
+          "left-symbol": false,
+          "right-symbol": false,
+          "function": "link",
+          "size": "medium",
+          "state": "default"
+        },
+        "instanceOf": "app-button"
+      }
+    }
+  },
+  "variants": [
+    {
+      "name": "function=default, width=fixed, background=secondary",
+      "configuration": {
+        "background": "secondary"
+      },
+      "layout": [
+        {
+          "root": [
+            {
+              "content": [
+                "icon",
+                {
+                  "text": [
+                    "title",
+                    "description"
+                  ]
+                }
+              ]
+            },
+            {
+              "action": [
+                "secondary-button",
+                "primary-button"
+              ]
+            }
+          ]
+        }
+      ],
+      "elements": {
+        "root": {
+          "styles": {
+            "fills": "colorModes/wel/sem/color/surface-container-mid"
+          }
+        }
+      }
+    },
+    {
+      "name": "function=default, width=full, background=primary",
+      "configuration": {
+        "width": "full"
+      },
+      "layout": [
+        {
+          "root": [
+            {
+              "content": [
+                "icon",
+                {
+                  "text": [
+                    "title",
+                    "description"
+                  ]
+                }
+              ]
+            },
+            {
+              "action": [
+                "secondary-button",
+                "primary-button"
+              ]
+            }
+          ]
+        }
+      ],
+      "elements": {
+        "root": {
+          "styles": {
+            "cornerRadius": 0,
+            "width": 375,
+            "maxWidth": "screenSize/layout/max-width",
+            "primaryAxisAlignItems": "MAX"
+          }
+        }
+      }
+    },
+    {
+      "name": "function=icon symbols, width=fixed, background=primary",
+      "configuration": {
+        "function": "icon symbols"
+      },
+      "layout": [
+        {
+          "root": [
+            {
+              "content": [
+                "icon-symbol",
+                {
+                  "text": [
+                    "title",
+                    "description"
+                  ]
+                }
+              ]
+            },
+            {
+              "action": [
+                "secondary-button",
+                "primary-button"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "function=warning, width=fixed, background=primary",
+      "configuration": {
+        "function": "warning"
+      },
+      "layout": [
+        {
+          "root": [
+            {
+              "content": [
+                "🧰 app.icon-slot",
+                {
+                  "text": [
+                    "title",
+                    "description"
+                  ]
+                }
+              ]
+            },
+            {
+              "action": [
+                "secondary-button",
+                "primary-button"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "function=info, width=fixed, background=primary",
+      "configuration": {
+        "function": "info"
+      },
+      "layout": [
+        {
+          "root": [
+            {
+              "content": [
+                "🧰 app.icon-slot",
+                {
+                  "text": [
+                    "title",
+                    "description"
+                  ]
+                }
+              ]
+            },
+            {
+              "action": [
+                "secondary-button",
+                "primary-button"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "function=alert, width=fixed, background=primary",
+      "configuration": {
+        "function": "alert"
+      },
+      "layout": [
+        {
+          "root": [
+            {
+              "content": [
+                "🧰 app.icon-slot",
+                {
+                  "text": [
+                    "title",
+                    "description"
+                  ]
+                }
+              ]
+            },
+            {
+              "action": [
+                "secondary-button",
+                "primary-button"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "invalidVariantCombinations": [],
+  "metadata": {
+    "author": "Levani",
+    "lastUpdated": "2026-01-26T16:31:59.960Z",
+    "generator": {
+      "url": "https://www.figma.com/community/plugin/1549454283615386215/anova",
+      "version": 6,
+      "name": "Directed Edges Anova Figma Plugin"
+    },
+    "schema": {
+      "url": "https://github.com/DirectedEdges/anova/blob/main/anova.schema.json",
+      "version": "0.5.0"
+    },
+    "source": {
+      "pageId": "268:3775",
+      "nodeId": "268:4018",
+      "nodeType": "COMPONENT_SET"
+    }
+  }
+}
